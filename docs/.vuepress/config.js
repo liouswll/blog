@@ -20,18 +20,31 @@ module.exports = {
       ],
     sidebar:{
       "/JavaScript/":[
-        ["", "JavaScript目录"],
+        ["", "JavaScript"],
         {
-          title: "基础API",
-          name: "基础API",
+          title: "基本知识",
+          name: "基本知识",
           collabsable: false,
           children: [
-            ["jsAPI/grammarStatements", "语法语句"],
+            ["jsAPI/grammarStatements", "输出语句or流程控制语句"],
+            ["jsAPI/grammar", "语法or运算符（赋值）"],
             ['jsAPI/type', "类型"]
           ]
         },
+        
+        
+        // {
+        //   title: "函数",
+        //   name: "函数",
+        //   collabsable: false,
+        //   children: [
+        //     ["function/function", "函数"],
+        //   ]
+        // }
         ["function", "函数"],
-        ["form", "表单"]
+
+
+        // ["form", "表单"]
       ],
     }
   },
