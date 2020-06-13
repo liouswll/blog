@@ -42,9 +42,15 @@ module.exports = {
         //   ]
         // }
         ["function", "函数"],
-
-
-        // ["form", "表单"]
+        ["form", "表单"],
+        {
+          title: "对象",
+          name: "对象",
+          collabsable: false,
+          children: [
+            ["object/builtInObjects", "内置对象"],
+          ]
+        }
       ],
     }
   },

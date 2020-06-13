@@ -131,4 +131,43 @@ console.log(getSum(100)); // 5050
  > 不使用var声明的变量是全局变量，不推荐使用(XXXX)  
  > 变量退出作用域之后会销毁，全局变量关闭网页或浏览器才会销毁
 
- 
+- 局部变量, 先在函数内部的作用域找变量name，如果找到则使用，如果找不到去父级作用域找name变量  
+
+- 变量提升  
+定义变量的时候，变量的声明会被提升到作用域的最上面，变量的赋值不会提升。
+- 函数提升  
+JavaScript解析器首先会把当前作用域的函数声明提前到整个作用域的最前面
+```
+相关示例
+var num = 10;
+fun();
+function fun(){
+    console.log(num);
+    var num = 20;
+}
+// undefined
+
+---
+var a = 18;
+f1();
+function f1(){
+    var b=9;
+    console.log(a);
+    console.log(b);
+    var a = '123';
+}
+// undefined  9
+
+---
+f1();
+console.log(c);
+console.log(b);
+console.log(a);
+function f1(){
+    var a = b = c = 9;   等价于 var a = 9; b = 9; c =9;
+    console.log(a);
+    console.log(b);
+    console.log(c);
+}
+//  9  9  (a is not defined)  9  9  9 
+```
