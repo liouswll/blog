@@ -17,6 +17,9 @@ module.exports = {
           { text: "css", link:"/web/css/"},
           ]
         },
+        {
+          text: "前端算法", link: "/Algorithm/"
+        }
       ],
     sidebar:{
       "/JavaScript/":[
@@ -51,6 +54,12 @@ module.exports = {
             ["object/builtInObjects", "内置对象"],
           ]
         }
+      ],
+
+      "/Algorithm/":[
+        ["", "Algorithm"],
+        ["Algorithm01", "链表"],
+
       ],
     }
   },

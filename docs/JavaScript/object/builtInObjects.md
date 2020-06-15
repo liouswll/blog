@@ -254,4 +254,33 @@ var str="1 plus 2 equal 3"
 str.match(/\d+/g) // 1,2,3
 ```
 
-- replace()	替换与正则表达式匹配的子串。**返回一个新的字符串**
+- replace(regexp/substr,replacement) 替换与正则表达式匹配的子串。**返回一个新的字符串**
+```
+var str="Visit Microsoft!"
+document.write(str.replace(/Microsoft/, "W3School"))
+// Visit W3School!
+
+全局替换
+var str="Welcome to Microsoft! "
+str=str + "We are proud to announce that Microsoft has "
+str=str + "one of the largest Web Developers sites in the world."
+// document.write(str.replace(/Microsoft/g, "W3School"))
+```
+
+- stringObject.search(regexp) 检索与正则表达式相匹配的值。**返回值：stringObj中找到的第一个与reregexp相匹配子串起始的位置，如果没有找到则返回-1**
+```
+var str="Visit W3School!"
+document.write(str.search(/W3School/))
+// 6
+```
+
+- slice(tart,end) 提取字符串的片断，并在新的字符串中**返回被提取的部分**。`stringObject.slice(start,end) start 开始（包括 start）到 end 结束（不包括 end）`
+
+- split(separator,howmany) 把字符串分割为字符串数组，**返回字符串数组**。
+>separator 分割依据 // var words = sentence.split(/\s+/)
+>howmany 长度
+
+- substr(start,length) 从起始索引号提取字符串中指定数目的字符。**一个新的字符串，包含从 stringObject 的 start（包括 start 所指的字符） 处开始的 length 个字符。如果没有指定 length，那么返回的字符串包含从 start 到 stringObject 的结尾的字符**
+>str.substr(3,7)
+
+- substring(start,stop) 提取字符串中两个指定的索引号之间的字符。
