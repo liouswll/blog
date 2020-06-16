@@ -284,3 +284,9 @@ document.write(str.search(/W3School/))
 >str.substr(3,7)
 
 - substring(start,stop) 提取字符串中两个指定的索引号之间的字符。
+```
+stringObject.substr(start不可为负数,length为起始时的长度)
+
+var str="Hello world!"
+document.write(str.substring(3,7))
+```

@@ -35,7 +35,6 @@ module.exports = {
           ]
         },
         
-        
         // {
         //   title: "函数",
         //   name: "函数",
@@ -46,15 +45,35 @@ module.exports = {
         // }
         ["function", "函数"],
         ["form", "表单"],
+
+
         {
           title: "对象",
           name: "对象",
           collabsable: false,
           children: [
+            ["object/objects", "对象"],
+            ["object/dataType", "数据类型和内存分析"],
             ["object/builtInObjects", "内置对象"],
+            ["object/globalObjects", "全局对象"],
+          ]
+        },
+
+
+
+        {
+          title: "面向对象",
+          name: "面向对象",
+          collabsable: false,
+          children: [
+            ["orientedObjects/orientedObjects", "创建对象模式"],
           ]
         }
       ],
+
+
+
+
 
       "/Algorithm/":[
         ["", "Algorithm"],
