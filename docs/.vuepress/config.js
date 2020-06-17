@@ -7,16 +7,17 @@ module.exports = {
         { text: "JavaScript", link: "/JavaScript/" },
         { text: "Vue", link: "/vue/"},
         { text: "React", link: "/react/"},
-        { text: "Flutter", link: "/flutter/"},
+        // { text: "Flutter", link: "/flutter/"},
         { text: "WebPack", link: "/webpack/"},
         { text: "Git", link: "/git/"},
-        { text: "面试问题", link: "/interview/" },
-        { text: "前端难点集中", 
-        items: [ 
-          { text: "html", link:"/web/html/"},
-          { text: "css", link:"/web/css/"},
-          ]
-        },
+        // { text: "面试问题", link: "/interview/" },
+        // { text: "前端难点集中", 
+        // items: [ 
+        //   { text: "html", link:"/web/html/"},
+        //   { text: "css", link:"/web/css/"},
+        //   ]
+        // },
+        { text: "前端难点集中", link: "/difficulties/" },
         {
           text: "前端算法", link: "/Algorithm/"
         }

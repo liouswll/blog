@@ -36,9 +36,75 @@ Object.defineProperty(book, "year", {
 		return this._year
 	},
 	set: function(newValue){
-		if(newValue > 2004)
+		if(newValue > 2004){
+			this._year = newValue;
+			this.edition += newValue - 2004	
+		}
 	}
 })
+book.year = 2005;
+console.log(book.edition) // 2	
+```
+
+#### 定义多个属性
+- Object.defineProperties() 可以定义多个属性，接受两个对象参数第一个**对象是要添加或者修改的其属性的队象**，第二个**对象的属性与第一个对象中要添加或者修改的属性一一对应**
+```
+var book ={}
+Objet.defineProperties(book, {
+	_year: {
+		value: 2004
+	},
+	edition: {
+		value: 1
+	}
+	year: {
+		get: function(){
+			return this._year
+		},
+		set: fubction(){
+			if(newValue>2004){
+				this._year = newValue;
+				this.edition += newValue-2004
+			}
+		}
+	}
+})
+```
+#### 读取属性的特性
+- Object.getOwnPropertyDescriptor() 可以取得给给定属性的描述符。接受两个参数**属性所在的对象，读取描述符的属性名称**分别是数据属性和访问器属性
+```
+var book ={}
+Objet.defineProperties(book, {
+	_year: {
+		value: 2004
+	},
+	edition: {
+		value: 1
+	}
+	year: {
+		get: function(){
+			return this._year
+		},
+		set: fubction(){
+			if(newValue>2004){
+				this._year = newValue;
+				this.edition += newValue-2004
+			}
+		}
+	}
+})
+
+// 数据属性
+var descriptor = Objet.defineProperties(book, _year);
+alert(descriptor.value) //2014
+alert(descriptor.configgurale) // false
+alert(type descriptor.get) // underfined
+
+// 访问器属性
+var descriptor = Objet.defineProperties(book, year);
+alert(descriptor.value) //undefined
+alert(descriptor.configgurale) // false
+alert(type descriptor.get) // function
 ```
 
 ## 基本要求
