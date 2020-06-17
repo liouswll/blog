@@ -72,3 +72,84 @@ Person.prototype = {
 
 
 ## 组合使用构造函数和原型模式
+```
+function Person(name,age,job){
+this.name = name;
+this.age = age;
+this.job = job;
+this.firend = ['ahao','ada'];
+}
+Person.prototype = {
+constructor: Person,
+sayName:function(){
+console.log(this.name);
+}
+};
+var p1 = new Person('wh',24,'web开发');
+var p2 = new Person('lsf',47,'超市上班');
+
+p1.firend.push('asong');
+console.log(p1.firend); // ["ahao", "ada", "asong"]
+console.log(p2.firend); // ["ahao", "ada"]
+console.log(p1.firend === p2.firend); // false
+console.log(p1.sayName === p2.sayName); // true
+```
+
+## 动态原型模式
+```
+function Person(name, age, job){
+    // 属性
+    this.name = name;
+    this.age = age;
+    this.job = job;
+    // 方法
+    if(typeOf this.sayName != "function"){
+        Person.prototype.sayName = finction(){
+            alert(this.name);
+        }
+    }
+}
+```
+
+## 寄生构造函数
+```
+基本思想：创建一个构造函数，该函数仅仅封装创建的对象的代码，然后再返回新创建的对象。
+function Person(){
+    var o = new Object();
+    o.name = name;
+    o.age = age;
+    o.job = job;
+    o.sayName = function(){
+        alert(this.name)
+    };
+    return o;
+}
+var friend = new Person('a', 12, '教师')
+friend.sayName(); // a
+
+返回的对象和构造函数或者与构造函数的原型属性之间没有关系，也就是说，构造函数返回的对象
+与构造函数在外部创建的对象没有什么不同。不能依赖insstanceOf操作符确定对象类型。
+```
+
+## 稳妥构造函数模式
+- 与寄生构造函数类似。有两点不同： 
+>1.创建对象的实例方法不引用this。  
+>2.不使用new操作符调用构造函数
+```
+function Person(){
+    // 创建返回的对象
+    var o = new Object()
+    // 定义私有变量和函数
+
+    // 添加方法
+    o.sayName = function(){
+        alert(name)
+    }
+    // 返回对象
+    return o;
+}
+
+这种模式创建的对象中，除了sayName()方法之外，没有其他的办法访问name值。
+var friend = Person('a', 12, '教师');
+friend.sayName(); // a
+```

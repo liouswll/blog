@@ -1,3 +1,46 @@
+## 对象属性类型
+#### 数据类型
+- Configurable：表示能否通过delete删除属性从而重新定义，**能否修改属性特性**。默认为true
+- Enumerable：表示是否能够通过for-in循环返回属性。默认为true。
+- Writeable：表示能否修改属性的值。默认为true。
+- Value：属性的数据值，读取时从这取。写入时，把新值保存到这个位置。默认为undefined
+```
+使用Object.defineProperty()方法修改，接受三个参数。
+Object.defineProperty(属性所在的对象, 属性的名字, 一个描述符对象)
+
+var person ={}
+Object.defineProperty(person, "name", {
+	writeable: false,
+	value: 'zx'
+})
+console.log(person.name) // zx
+person.name = "cy"
+console.log(person.name) // zx
+
+writeable设置为false,修改值，非严格模式下赋值操作会被忽略。严格模式下报错。
+configurable设置为不可更改后,调用delete非严格模式下什么模式也不会发生。严格模式下报错。一旦设置为不可修改属性特性，就不能变回可配置。此时再修改writeable之外的特性，都会导致报错。
+```
+
+#### 访问器属性
+- Configurable：表示能否通过delete删除属性从而重新定义，能否修改器特性。默认为true
+- Enumerable：表示是否能够通过for-in循环返回属性。默认为true。
+- Get：读取数值时调用的函数，默认undefined
+- Set：写入属性时调用的函数，默认undefined
+```
+var book = {
+	_year: 2004,
+	edition: 1
+};
+Object.defineProperty(book, "year", {
+	get: function(){
+		return this._year
+	},
+	set: function(newValue){
+		if(newValue > 2004)
+	}
+})
+```
+
 ## 基本要求
 - 定义一个构造函数，创建自定义对象。
 

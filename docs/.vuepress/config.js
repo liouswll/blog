@@ -67,6 +67,7 @@ module.exports = {
           collabsable: false,
           children: [
             ["orientedObjects/orientedObjects", "创建对象模式"],
+            ["orientedObjects/inheritance", "继承"],
           ]
         }
       ],
