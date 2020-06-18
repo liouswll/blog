@@ -5,8 +5,8 @@
 ### JavaScript中的数据类型
 #### 简单(基本)数据类型 Number、String、Boolean、Undefined、Null
 - 直接存储值  
-![basic](../../.vuepress/public/basic.webp)   
+![basic](../../.vuepress/public/basic.png)   
  
 #### 复杂(引用)数据类型 Object、Array、Date.....
  - 存储引用  
-![reference](../../.vuepress/public/reference.webp)   
+![reference](../../.vuepress/public/reference.png)   

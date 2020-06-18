@@ -1,5 +1,5 @@
 ## 工厂模式
-![factory](../../.vuepress/public/factory.webp)
+![factory](../../.vuepress/public/factory.png)
 
 ## 构造函数
 - 构造函数就是一个普通的函数，创建方式和普通函数没有区别，不同的是构造函数习惯上首字母大写。
@@ -9,7 +9,7 @@
 2. 将新建的对象设置为函数中this, 在构造函数中可以使用this来引用新建的对象
 3. 逐行执行函数中的代码
 4. 将新建的对象作为返回值返回
-![functionGz](../../.vuepress/public/functionGz.webp)
+![functionGz](../../.vuepress/public/functionGz.png)
 #### **问题**
 ```
 function Person(name,age,job){
@@ -36,7 +36,7 @@ function sayName(){
 ```
 
 ## 原型模式
-![prototypeYX](../../.vuepress/public/prototypeYX.webp)
+![prototypeYX](../../.vuepress/public/prototypeYX.png)
 #### 问题1
 ```
 由其共享的本性导致
@@ -67,7 +67,7 @@ Person.prototype = {
 
 ```
 #### 问题2
-![prototypeYXERROR](../../.vuepress/public/prototypeYXERROR.webp)
+![prototypeYXERROR](../../.vuepress/public/prototypeYXERROR.png)
 
 
 

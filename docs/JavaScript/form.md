@@ -22,4 +22,4 @@ type： 规定 input 元素的类型
 
 ### type属性值  
 
-![inputType](../.vuepress/public/inputType.webp)
+![inputType](../.vuepress/public/inputType.png)

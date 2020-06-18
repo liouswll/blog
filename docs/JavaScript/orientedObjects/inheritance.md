@@ -5,7 +5,7 @@ function F(){}
 var f = new F();
 f._proto_ === F.prototype; // true
 ```
-![prototypeL](../../.vuepress/public/prototypeL.webp)
+![prototypeL](../../.vuepress/public/prototypeL.png)
 
 1. 首先在对象自身上查找是否有该属性，如果有，返回结果
 2. 如果没有，就去对象的原型上进行查找， 如果有，返回结果
@@ -18,5 +18,5 @@ f._proto_ === F.prototype; // true
 - __proto__每个对象都有，js在new一个对象的时候，会将它的__proto__指向构造函数的prototype指向的那个对象。在上图中，f1、f2这些实例对象的__proto__都指向了Foo.prototype。
 - 如果一个对象的__proto__指向了另一个对象，那么前者就继承了后者的所有属性。
 
-![protoL](../../.vuepress/public/protoL.webp)
+![protoL](../../.vuepress/public/protoL.png)
 
