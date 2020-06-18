@@ -1,4 +1,3 @@
-## BOM
 #### Window 对象表示浏览器中打开的窗口。  
 1. 对象属性  
 - location	用于窗口或框架的 Location 对象。请参阅 Location 对象。  
