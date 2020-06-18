@@ -219,7 +219,7 @@ length		字符串的长度
 prototype	允许您向对象添加属性和方法  
 
 #### 方法
-- charAt()	    返回在指定位置的字符。  ```"qweqweq".charAt(1)  // w`  
+- charAt()	    返回在指定位置的字符。  `"qweqweq".charAt(1)  // w`  
 - charCodeAt()	返回在指定的位置的字符的 Unicode 编码。  
 - concat()	    连接字符串。 
 

@@ -24,3 +24,10 @@ java		代表 java.* 包层级的一个 JavaPackage。
 NaN		指示某个值是不是数字值。  
 Packages	根 JavaPackage 对象。  
 undefined	指示未定义的值。  
+
+## 包装类
+- 在JS中为我们提供了三个包装类，通过这三个包装类可以将基本数据类型的数据转换为对象
+- String() 可以将基本数据类型字符串转换为String对象
+- Number() 可以将基本数据类型的数字转换为Number对象
+- Boolean() 可以将基本数据类型的布尔值转换为Boolean对象
+- 注意：在实际应用中不会使用基本数据类型的对象

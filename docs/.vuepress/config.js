@@ -70,7 +70,11 @@ module.exports = {
             ["orientedObjects/orientedObjects", "创建对象模式"],
             ["orientedObjects/inheritance", "继承"],
           ]
-        }
+        },
+
+        
+        ["DOM", "DOM"],
+        ["BOM", "BOM"]
       ],
 
 
