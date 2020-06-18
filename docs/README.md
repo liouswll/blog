@@ -1,6 +1,6 @@
 ---
 home: true
-heroImage: /home.png
+heroImage: /home.webp
 actionText: Get Started →
 actionLink: /JavaScript/
 features:
