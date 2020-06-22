@@ -10,7 +10,7 @@ module.exports = {
         // { text: "Flutter", link: "/flutter/"},
         { text: "WebPack", link: "/webpack/"},
         { text: "Git", link: "/git/"},
-        // { text: "面试问题", link: "/interview/" },
+        { text: "Websocket", link: "/Websocket/" },
         // { text: "前端难点集中", 
         // items: [ 
         //   { text: "html", link:"/web/html/"},
@@ -86,6 +86,15 @@ module.exports = {
         ["Algorithm01", "链表"],
 
       ],
+      
+      "/Git/": [
+        ["", "Git"]
+      ],
+
+      "/Websocket/": [
+        ["", "Websocket"]
+      ], 
+      
     }
   },
 }
