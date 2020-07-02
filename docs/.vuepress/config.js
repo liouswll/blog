@@ -8,7 +8,7 @@ module.exports = {
         { text: "Vue", link: "/Vue/"},
         { text: "React", link: "/React/"},
         // { text: "Flutter", link: "/flutter/"},
-        { text: "WebPack", link: "/webpack/"},
+        { text: "Webpack", link: "/Webpack/"},
         { text: "Git", link: "/git/"},
         { text: "Websocket", link: "/Websocket/" },
         // { text: "前端难点集中", 
@@ -103,6 +103,10 @@ module.exports = {
       
       "/Vue/": [
         ["","基础概念"]
+      ],
+
+      "/Webpack/": [
+        ["", "概念"]
       ]
       
     }
