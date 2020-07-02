@@ -5,8 +5,8 @@ module.exports = {
   themeConfig:{
     nav: [{text: "主页", link: "/"      },
         { text: "JavaScript", link: "/JavaScript/" },
-        { text: "Vue", link: "/vue/"},
-        { text: "React", link: "/react/"},
+        { text: "Vue", link: "/Vue/"},
+        { text: "React", link: "/React/"},
         // { text: "Flutter", link: "/flutter/"},
         { text: "WebPack", link: "/webpack/"},
         { text: "Git", link: "/git/"},
@@ -99,7 +99,11 @@ module.exports = {
         ["LifeCycle", "生命周期"],
         ["Redux", "Redux"],
         ["Guidance", "高级指引"],
-      ], 
+      ],
+      
+      "/Vue/": [
+        ["","基础概念"]
+      ]
       
     }
   },
