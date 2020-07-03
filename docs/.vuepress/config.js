@@ -17,7 +17,7 @@ module.exports = {
         //   { text: "css", link:"/web/css/"},
         //   ]
         // },
-        { text: "前端难点集中", link: "/difficulties/" },
+        { text: "前端难点集中", link: "/Difficulties/" },
         {
           text: "前端算法", link: "/Algorithm/"
         }
@@ -107,6 +107,12 @@ module.exports = {
 
       "/Webpack/": [
         ["", "概念"]
+      ],
+
+      "/Difficulties/": [
+        ["", "JS注意点-难点"],
+        ["Vue", "Vue注意点-难点"],
+        ["React", "React注意点-难点"]
       ]
       
     }

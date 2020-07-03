@@ -276,7 +276,7 @@ document.write(str.search(/W3School/))
 
 - slice(tart,end) 提取字符串的片断，并在新的字符串中**返回被提取的部分**。`stringObject.slice(start,end) start 开始（包括 start）到 end 结束（不包括 end）`
 
-- split(separator,howmany) 把字符串分割为字符串数组，**返回字符串数组**。
+- split(separator,howmany) 把字符串分割为字符串数组，**返回字符串数组**。如果没有设置该参数，整个字符串都会被分割，不考虑它的长度。
 >separator 分割依据 // var words = sentence.split(/\s+/)
 >howmany 长度
 
