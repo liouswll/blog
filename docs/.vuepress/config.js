@@ -11,6 +11,7 @@ module.exports = {
         { text: "Webpack", link: "/Webpack/"},
         { text: "Git", link: "/git/"},
         { text: "Websocket", link: "/Websocket/" },
+        { text: "HTTP", link: "/Http/" },
         // { text: "前端难点集中", 
         // items: [ 
         //   { text: "html", link:"/web/html/"},
@@ -107,6 +108,10 @@ module.exports = {
 
       "/Webpack/": [
         ["", "概念"]
+      ],
+      
+      "/Http/": [
+        ["", "Http"]
       ],
 
       "/Difficulties/": [
