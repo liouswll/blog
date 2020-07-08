@@ -237,11 +237,12 @@ MutationObserve
     只能在回调里处理异常 
 2. 
 - Promise： 异步编程解决方案（ promise有三种状态：pending(等待态)，fulfiled(成功态)，rejected(失败态)；状态一旦改变，就不会再变。创造promise实例后，它会立即执行。）
+```
+
+```
 
 
 
 
-
-
-## node-gyp
+## node-gyp（工具包编译代码）
 https://www.cnblogs.com/wangyuxue/p/11218113.html
