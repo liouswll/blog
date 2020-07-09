@@ -236,9 +236,201 @@ MutationObserve
     容易滋生 bug。  
     只能在回调里处理异常 
 2. 
-- Promise： 异步编程解决方案（ promise有三种状态：pending(等待态)，fulfiled(成功态)，rejected(失败态)；状态一旦改变，就不会再变。创造promise实例后，它会立即执行。）
+- Promise： 异步编程解决方案（ promise有三种状态：pending(等待态)，resolved（fulfiled）(成功态)，rejected(失败态)；状态一旦改变，就不会再变。创造promise实例后，它会立即执行。）
+```
+new Promise(resolve => {
+  setTimeout(() => {
+    resolve('hello')
+  }, 2000)
+}).then(res => {
+  console.log(res)
+})
 ```
 
+```
+new Promise(resolve => {
+    setTimeout(() => {
+      resolve('hello')
+    }, 2000)
+  }).then(val => {
+    console.log(val) //  参数val = 'hello'
+    return new Promise(resolve => {
+      setTimeout(() => {
+        resolve('world')
+      }, 2000)
+    })
+  }).then(val => {
+    console.log(val) // 参数val = 'world'
+  })
+```
+
+```
+// promise完成后then()
+let pro = new Promise(resolve => {
+   setTimeout(() => {
+     resolve('hello world')
+   }, 2000)
+ })
+ setTimeout(() => {
+   pro.then(value => {
+   console.log(value) // hello world
+ })
+ }, 2000)
+```
+
+```
+// Promise 状态的不可逆性
+var p1 = new Promise(function(resolve, reject){
+  resolve("success1");
+  resolve("success2");
+});
+
+var p2 = new Promise(function(resolve, reject){
+  resolve("success");
+  reject("reject");
+});
+
+p1.then(function(value){
+  console.log(value);
+});
+
+p2.then(function(value){
+  console.log(value);
+});
+
+输出 success1 success
+```
+
+```
+// 链式调用
+var p = new Promise(function(resolve, reject){
+  resolve(1);
+});
+p.then(function(value){               //第一个then
+  console.log(value);
+  return value*2;
+}).then(function(value){              //第二个then
+  console.log(value);
+}).then(function(value){              //第三个then
+  console.log(value);
+  return Promise.resolve('resolve'); 
+}).then(function(value){              //第四个then
+  console.log(value);
+  return Promise.reject('reject');
+}).then(function(value){              //第五个then
+  console.log('resolve: '+ value);
+}, function(err){
+  console.log('reject: ' + err);
+})
+打印
+1
+2
+undefined
+"resolve"
+"reject: reject"
+```
+
+```
+// then方法后接err   
+promiseDemo.then((result) => {
+  console.log(result)
+}, (result) => {
+  console.log(result)
+})
+
+// .catch  等价于上述的err
+promiseDemo.then((result) => {
+  console.log(result)
+}).catch((result) => {
+  console.log(result)
+})
+
+promiseDemo.then((result) => {
+  console.log(result)
+})   //只接收成功状态
+promiseDemo.catch((result) => {
+  console.log(result)
+})    // 只接收失败状态，可以看成第三种的简写形式
+promiseDemo.then(null, (result) => {
+  console.log(result)
+})   //只接收失败状态
+```
+- **promise setTimeout（宏任务异步） console执行顺序**  
+console -> promise -> setTimeout
+
+
+
+## axios请求
+#### get请求 一般多用于获取数据
+- 不带参数     　　
+1. 方式一: axios({ methods: 'get', url: '/ulr' })  
+2. 方式二: axios.get('/url')  
+- 带参数
+    ```
+    1. 方式一: axios.get('/url', {params: {id: 12}})  //请求的地址实际为localhost:8080/url?id=12
+    2. 方式二: axios({
+                   methods: 'get',
+                   url: 'url',
+                   params: {
+                        id:12
+                   }
+               })
+    ```
+#### post请求 主要提交表单数据和上传文件
+```
+let data = {}
+方式一:  axios.post('/url',data,config)
+ 
+方式二:  axios({
+    methods: 'post',
+    url: '/url',
+    data: data,
+    
+    url: '连接地址 path参数直接放里面',
+    method: 'post 默认是 get',
+    params: '必须是一个无格式对象 query参数',
+    data: '是作为请求主体被发送的数据 body参数',
+
+})　　　　
+其中data可以有两种格式form-data(图片上传,文件上传)，applicition/json（目前比较流行）上面两种方法都是 appliction/json格式如下为: form-data
+let formData = new FormData()
+let data = {id: 12}
+for (let key in data) {
+    formData.append(key, data[key]) //创建form-data格式数据
+}
+axios({
+    methods: 'post',
+    url: '/url',
+    data: formData
+})
+该请求发出之后可以在浏览器中查看此次请求的request header里面content-type: 为 form-data形式
+ ```
+- 请求完成后可跟.then方法
+```
+- get
+axios.get('/user', {
+    params: {
+      ID: 12345
+    }
+  })
+  .then(function (response) {
+    console.log(response);
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
+
+- post
+axios.post('/user', {
+    firstName: 'Fred',
+    lastName: 'Flintstone'
+  })
+  .then(function (response) {
+    console.log(response);
+  })
+  .catch(function (error) {
+    console.log(error);
+  });  
 ```
 
 
