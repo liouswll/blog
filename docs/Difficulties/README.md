@@ -434,7 +434,8 @@ axios.post('/user', {
 ```
 
 
-
+## polyfill
+- 要抚平不同浏览器之间对js实现的差异。比如，html5的storage(session,local), 不同浏览器，不同版本，有些支持，有些不支持。
 
 ## node-gyp（工具包编译代码）
 https://www.cnblogs.com/wangyuxue/p/11218113.html
