@@ -1,4 +1,7 @@
 ## vue2.x到vue3.x
+1. Object.defineProperty => Proxy  
+2. 重构了虚拟DOM  
+3. OptionApi => Composition API  
 
 #### 双向绑定
 - **vue2.x** 通过Object.defineproperty重定义data中的属性get和set方法，从而劫持data中的set和get操作。存在问题：
