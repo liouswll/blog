@@ -222,3 +222,17 @@ let App = {
 Vue.createApp().mount(App, '#app')
 
 ```
+
+## 生命周期对比
+|vue2 | vue3 |
+|--- |---|
+|beforeCreate |setup(替代)|
+|created |setup(替代)|
+|beforeMount |onBeforeMount|
+|mounted |onMounted|
+|beforeUpdate |onBeforeUpdate|
+|updated |onBeforeUpdate|
+|beforeDestroy |onUnmounted|
+|destroyed  |onUnmounted|
+|errorCaptured  |onErrorCaptured|
+
