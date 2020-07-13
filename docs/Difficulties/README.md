@@ -441,7 +441,7 @@ axios.post('/user', {
 https://www.cnblogs.com/wangyuxue/p/11218113.html
 
 
-## 防抖 节流
+## 防抖-节流
 #### 防抖 debounce 
 - 以免把一次事件误认为多次，敲键盘就是一个每天都会接触到的防抖操作。
 - 场景  
