@@ -100,6 +100,7 @@ module.exports = {
         ["LifeCycle", "生命周期"],
         ["Redux", "Redux"],
         ["Guidance", "高级指引"],
+        ["Hook", "HooK"],
       ],
       
       "/Vue/": [
