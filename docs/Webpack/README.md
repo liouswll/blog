@@ -75,6 +75,7 @@
 
 ## 模式
 - 通过选择 development 或 production 之中的一个，来设置 mode 参数，你可以启用相应模式下的 webpack 内置的优化
+
     ```
     module.exports = {
         mode: 'production'

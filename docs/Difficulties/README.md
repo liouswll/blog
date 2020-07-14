@@ -484,3 +484,64 @@ function throttle (f, wait) {
 }
 
 ```
+
+## call-apply-bind
+#### 作用：  
+可以把方法借给其它对象使用，并且改变this的指向`a.apply(b,[3,2]);//`**this指向由a变为b, a的方法借给b使用。**  
+在特定的作用域中调用函数，等于设置函数体内this对象的值，以扩充函数赖以运行的作用域  
+
+#### 接收参数不同点
+- apply()方法 接收两个参数，一个是函数运行的作用域（this），另一个是**参数数组**。
+- 语法： `apply([thisObj [,argArray] ])`;，调用一个对象的一个方法，2另一个对象替换当前对象。
+
+- call()方法 第一个参数和apply()方法的一样，但是**传递给函数的参数必须列举出来**
+- 语法：call([thisObject[,arg1 [,arg2 [,...,argn]]]]);，应用某一对象的一个方法，用另一个对象替换当前对象。
+
+```
+function add(c,d){
+  return this.a + this.b + c + d;
+}
+
+var s = {a:1, b:2};
+console.log(add.call(s,3,4)); // 1+2+3+4 = 10
+console.log(add.apply(s,[5,6])); // 1+2+5+6 = 14
+```
+
+**call和apply立即执行并且返回值是你调用的方法的返回值，若该方法没有返回值，则返回undefined。bind是改变this后返回一个新的函数，他不会立即执行。**
+
+- bind bind()方法创建一个新的函数, 当被调用时，将其this关键字设置为提供的值，在调用新函数时，在任何提供之前提供一个给定的参数序列。
+```
+    var a ={
+        name : "Cherry",
+        fn : function (a,b) {
+            console.log( a + b)
+        }
+    }
+
+    var b = a.fn;
+    b.bind(a,1,2) // 无输出
+
+    b.bind(a,1,2)() // 3  bind 是创建一个新的函数，我们必须要手动去调用
+```
+
+
+
+
+## arguments-类数组对象
+- 函数的参数列表arguments是一个类数组对象，虽然它也有“下标”，但它并非真正的数组，所以也不能像数组一样，进行排序操作或者往集合里添加一个新的元素
+
+- `Array.prototype.slice.call(arguments,0)`就是arguments这个对象使用了数组的slice这个方法，得到了参数构成的数组（也可以用apply）。
+
+- 这种情况下，我们常常会借用Array.prototype对象上的方法。比如想往arguments中添加一个新的元素，通常会借用Array.prototype.push：
+```
+ (function () {
+            Array.prototype.push.call(arguments, 3);
+            console.log(arguments);
+            // 输出[1,2,3] 
+ 
+})(1, 2);
+```
+
+
+## 箭头函数中This
+- 箭头函数的 this 始终指向**函数定义时的 this，而非执行时**。箭头函数需要记着这句话：“箭头函数中没有 this 绑定，必须通过查找作用域链来决定其值，如果箭头函数被非箭头函数包含，则 this 绑定的是最近一层非箭头函数的 this，否则，this 为 undefined”。
