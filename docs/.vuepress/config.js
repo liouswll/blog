@@ -21,7 +21,9 @@ module.exports = {
         { text: "前端难点集中", link: "/Difficulties/" },
         {
           text: "前端算法", link: "/Algorithm/"
-        }
+        },
+
+        { text: "PLAN", link: "/Plan/" },
       ],
     sidebar:{
       "/JavaScript/":[
@@ -121,8 +123,11 @@ module.exports = {
         ["", "JS注意点-难点"],
         ["Vue", "Vue注意点-难点"],
         ["React", "React注意点-难点"]
+      ],
+
+      "/Plan/": [
+        ["","计划"],
       ]
-      
     }
   },
 }
