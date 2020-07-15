@@ -85,9 +85,9 @@ module.exports = {
 
 
       "/Algorithm/":[
-        ["", "Algorithm"],
-        ["Algorithm01", "链表"],
-
+        ["", "排序"],
+        ["Algorithm01", "递归"],
+        ["Algorithm02", "二叉树和二叉查找树"],
       ],
       
       "/Git/": [
