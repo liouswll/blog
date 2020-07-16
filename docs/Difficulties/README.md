@@ -65,7 +65,7 @@ function hello(){
 - 事件委托： 事件委托就是利用冒泡的原理，把事件加到父元素或祖先元素上，触发执行效果。提高JavaScript性能。事件委托可以显著的提高事件的处理速度，减少内存的占用。
 
 
-## instanceof，hasOwnProperty，in的用法
+## instanceof，hasOwnProperty，in，isArray
 1. instanceof
 - 通过使用instanceof操作符，可以确定一个**对象是否是特定构造函数的实例**，返回true或false。
 instanceof只适用于构造函数创建返回的复杂对象和实例。
@@ -116,6 +116,10 @@ for (let key in obj1) {
     }
 }
 ```
+
+3. isArray
+- isArray() 方法用于判断一个对象是否为数组，如果对象是数组返回 true，否则返回 false。
+- Array.isArray(obj)  // obj必需，要判断的对象。
 
 ## JS阻止冒泡和取消默认事件(默认行为)
 
