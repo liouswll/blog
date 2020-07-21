@@ -550,4 +550,16 @@ console.log(add.apply(s,[5,6])); // 1+2+5+6 = 14
 ## 箭头函数中This
 - 箭头函数的 this 始终指向**函数定义时的 this，而非执行时**。箭头函数需要记着这句话：“箭头函数中没有 this 绑定，必须通过查找作用域链来决定其值，如果箭头函数被非箭头函数包含，则 this 绑定的是最近一层非箭头函数的 this，否则，this 为 undefined”。
 
-## 
+## set和map
+1. set,类似数组，成员值唯一。无重复的值。
+2. 生成set数据
+```
+const s = new Set();
+[2, 2, 3, 5, 6, 7, 4, 3, 2].forEach(x => s.add(x));
+for(let i of s) {
+  console.log(i)
+}
+// 2 5 6 7 4
+```
+## Iterator(遍历器)和for-of循环
+
