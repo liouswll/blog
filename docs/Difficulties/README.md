@@ -550,8 +550,11 @@ console.log(add.apply(s,[5,6])); // 1+2+5+6 = 14
 ## 箭头函数中This
 - 箭头函数的 this 始终指向**函数定义时的 this，而非执行时**。箭头函数需要记着这句话：“箭头函数中没有 this 绑定，必须通过查找作用域链来决定其值，如果箭头函数被非箭头函数包含，则 this 绑定的是最近一层非箭头函数的 this，否则，this 为 undefined”。
 
+
+
+
 ## set和map
-1. set,类似数组，成员值唯一。无重复的值。
+1. Set, 类似数组，成员值唯一。无重复的值。
 2. 生成set数据
 ```
 const s = new Set();
@@ -561,5 +564,153 @@ for(let i of s) {
 }
 // 2 5 6 7 4
 ```
-## Iterator(遍历器)和for-of循环
+- Set 结构的实例有以下属性。  
+Set.prototype.constructor：构造函数，默认就是Set函数。  
+Set.prototype.size：返回Set实例的成员总数。  
 
+- Set 实例的方法分为两大类：操作方法（用于操作数据）和遍历方法（用于遍历成员）。下面先介绍四个操作方法。  
+Set.prototype.add(value)：添加某个值，返回 Set 结构本身。  
+Set.prototype.delete(value)：删除某个值，返回一个布尔值，表示删除是否成功。  
+Set.prototype.has(value)：返回一个布尔值，表示该值是否为Set的成员。  
+Set.prototype.clear()：清除所有成员，没有返回值。  
+
+- Set遍历  
+Set.prototype.keys()：返回键名的遍历器  
+Set.prototype.values()：返回键值的遍历器  
+Set.prototype.entries()：返回键值对的遍历器  
+Set.prototype.forEach()：使用回调函数遍历每个成员  
+
+3. Map, JavaScript 的对象（Object），本质上是键值对的集合（Hash 结构），但是传统上只能用字符串当作键。这给它的使用带来了很大的限制。
+```
+const map = new Map([
+  ['name', '张三'],
+  ['title', 'Author']
+]);
+
+map.size // 2
+map.has('name') // true
+map.get('name') // "张三"
+map.has('title') // true
+map.get('title') // "Author"
+```
+- 属性  
+size 属性  
+```
+const map = new Map();
+map.set('foo', true);
+map.set('bar', false);
+
+map.size // 2
+```
+- 方法
+
+
+
+## Iterator(遍历器)和for-of循环
+### Iterator(遍历器)
+1. JS原有的表示"集合"的数据结构，主要是Array，Object，Es6添加了Map，Set。四种数据集合，可以组合使用，定义自己的数据结构。比如数组的成员是Map，Map的成员是对象。这样就需要一种统一的接口机制。来处理所有不同的数据结构。
+
+2. 遍历器(Iterator)就是这样一种机制。它是一种接口，为各种不同的数据提供统一的访问机制。任何数据只要部署Iterator接口，就可以完成遍历操作（即依次处理该数据结构的所有成员）
+
+3. Iterator的作用有三个：一是为各种数据结构，提供一个统一的，简单的访问接口。二是使的数据结构的成员能够按照某种次序排列。三是Es6创建了一种新的循环模式for-of，Iterator接口主要提供for-of消费。
+
+4. 工作原理：①创建一个空指针对象，指向数据起始的位置。②第一次调用next()方法，指针自动指向数据结构的第一个成员。③不断的调用next()方法，指针一直向后移，直到指向最后一个成员。④每调用next方法返回包括value和done对象，{value: 当前成员的值, done: 布尔值}
+> value表示当前成员的值，done对应的布尔值表示当前的数据的结构是否遍历结束。  
+当遍历结束的时候返回的value值是undefined，done值为false
+```
+模拟next()函数
+var it = makeIterator(['a', 'b']);
+
+it.next() // { value: "a", done: false }
+it.next() // { value: "b", done: false }
+it.next() // { value: undefined, done: true }
+
+function makeIterator(array) {
+  var nextIndex = 0;
+  return {
+    next: function() {
+      return nextIndex < array.length ?
+        {value: array[nextIndex++], done: false} :
+        {value: undefined, done: true};
+    }
+  };
+}
+```
+
+5. 默认的Iterator接口：ES6规定,默认的Iterator接口部署在数据结构的Symbol.iterator属性,或者说一个数据结构只要有Symbol.iterator属性就可以认为是可遍历的.Symbol.iterator属性本身是一个函数,就是当前数据结构默认的遍历器生成函数。
+
+6. ES6的有些数据结构原生具备Iterator接口,比如数组,即不用任何处理就能被for…of循环遍历.对象没有Iterator接口。
+
+7. 原生具备Iterator接口的数据结构:**Array,Map,Set,String,TypedArray,NodeList对象,函数的arguments对象**。
+
+8. 有了遍历器接口,数据结构就可以用for…of循环遍历
+>一个对象如果要具备可被for...of循环调用的 Iterator 接口，就必须在Symbol.iterator的属性上部署遍历器生成方法（原型链上的对象具有该方法）
+### 调用Iterator接口场合
+1. 解构赋值
+```
+let set = new Set().add('a').add('b').add('c');
+
+let [x,y] = set;
+// x='a'; y='b'
+
+let [first, ...rest] = set;
+// first='a'; rest=['b','c'];
+```
+2. 扩展运算符
+```
+// 例一
+var str = 'hello';
+[...str] //  ['h','e','l','l','o']
+
+// 例二
+let arr = ['b', 'c'];
+['a', ...arr, 'd']
+// ['a', 'b', 'c', 'd']
+```
+3. yield* 后面跟的是一个可遍历的结构，它会调用该结构的遍历器接口
+```
+let generator = function* () {
+  yield 1;
+  yield* [2,3,4];
+  yield 5;
+};
+
+var iterator = generator();
+
+iterator.next() // { value: 1, done: false }
+iterator.next() // { value: 2, done: false }
+iterator.next() // { value: 3, done: false }
+iterator.next() // { value: 4, done: false }
+iterator.next() // { value: 5, done: false }
+iterator.next() // { value: undefined, done: true }
+```
+### for-of
+```
+  for(let v of array) {  
+    console.log(v);  
+  };  
+  let s = "helloabc"; 
+  for(let c of s) {  
+  console.log(c); 
+}
+// h e l l o a b c
+
+for in总是得到对像的key或数组,字符串的下标,而for of和forEach一样,是直接得到值 
+```
+
+```
+Set和Map
+    var set = new Set();  
+    set.add("a").add("b").add("d").add("c");  
+    var map = new Map();  
+    map.set("a",1).set("b",2).set(999,3);  
+    for (let v of set) {  
+        console.log(v);  
+    }  
+    console.log("--------------------");  
+    for(let [k,v] of map) {  
+        console.log(k,v);  
+    }  
+    //a b c d
+    // a 1    b 2     999 3
+```
