@@ -579,6 +579,38 @@ Set.prototype.keys()：返回键名的遍历器
 Set.prototype.values()：返回键值的遍历器  
 Set.prototype.entries()：返回键值对的遍历器  
 Set.prototype.forEach()：使用回调函数遍历每个成员  
+```
+let set = new Set(['red', 'green', 'blue']);
+
+for (let item of set.keys()) {
+  console.log(item);
+}
+// red
+// green
+// blue
+
+for (let item of set.values()) {
+  console.log(item);
+}
+// red
+// green
+// blue
+
+for (let item of set.entries()) {
+  console.log(item);
+}
+// ["red", "red"]
+// ["green", "green"]
+// ["blue", "blue"]
+
+
+
+let set = new Set([1, 4, 9]);
+set.forEach((value, key) => console.log(key + ' : ' + value))
+// 1 : 1
+// 4 : 4
+// 9 : 9
+```
 
 3. Map, JavaScript 的对象（Object），本质上是键值对的集合（Hash 结构），但是传统上只能用字符串当作键。这给它的使用带来了很大的限制。
 ```
@@ -603,7 +635,56 @@ map.set('bar', false);
 map.size // 2
 ```
 - 方法
+Map.prototype.set(key, value)  
+Map.prototype.get(key)  
+Map.prototype.has(key)  
+Map.prototype.delete(key)  
+Map.prototype.clear()
 
+- 遍历  
+Map.prototype.keys()：返回键名的遍历器。  
+Map.prototype.values()：返回键值的遍历器。  
+Map.prototype.entries()：返回所有成员的遍历器。  
+Map.prototype.forEach()：遍历 Map 的所有成员。
+  
+```
+const map = new Map([
+  ['F', 'no'],
+  ['T',  'yes'],
+]);
+
+for (let key of map.keys()) {
+  console.log(key);
+}
+// "F"
+// "T"
+
+for (let value of map.values()) {
+  console.log(value);
+}
+// "no"
+// "yes"
+
+for (let item of map.entries()) {
+  console.log(item[0], item[1]);
+}
+// "F" "no"
+// "T" "yes"
+
+// 或者
+for (let [key, value] of map.entries()) {
+  console.log(key, value);
+}
+// "F" "no"
+// "T" "yes"
+
+// 等同于使用map.entries()
+for (let [key, value] of map) {
+  console.log(key, value);
+}
+// "F" "no"
+// "T" "yes"
+```
 
 
 ## Iterator(遍历器)和for-of循环
