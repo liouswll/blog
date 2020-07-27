@@ -826,4 +826,84 @@ hw.next()
 // { value: undefined, done: true }
 ```
 ### yield表达式
-- 只有调用next方法才会遍历下一个内部状态。
+1. 只有调用next方法才会遍历下一个内部状态。所以提供了一种可以暂停的执行的函数。yield表达式就是暂停标志yield后表达式返回的值，作为对象返回的value值。
+2. yield执行下，如果没有遇到新的yield，就一直运算到函数结束。直到有return语句为止，
+3. 如果没有return语句，返回对象的value值为undefined。
+4. generator函数可以不用yield表达式，这时变成了一个单纯的暂缓执行函数。
+5. 上述函数中，函数f如果是普通函数，在为变量generator赋值时就会执行。但是函数f是一个generator函数，只有在调用next方法时才会执行。
+```
+function* f() {
+  console.log('执行了！')
+}
+
+var generator = f();
+
+setTimeout(function () {
+  generator.next()
+}, 2000);
+```
+
+6. yield只能用在generator函数中使用，其他地方会报错。
+```
+(function (){
+  yield 1;
+})()
+// SyntaxError: Unexpected number
+```
+### next方法的参数和与Iterator接口关系和for-of循环
+1. next函数会携带一个参数，该参数会被当成上一个yield表达式的返回值。
+```
+function* f() {
+  for(var i = 0; true; i++) {
+    var reset = yield i;
+    if(reset) { i = -1; }
+  }
+}
+
+var g = f();
+
+g.next() // { value: 0, done: false }
+g.next() // { value: 1, done: false }
+g.next(true) // { value: 0, done: false }
+
+代码定义了一个可以无限循环的generator函数f，如果next方法没有参数，每次运行到yield表达式，变量值为underfined。当next方法携带一个参数为true时，变量会被重置为true，i为1变为-1。
+```
+2. 任意一个对象的Symbol.iterator方法，等于该对象的遍历器生成函数，调用该函数会返回该对象的一个遍历器对象。由于 Generator 函数就是遍历器生成函数，因此可以把 Generator 赋值给对象的Symbol.iterator属性，从而使得该对象具有 Iterator 接口。
+```
+var myIterable = {};
+myIterable[Symbol.iterator] = function* () {
+  yield 1;
+  yield 2;
+  yield 3;
+};
+
+[...myIterable] // [1, 2, 3]
+```
+3. for-of循环
+for-of可以自动遍历generator函数运行时生成的iterator对象，且此时不需要调用next方法。
+```
+function* foo() {
+  yield 1;
+  yield 2;
+  yield 3;
+  yield 4;
+  yield 5;
+  return 6;
+}
+
+for (let v of foo()) {
+  console.log(v);
+}
+
+上面代码使用for...of循环，依次显示 5 个yield表达式的值。这里需要注意，一旦next方法的返回对象的done属性为true，for...of循环就会中止，且不包含该返回对象，所以上面代码的return语句返回的6，不包括在for...of循环之中
+```
+## Array.from
+- Array.from() 方法从一个类似数组或可迭代对象创建一个新的，浅拷贝的数组实例。
+```
+console.log(Array.from('foo'));
+// expected output: Array ["f", "o", "o"]
+
+console.log(Array.from([1, 2, 3], x => x + x));
+// expected output: Array [2, 4, 6]
+
+```
