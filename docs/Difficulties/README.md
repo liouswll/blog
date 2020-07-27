@@ -850,7 +850,7 @@ setTimeout(function () {
 })()
 // SyntaxError: Unexpected number
 ```
-### next方法的参数和与Iterator接口关系和for-of循环
+## next()的参数和Iterator接口关系和for-of循环
 1. next函数会携带一个参数，该参数会被当成上一个yield表达式的返回值。
 ```
 function* f() {

@@ -307,3 +307,61 @@ res.setHeader('Content-Type', 'text/html; charset=utf8');
 res.setHeader('Content-Length', 10); // 不生效
 res.setHeader('Transfer-Encoding', 'chunked');
 ```
+
+## HTTP中处理表单的数据提交
+1. application/x-www-form-urlencoded
+- 数据格式会被编码成 **&** 分割的键值对。
+- 字符以 **URL编码方式编码**。
+```
+// 转换过程: {a: 1, b: 2} -> a=1&b=2 -> 如下(最终形式)
+"a%3D1%26b%3D2"
+```
+
+2. multipart/form-data
+- 请求头中Content-Type字段会包括boundary，其值为浏览器默认指定。如ontent-Type: multipart/form-data;boundary=----WebkitFormBoundaryRRJKeWfHPGrS4LKe。
+- 数据会包含很多个部分，每两个部分之间通过分隔符来分割，每部分表述均有HTTP头部描述子包体，如Content-Type在最后的分隔符上会加上--表示结束。
+```
+Content-Disposition: form-data;name="data1";
+Content-Type: text/plain
+data1
+----WebkitFormBoundaryRRJKeWfHPGrS4LKe
+Content-Disposition: form-data;name="data2";
+Content-Type: text/plain
+data2
+----WebkitFormBoundaryRRJKeWfHPGrS4LKe--
+
+```
+>表单的提交都是post，get很少考虑
+
+## HTTP1.1解决HTTP的队头阻塞问题
+1. 域名分片：一个域名是可以连6个长连接。比如sanyua.com 域名下面可以分出非常多的二级域名，能够指向同一台服务器，能够更好的解决HTTP的队头阻塞问题
+
+## Cookie
+1. 储存方式：浏览器里面储存的一个很小的文件文本，内部用键值对的方式储存。
+2. 向同一个域名下发送的请求，都会携带相同的Cookie，服务器拿到Cookie进行解析，拿到客户端的状态。
+3. 服务器可以通过Set-Cookie字段对客户端写入Cookie。
+```
+// 请求头
+Cookie: a=xxx;b=xxx
+// 响应头
+Set-Cookie: a=xxx
+set-Cookie: b=xxx
+```
+4. 有效期可以通过Expires和Max-Age两个属性来设置。
+- Expires过去时间
+- Max-Age用的是一段时间间隔，单位是秒，从浏览器收到报文开始计算。
+> 过期会被删除
+5. 作用域：作用域的两个属性：Domain，Path。给Cookie绑定了域名和路径，在发送请求之前，发现域名或者路径两个属性不匹配，那么就不会带上Cookie。路径 /表示域名下的任意路径都允许使用Cookie。
+6. 安全：
+- 如果带上Secure，说明只能通过 HTTPS 传输 cookie。  
+- 如果 cookie 字段带上HttpOnly，那么说明只能通过 HTTP 协议传输，不能通过 JS 访问，这也是预防 XSS 攻击的重要手段。  
+- 对于 CSRF 攻击的预防，也有SameSite属性，SameSite可以设置为三个值，Strict、Lax和None。 
+```
+a. 在Strict模式下，浏览器完全禁止第三方请求携带Cookie。比如请求sanyuan.com网站只能在sanyuan.com域名当中请求才能携带 Cookie，在其他网站请求都不能。
+
+b. 在Lax模式，就宽松一点了，但是只能在 get 方法提交表单况或者a 标签发送 get 请求的情况下可以携带 Cookie，其他情况均不能。
+
+c. 在None模式下，也就是默认模式，请求会自动携带上 Cookie。
+```
+
+7. 缺点： 容量小（4k）。性能缺陷（Cookie紧跟域名，不管域名下面得到某一个地址需不需要这个Cookie，请求会携带上完整的Cookie，随着请求的增多，会携带好多不必要的内容。通过指定作用域解决）。安全缺陷（以纯文本的方式在浏览器和服务器传递，很容易被非法截获，进行篡改，在Cookie有效期内重新发送给服务器，另外，在HttpOnly为 false 的情况下，Cookie 信息能直接通过 JS 脚本来读取。）
