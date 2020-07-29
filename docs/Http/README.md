@@ -403,3 +403,51 @@ X-Forwarded-Proto：客户端(注意哦，不包括代理)协议名
 否则，返回304，告诉浏览器直接从缓存获取资源
 
 ```
+
+## 跨域
+1. 浏览器遵循同源策略。协议，主机，端口都相同则为同源。
+2. 非同源站点的限制：①不能读取和修改对方的DOM。②不能访问对方的Cookie，indexDB，localStorage。③限制XMLHttpRequest请求。
+>当浏览器想目标URL发送Ajax请求时，只要当前的URL和目标的URL不同源，则产生跨域，被称为**跨域请求**
+>跨域请求的响应一般是被浏览器所拦截，响应其实是成功到达了客户端。
+
+### CORS
+1. cors其实是w3c标准，全称是跨域资源共享。
+```
+https://juejin.im/post/5e76bd516fb9a07cce750746#heading-69
+
+简单请求：
+请求方法：GET，POST，HEAD。
+请求头取值范围：Accept，Accept-Language，Content-Language，Content-type(只限三个值application/x-www-form-urlencoded，multipart/form-data，text-plain)
+
+非简单请求：先会预检请求->下来是CROS请求
+体现：预检请求和响应字段
+请求方法： PUT
+```
+
+### JSONP
+1. 虽然XMLHttpRequest对象遵循同源策略，但是script标签不遵守。 可以通过src填上目标地址从而发出 GET 请求，实现跨域请求并拿到响应、
+>JSONP 最大的优势在于兼容性好，IE 低版本不能使用 CORS 但可以使用 JSONP，缺点也很明显，请求方法单一，只支持 GET 请求。
+
+### postMessage
+### webSocket
+
+## Nginx
+1. 高性能的反向代理服务器，可以轻松搞定跨域。 
+![nginxS](../.vuepress/public/nginxS.png)
+2. 正向代理：帮助客户端访问客户端访问不到的服务器，将结果返回给服务器。**（正向代理服务器是帮客户端做事情）**
+3. 反向代理：拿到客户端的请求，将请求转发给其他服务器。主要场景维持服务器集群的负载均衡（反向代理帮其他的服务器拿到请求，然后选择一个合适的服务器，将请求转交给它）**（反向代理服务器是帮其它的服务器做事情）**
+4. 解决跨域问题
+```
+比如说现在客户端的域名为client.com，服务器的域名为server.com，客户端向服务器发送 Ajax 请求。
+当然会跨域了，那这个时候让 Nginx 登场了，通过下面这个配置
+
+server {
+  listen  80;
+  server_name  client.com;
+  location /api {
+    proxy_pass server.com;
+  }
+}
+
+Nginx相当于起了个跳板机的作用，跳板机的域名是client.com，让客户端访问client.com/api，这当然没有跨域，然后 Nginx 服务器作为反向代理，将请求转发给server.com，当响应返回时又将响应给到客户端，这就完成整个跨域请求的过程。
+```
