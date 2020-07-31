@@ -23,6 +23,8 @@ module.exports = {
           text: "前端算法", link: "/Algorithm/"
         },
 
+        { text: "Node", link: "/Node/"},
+
         { text: "PLAN", link: "/Plan/" },
       ],
     sidebar:{
@@ -123,6 +125,10 @@ module.exports = {
         ["", "JS注意点-难点"],
         ["Vue", "Vue注意点-难点"],
         ["React", "React注意点-难点"]
+      ],
+
+      "/Node/": [
+        ["", "Node"]
       ],
 
       "/Plan/": [
