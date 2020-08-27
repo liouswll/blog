@@ -3,7 +3,7 @@
 ```
 element.addEventListener(event, function, useCapture)
 
-//event : （必需）事件名，支持所有DOM事件 。
+//event : （必需）事件名，支持所有DOM事件。
 
 //function：（必需）指定要事件触发时执行的函数。
 
