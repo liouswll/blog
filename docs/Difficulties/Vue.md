@@ -222,3 +222,69 @@ let App = {
 Vue.createApp().mount(App, '#app')
 
 ```
+
+## Vue中的ref $refs
+1. ref 被用来给元素或者子组件注册引用信息。引用信息将会注册在父组件的$refs上对象上。  
+普通的DOM元素上，那就指向DOM元素。子组件上，指向组件实例。
+
+2. $refs 一个对象，持有已注册过ref的所有子组件。
+
+
+## Vue异步DOM更新（含ref）
+```
+(ref $refs示例)
+<template>
+  <div id="app">
+    <ul ref="ul">
+      <li v-for="(item, index) in arr" :key="index">{{item}}</li>
+    </ul>
+    <button @click="add">add</button>
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      arr: [1, 2, 3, 4],
+    };
+  },
+  methods: {
+    add() {
+      this.arr.push(Math.random());
+      this.arr.push(Math.random());
+      this.arr.push(Math.random());
+      console.log(this.arr);
+      console.log(this.$refs.ul.childNodes.length);
+    },
+  },
+};
+</script>
+
+//  7 4
+//  10 7
+即使打印添加在后面，数据已经放进arr中，但是vue没有把新增的渲染进来，此时的DOM还是原来的li节点。
+同步渲染的那种效果。我们就是希望能够及时拿到先要的数据该怎么做呢（nextTick基本使用）
+```
+
+## nextTick基本使用（及时取到先要数据）
+1. vue的全局还有实例中提供了nextTickAPI，用法：首先接受一个回调函数，即这个回调会在**DOM更新后执行**
+```
+add() {
+      this.arr.push(Math.random());
+      this.arr.push(Math.random());
+      this.arr.push(Math.random());
+      console.log(this.arr);
+
+      this.$nextTick(() => {
+        console.log(this.$refs.ul.childNodes.length);
+      });
+
+    },
+// 7 7 
+// 10 10
+```
+
+## 插槽
+https://juejin.im/post/6864570298767769607#heading-10
+
