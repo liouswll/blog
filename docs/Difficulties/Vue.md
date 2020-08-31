@@ -288,3 +288,117 @@ add() {
 ## 插槽
 https://juejin.im/post/6864570298767769607#heading-10
 
+
+## 动态组件和异步组件
+1. component元素绑定一个is属性实现。
+```
+<template>
+  <div id="app">
+    <ul @click="change">
+      <li>test01</li>
+      <li>test02</li>
+      <li>test03</li>
+    </ul>
+
+    <div class="zhan"></div>
+
+    <component :is="componentId"></component>
+  </div>
+</template>
+<script>
+import Test01 from "./components/test01";
+import Test02 from "./components/test02";
+import Test03 from "./components/test03";
+export default {
+  data() {
+    return {
+      componentId: "Test01",
+    };
+  },
+  methods: {
+    change(e) {
+      this.componentId = e.target.innerText;
+    },
+  },
+  components: {
+    Test01,
+    Test02,
+    Test03,
+  },
+};
+</script>
+```
+2. 异步加载组件
+```
+  components: {
+    Test01:()=>import('./components/test01'),//返回的是promise
+    Test02:()=>import('./components/test02'),
+    Test03:()=>import('./components/test03'),
+  },
+```
+## keep-alive
+1. keep-alive缓存，用<keep-alive>标签将动态目标包裹。
+```
+ <keep-alive>
+      <component :is="componentId"></component>
+    </keep-alive>
+```
+2. 有三个属性
+ - include 字符串或者正则表达式。只有名称匹配的组件**会被缓存。**
+ - exclude 字符串或者正则表达式。名称匹配的组件**不会被缓存。**
+ - max 数字。最多可以缓存多少组件实例。
+```
+<!-- 逗号分隔字符串 -->
+<keep-alive include="a,b">
+  <component :is="view"></component>
+</keep-alive>
+
+<!-- 正则表达式 (使用 `v-bind`) -->
+<keep-alive :include="/a|b/">
+  <component :is="view"></component>
+</keep-alive>
+
+<!-- 数组 (使用 `v-bind`) -->
+<keep-alive :include="['a', 'b']">
+  <component :is="view"></component>
+</keep-alive>
+匹配首先检查组件自身的 name 选项，如果 name 选项不可用，则匹配它的局部注册名称 (父组件 components 选项的键值)。匿名组件不能被匹配。
+```
+3.   create钩子创建储存数据结构。  
+mounted钩子执行完就完成挂载，钩子在额更新钩子后面，再次触发，可以拿到新传过来的三个属性的值。
+  ```
+  mounted () {
+      this.$watch('include', val => {
+          pruneCache(this, name => matches(val, name))
+      })
+      this.$watch('exclude', val => {
+          pruneCache(this, name => !matches(val, name))
+      })
+  }
+pruneCache这个函数，就是把以储存的组件，根据include或exclude的最新变化进行判断是否还需要储存，不需要剔除缓存对象中
+  ```
+  destory 把缓存中所有组件都销毁。
+
+
+## 混入
+1. 混入提供了一种非常灵活的方式，来分发vue组件中可复用功能。一个混入的对象可以包含任意组件的对象。
+```
+<template>
+  <div>test01</div>
+</template>
+<script>
+const mixin = {
+  created() {
+    console.log('混进来的')
+  },
+};
+export default {
+  mixins: [mixin],
+ 
+  created() {
+    console.log('组件上的')
+  },
+};
+</script>
+
+```
