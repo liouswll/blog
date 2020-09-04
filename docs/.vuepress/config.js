@@ -111,7 +111,8 @@ module.exports = {
       "/Vue/": [
         ["","基础概念"],
         ["AllLife","生命周期"],
-        ["Vue3","Vue3"]
+        ["Vue3","Vue3"],
+        ["vueX","vueX"],
       ],
 
       "/Webpack/": [
