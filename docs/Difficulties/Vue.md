@@ -336,8 +336,9 @@ export default {
     Test03:()=>import('./components/test03'),
   },
 ```
-## keep-alive
-1. keep-alive缓存，用<keep-alive>标签将动态目标包裹。
+
+## keep-alive是vue一个内置组件（主要就是要实现组件缓存）
+1. keep-alive缓存，用`<keep-alive>`标签将动态目标包裹。
 ```
  <keep-alive>
       <component :is="componentId"></component>
@@ -347,6 +348,7 @@ export default {
  - include 字符串或者正则表达式。只有名称匹配的组件**会被缓存。**
  - exclude 字符串或者正则表达式。名称匹配的组件**不会被缓存。**
  - max 数字。最多可以缓存多少组件实例。
+ 
 ```
 <!-- 逗号分隔字符串 -->
 <keep-alive include="a,b">
@@ -364,10 +366,13 @@ export default {
 </keep-alive>
 匹配首先检查组件自身的 name 选项，如果 name 选项不可用，则匹配它的局部注册名称 (父组件 components 选项的键值)。匿名组件不能被匹配。
 ```
-3.   create钩子创建储存数据结构。  
-mounted钩子执行完就完成挂载，钩子在额更新钩子后面，再次触发，可以拿到新传过来的三个属性的值。
-  ```
-  mounted () {
+
+3. 
+```
+我们最终的目的就是储存组件，那么我们就要考虑使用什么数据结构保存、在什么时候创建这个创建结构、传过来的三个属性值变化了我们在哪个钩子里做处理、keep-alive组件销毁之后，所有存储的组件也要进行销毁
+  1. create钩子创建储存数据结构。  
+  2. mounted钩子执行完就完成挂载，钩子在额更新钩子后面，再次触发，可以拿到新传过来的三个属性的值。
+  3. mounted () {
       this.$watch('include', val => {
           pruneCache(this, name => matches(val, name))
       })
@@ -375,10 +380,9 @@ mounted钩子执行完就完成挂载，钩子在额更新钩子后面，再次�
           pruneCache(this, name => !matches(val, name))
       })
   }
-pruneCache这个函数，就是把以储存的组件，根据include或exclude的最新变化进行判断是否还需要储存，不需要剔除缓存对象中
-  ```
-  destory 把缓存中所有组件都销毁。
-
+  pruneCache这个函数，就是把以储存的组件，根据include或exclude的最新变化进行判断是否还需要储存，不需要剔除缓存对象中
+  4. destory 把缓存中所有组件都销毁。
+```
 
 ## 混入
 1. 混入提供了一种非常灵活的方式，来分发vue组件中可复用功能。一个混入的对象可以包含任意组件的对象。

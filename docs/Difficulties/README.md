@@ -64,10 +64,24 @@ function hello(){
 
 - 事件委托： 事件委托就是利用冒泡的原理，把事件加到父元素或祖先元素上，触发执行效果。提高JavaScript性能。事件委托可以显著的提高事件的处理速度，减少内存的占用。
 
+## Object.assign()
+1. 方法用于将所有可枚举属性的值从一个或多个源对象复制到目标对象。它将返回目标对象。`Object.assign(target, ...sources)`
+```
+const target = { a: 1, b: 2 };
+const source = { b: 4, c: 5 };
+
+const returnedTarget = Object.assign(target, source);
+// target目标对象。 sources源对象。
+
+console.log(target);
+// expected output: Object { a: 1, b: 4, c: 5 }
+console.log(returnedTarget);
+// expected output: Object { a: 1, b: 4, c: 5 }
+```
 
 ## instanceof，hasOwnProperty，in，isArray
 1. instanceof
-- 通过使用instanceof操作符，可以确定一个**对象是否是特定构造函数的实例**，返回true或false。
+- 用于检测构造函数的 prototype 属性是否出现在某个实例对象的原型链。
 instanceof只适用于构造函数创建返回的复杂对象和实例。
 >任何时间判断一个对象（复杂值）是否是Object的实例时，它都将返回true，因为所有对象都继承自Object()构造函数。  
 >instanceof使用场景，判断在一个继承关系中实例是否属于它的父类。
@@ -547,12 +561,6 @@ console.log(add.apply(s,[5,6])); // 1+2+5+6 = 14
 ```
 
 
-## 箭头函数中This
-- 箭头函数的 this 始终指向**函数定义时的 this，而非执行时**。箭头函数需要记着这句话：“箭头函数中没有 this 绑定，必须通过查找作用域链来决定其值，如果箭头函数被非箭头函数包含，则 this 绑定的是最近一层非箭头函数的 this，否则，this 为 undefined”。
-
-
-
-
 ## set和map
 1. Set, 类似数组，成员值唯一。无重复的值。
 2. 生成set数据
@@ -1016,3 +1024,17 @@ console.log(add(1)(2)(3)(4)(5))          // 15
 否则只是调用则返回函数而不是相加值
 
 ```
+
+## 箭头函数中This
+- 箭头函数的 this 始终指向**函数定义时的 this，而非执行时**。箭头函数需要记着这句话：“箭头函数中没有 this 绑定，必须通过查找作用域链来决定其值，如果箭头函数被非箭头函数包含，则 this 绑定的是最近一层非箭头函数的 this，否则，this 为 undefined”。
+
+## this指向
+1. 当做普通函数执行，this指向window。（fn()）
+2. new出来的对象，this指向了即将new出来的对象。
+3. 如果使用apply、call或者bind来调用一个函数，函数内部的this就将指向传入的第一个参数。（注：使用这几个方法可以改变this的指向）
+4. 如果函数被作为一个方法进行调用，比如：obj.method() --- 那么this就该函数的调用者。（这里是obj）
+
+## 原型链
+1. 当调用某种方法或查找某种属性时，首先会在自身调用和查找，如果自身并没有该属性或方法，则会去它的__proto__属性中调用查找，也就是它构造函数的prototype中调用查找。
+![prototype](../.vuepress/public/prototype.png)  
+![prototype2](../.vuepress/public/prototype2.png)  
