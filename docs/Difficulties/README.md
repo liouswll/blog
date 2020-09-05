@@ -907,3 +907,112 @@ console.log(Array.from([1, 2, 3], x => x + x));
 // expected output: Array [2, 4, 6]
 
 ```
+
+## 高阶函数和函数柯里化【手动实现map】【bind】
+1. 高阶函数定义：接受函数作为参数或者返回函数的函数。常见的方法有map,filter,bind,apply。
+```
+手动实现map `https://blog.csdn.net/Aiolimp/article/details/108313028`
+
+[1, 2, 3].map( item => item*2)   // [2, 4, 6]
+map函数接受一个函数作为参数，返回一个新数组。
+
+①var fn = item => item*2;
+②Arr.prototype.MyMap = function(fn){
+  let arr = [];
+  for(var i = 0; i < this.length; i++){
+    arr.push(this[i], i, this)
+  }
+  return arr
+}
+
+测试
+[1, 2, 3].MyMap(item => item*2)  // [2, 4, 6] 
+```
+
+2. 函数柯里化（curry）：是函数式标称里面的概念。把**接受多个参数的函数换成接受单一参数（最初函数的第一个参数）的函数**，返回接受余下参数而且**返回结果**的新函数。
+```
+简单来说： 只传递给函数一部分参数来调用它，让它返回一个函数去处理剩下的参数。
+
+const add = (x, y, z) => x + y + z;
+add(1, 2, 3);  // 6
+
+const add = x => y => z => x+y+z
+add(1)(2)(3)  // 6
+```
+```
+作用：
+1. 函数复用
+// 正常正则验证字符串 reg.test(txt)
+// 函数封装后
+function check(reg, txt) {
+    return reg.test(txt)
+}
+
+check(/\d+/g, 'test')       //false
+check(/[a-z]+/g, 'test')    //true
+
+// Currying后
+function curryingCheck(reg) {
+    return function(txt) {
+        return reg.test(txt)
+    }
+}
+
+var hasNumber = curryingCheck(/\d+/g)
+var hasLetter = curryingCheck(/[a-z]+/g)
+
+hasNumber('test1')      // true
+hasNumber('testtest')   // false
+hasLetter('21212')      // false
+2. 延迟执行：不断的柯里化，累积传入的参数，最后执行。
+
+3. 提前把易变因素，传参固定下来，生成一个更明确的应用函数。最典型的代表应用，是bind函数用以固定this这个易变对象。
+Function.prototype.bind = function(context) {
+    var _this = this,
+    _args = Array.prototype.slice.call(arguments, 1);
+    return function() {
+        return _this.apply(context, _args.concat(Array.prototype.slice.call(arguments)))
+    }
+}
+```
+3. 函数柯里化（curry）面试题
+```
+再来看看之前的面试题：
+如何实现add(1)(2)(3)结果等于6?
+如果参数是100个呢，难道要写100次吗，如果参数是未知的呢，所以这个写法没有通用性。
+例如：
+add(1)(2)(3)                
+add(1, 2, 3)(4)           
+add(1)(2)(3)(4)(5)          
+add(2, 6)(1)
+
+
+
+function add() {
+    // 第一次执行时，定义一个数组专门用来存储所有的参数
+    var _args = Array.prototype.slice.call(arguments)
+
+    // 在内部声明一个函数，利用闭包的特性保存_args并收集所有的参数值
+    var _adder = function() {
+        _args.push(...Array.from(arguments))
+        return _adder
+    };
+
+    // 利用toString隐式转换的特性，当最后执行时隐式转换，并计算最终的值返回
+    _adder.toString = function () {
+        return _args.reduce(function (a, b) {
+            return a + b;
+        })
+    }
+    return _adder;
+}
+测试：
+console.log(add(1)(2)(3))                // 6
+console.log(add(1, 2, 3)(4))             // 10
+console.log(add(1)(2)(3)(4)(5))          // 15
+
+注意：
+只有在对该函数取值时，才会进行类型转换，才会调用toString返回相加的值
+否则只是调用则返回函数而不是相加值
+
+```

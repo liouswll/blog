@@ -11,6 +11,18 @@ length		设置或返回数组中元素的数目。
 prototype	使您有能力向对象添加属性和方法。
 
 #### 方法  
+- reduce() 方法接收一个函数作为累加器，数组中的每个值（从左到右）开始缩减，最终计算为一个值。注意: reduce() 对于空数组是不会执行回调函数的。
+```
+var numbers = [65, 44, 12, 4];
+function getSum(total, num) {
+    return total + num;
+}
+function myFunction(item) {
+    document.getElementById("demo").innerHTML = numbers.reduce(getSum);
+}
+// 125
+```
+
 - conact() 连接两个或更多的数组，并返回组合后的数组。`[1,2].concat([3,4])  //[1, 2, 3, 4]`  
 
 - slice() 从已有的数组中选定元素,返回组成的数组。 
