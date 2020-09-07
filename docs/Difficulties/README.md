@@ -1038,3 +1038,83 @@ console.log(add(1)(2)(3)(4)(5))          // 15
 1. 当调用某种方法或查找某种属性时，首先会在自身调用和查找，如果自身并没有该属性或方法，则会去它的__proto__属性中调用查找，也就是它构造函数的prototype中调用查找。
 ![prototype](../.vuepress/public/prototype.png)  
 ![prototype2](../.vuepress/public/prototype2.png)  
+
+
+## 无模块化
+1. 引入js
+2. 缺点：①污染全局②不利于维护
+3. defer：渲染完再执行。async：下载完就执行
+
+## 模块化（commonJS）
+1. commonJS一个模块化规范（nodeJS，webpack支持）。
+2. 定义：规定每一个文件就是一个模块，内部定义的变量属于这个模块。**（不会外漏，污染全局变量）**
+3. 为模块化提供支持：moudle，exports，require，global。
+4. 对外输出**moudle.export**，加载模块**require**
+```
+4.1
+// example.js
+var x = 5;
+var addX = function (value) {
+  return value + x;
+};
+module.exports = {
+  x: x,
+  addX: addX
+};
+
+// 引入
+var example = require('./example.js');
+console.log(example.x); // 5
+console.log(example.addX(1)); // 6
+```
+5. 特点：可以多次加载，第一次加载会缓存，以后加载会从缓存中取。要想让模块再次运行，必须清除缓存。
+6. 缺点：由于commonJS是同步加载模块，在服务器端，文件都是保存在硬盘上，所以同步加载没有问题，**但是对于浏览器端，需要将文件从服务器端请求过来，那么同步加载就不适用了**，所以，CommonJS 是不适用于浏览器端的。
+7. 优点：CommonJS 规范在服务器端率先完成了 JavaScript 的模块化，**解决了依赖、全局变量污染的问题**，这也是 js 运行在服务器端的必要条件。
+
+
+## export-export default
+0. export与export default均可用于导出常量、函数、文件、模块等
+1. 在一个文件或模块中，export、import可以有多个，export default仅有一个
+2. 通过export方式导出，在导入时要加{ }，export default则不需要。使用export default命令，为模块指定默认输出，这样就不需要知道所要加载模块的变量名。
+
+
+## 模块化（ES6）
+1. 导出模块**export**
+```
+1.1 默认导出
+/******导出*****/
+export default {
+    myFn(){
+        return "默认导出一个方法"
+    },
+    myName:"laowang"
+
+/**引入***/
+import myObj from "./test.js";
+console.log(myObj.myFn(),myObj.myName);//默认导出一个方法 laowang
+```
+2. 导入模块**import**
+```
+2.1  不想暴露名字可以用as
+let myName="laowang";
+let myAge=90;
+let myfn=function(){
+    return "我是"+myName+"！今年"+myAge+"岁了"
+}
+export {
+    myName as name,
+    myAge as age,
+    myfn as fn
+}
+/******************************接收的代码调整为**********************/
+import {fn,age,name} from "./test.js";
+console.log(fn());//我是laowang！今年90岁了
+console.log(age);//90
+console.log(name);//laowang
+
+2.2 直接导入整个模块
+import * as info from "./test.js";//通过*来批量接收，as 来指定接收的名字
+console.log(info.fn());//我是laowang！今年90岁了
+console.log(info.age);//90
+console.log(info.name);//laowang
+```
