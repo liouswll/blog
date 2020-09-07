@@ -1,4 +1,4 @@
-## Event时间中的监听事件
+## 1. Event事件绑定（监听事件）
 - W3C规范中定义了3个事件阶段，依次是捕获阶段、目标阶段、冒泡阶段。
 ```
 element.addEventListener(event, function, useCapture)
@@ -61,10 +61,7 @@ function hello(){
 </script>
 ```
 
-
-- 事件委托： 事件委托就是利用冒泡的原理，把事件加到父元素或祖先元素上，触发执行效果。提高JavaScript性能。事件委托可以显著的提高事件的处理速度，减少内存的占用。
-
-## Object.assign()
+## 2. Object.assign()
 1. 方法用于将所有可枚举属性的值从一个或多个源对象复制到目标对象。它将返回目标对象。`Object.assign(target, ...sources)`
 ```
 const target = { a: 1, b: 2 };
@@ -79,7 +76,7 @@ console.log(returnedTarget);
 // expected output: Object { a: 1, b: 4, c: 5 }
 ```
 
-## instanceof，hasOwnProperty，in，isArray
+## 3. instanceof，hasOwnProperty，in，isArray
 1. instanceof
 - 用于检测构造函数的 prototype 属性是否出现在某个实例对象的原型链。
 instanceof只适用于构造函数创建返回的复杂对象和实例。
@@ -135,7 +132,7 @@ for (let key in obj1) {
 - isArray() 方法用于判断一个对象是否为数组，如果对象是数组返回 true，否则返回 false。
 - Array.isArray(obj)  // obj必需，要判断的对象。
 
-## JS阻止冒泡和取消默认事件(默认行为)
+## 4.JS阻止冒泡和取消默认事件(默认行为)
 
 - js冒泡和捕获是事件的两种行为，使用event.stopPropagation()起到阻止捕获和冒泡阶段中当前事件的进一步传播。
 >w3c的方法是e.stopPropagation()，IE则是使用e.cancelBubble = true
@@ -174,7 +171,7 @@ el.onclick = function (e) {
 >冒泡事件：比如我们点击了一个元素然后从它本身开始一层一层向上的父元素都做出反应直到根元素  
 默认事件：像a标签的点击跳转和页面鼠标右键单击弹出菜单等都是默认事件
 
-## 分割子串
+## 5. 分割子串
 - 不以使用正则表达式来替代子串，使用子串构建正则时，有可能有特殊字符
 ```
 const s = 'foo foo foo'
@@ -196,7 +193,7 @@ String.prototype.replaceAll()
 ```
 
 
-## EventLoop-宏队列和微队列及其执行顺序
+## 6.EventLoop-宏队列和微队列及其执行顺序
 #### EventLoop事件循环机制： 浏览器或者node的一种解决JavaScript单线程运行时不会阻塞的一种机制，也就是异步原理。
 - 宏任务队列可以有多个，微任务队列只有一个；主线程上的任务就是第一个宏任务，即刚进来时候的 script； 
 ```
@@ -228,7 +225,7 @@ MutationObserve
 
 >microtask 是确确实实存在的一个队列，microtask 是属于当前线程的，而不是其他线程 postTask 过来的任务。只是延迟执行了而已，比如 Promise.then、mutationObserve 都属于这种情况；
 
-## Promise
+## 7. Promise
 1. 
 - 出现原因： 根据上一个请求执行下一步请求，产生回调地狱
     ```
@@ -378,7 +375,7 @@ console -> promise -> setTimeout
 
 
 
-## axios请求
+## 8.axios请求
 #### get请求 一般多用于获取数据
 - 不带参数     　　
 1. 方式一: axios({ methods: 'get', url: '/ulr' })  
@@ -452,14 +449,14 @@ axios.post('/user', {
 ```
 
 
-## polyfill
+## 9. polyfill
 - 要抚平不同浏览器之间对js实现的差异。比如，html5的storage(session,local), 不同浏览器，不同版本，有些支持，有些不支持。
 
-## node-gyp（工具包编译代码）
+## 10. node-gyp（工具包编译代码）
 https://www.cnblogs.com/wangyuxue/p/11218113.html
 
 
-## 防抖-节流
+## 11. 防抖-节流
 #### 防抖 debounce 
 - 以免把一次事件误认为多次，敲键盘就是一个每天都会接触到的防抖操作。
 - 场景  
@@ -503,7 +500,7 @@ function throttle (f, wait) {
 
 ```
 
-## call-apply-bind
+## 12. call-apply-bind
 #### 作用：  
 可以把方法借给其它对象使用，并且改变this的指向`a.apply(b,[3,2]);//`**this指向由a变为b, a的方法借给b使用。**  
 在特定的作用域中调用函数，等于设置函数体内this对象的值，以扩充函数赖以运行的作用域  
@@ -545,7 +542,7 @@ console.log(add.apply(s,[5,6])); // 1+2+5+6 = 14
 
 
 
-## arguments-类数组对象
+## 13. arguments-类数组对象
 - 函数的参数列表arguments是一个类数组对象，虽然它也有“下标”，但它并非真正的数组，所以也不能像数组一样，进行排序操作或者往集合里添加一个新的元素
 
 - `Array.prototype.slice.call(arguments,0)`就是arguments这个对象使用了数组的slice这个方法，得到了参数构成的数组（也可以用apply）。
@@ -561,7 +558,7 @@ console.log(add.apply(s,[5,6])); // 1+2+5+6 = 14
 ```
 
 
-## set和map
+## 14. set和map
 1. Set, 类似数组，成员值唯一。无重复的值。
 2. 生成set数据
 ```
@@ -695,7 +692,7 @@ for (let [key, value] of map) {
 ```
 
 
-## Iterator(遍历器)和for-of循环
+## 15. Iterator(遍历器)和for-of循环
 ### Iterator(遍历器)
 1. JS原有的表示"集合"的数据结构，主要是Array，Object，Es6添加了Map，Set。四种数据集合，可以组合使用，定义自己的数据结构。比如数组的成员是Map，Map的成员是对象。这样就需要一种统一的接口机制。来处理所有不同的数据结构。
 
@@ -804,7 +801,7 @@ Set和Map
     // a 1    b 2     999 3
 ```
 
-## Generator函数的语法
+## 16. Generator函数的语法
 - 其函数是ES6提供的一种异步编程解决方案。执行Generator函数会返回一个遍历器对象，也就是说除了状态机，还是一个遍历器对象生成函数。返回的遍历对象可一次遍历Generqtor函数内部的每一个状态。
 
 - Generator 函数是一个普通函数，但是有两个特征。一是，function关键字与函数名之间有一个星号；二是，函数体内部使用yield表达式，定义不同的内部状态（yield在英语里的意思就是“产出”）。
@@ -858,7 +855,7 @@ setTimeout(function () {
 })()
 // SyntaxError: Unexpected number
 ```
-## next()的参数和Iterator接口关系和for-of循环
+## 17. next()的参数和Iterator接口关系和for-of循环
 1. next函数会携带一个参数，该参数会被当成上一个yield表达式的返回值。
 ```
 function* f() {
@@ -905,7 +902,7 @@ for (let v of foo()) {
 
 上面代码使用for...of循环，依次显示 5 个yield表达式的值。这里需要注意，一旦next方法的返回对象的done属性为true，for...of循环就会中止，且不包含该返回对象，所以上面代码的return语句返回的6，不包括在for...of循环之中
 ```
-## Array.from
+## 18. Array.from
 - Array.from() 方法从一个类似数组或可迭代对象创建一个新的，浅拷贝的数组实例。
 ```
 console.log(Array.from('foo'));
@@ -916,7 +913,7 @@ console.log(Array.from([1, 2, 3], x => x + x));
 
 ```
 
-## 高阶函数和函数柯里化【手动实现map】【bind】
+## 19. 高阶函数和函数柯里化【手动实现map】【bind】
 1. 高阶函数定义：接受函数作为参数或者返回函数的函数。常见的方法有map,filter,bind,apply。
 ```
 手动实现map `https://blog.csdn.net/Aiolimp/article/details/108313028`
@@ -1025,27 +1022,27 @@ console.log(add(1)(2)(3)(4)(5))          // 15
 
 ```
 
-## 箭头函数中This
+## 20. 箭头函数中This
 - 箭头函数的 this 始终指向**函数定义时的 this，而非执行时**。箭头函数需要记着这句话：“箭头函数中没有 this 绑定，必须通过查找作用域链来决定其值，如果箭头函数被非箭头函数包含，则 this 绑定的是最近一层非箭头函数的 this，否则，this 为 undefined”。
 
-## this指向
+## 21. this指向
 1. 当做普通函数执行，this指向window。（fn()）
 2. new出来的对象，this指向了即将new出来的对象。
 3. 如果使用apply、call或者bind来调用一个函数，函数内部的this就将指向传入的第一个参数。（注：使用这几个方法可以改变this的指向）
 4. 如果函数被作为一个方法进行调用，比如：obj.method() --- 那么this就该函数的调用者。（这里是obj）
 
-## 原型链
+## 22. 原型链
 1. 当调用某种方法或查找某种属性时，首先会在自身调用和查找，如果自身并没有该属性或方法，则会去它的__proto__属性中调用查找，也就是它构造函数的prototype中调用查找。
 ![prototype](../.vuepress/public/prototype.png)  
 ![prototype2](../.vuepress/public/prototype2.png)  
 
 
-## 无模块化
+## 23. 无模块化
 1. 引入js
 2. 缺点：①污染全局②不利于维护
 3. defer：渲染完再执行。async：下载完就执行
 
-## 模块化（commonJS）
+## 24. 模块化（commonJS）
 1. commonJS一个模块化规范（nodeJS，webpack支持）。
 2. 定义：规定每一个文件就是一个模块，内部定义的变量属于这个模块。**（不会外漏，污染全局变量）**
 3. 为模块化提供支持：moudle，exports，require，global。
@@ -1072,13 +1069,13 @@ console.log(example.addX(1)); // 6
 7. 优点：CommonJS 规范在服务器端率先完成了 JavaScript 的模块化，**解决了依赖、全局变量污染的问题**，这也是 js 运行在服务器端的必要条件。
 
 
-## export-export default
+## 25. export-export default
 0. export与export default均可用于导出常量、函数、文件、模块等
 1. 在一个文件或模块中，export、import可以有多个，export default仅有一个
 2. 通过export方式导出，在导入时要加{ }，export default则不需要。使用export default命令，为模块指定默认输出，这样就不需要知道所要加载模块的变量名。
 
 
-## 模块化（ES6）
+## 26. 模块化（ES6）
 1. 导出模块**export**
 ```
 1.1 默认导出
@@ -1117,4 +1114,89 @@ import * as info from "./test.js";//通过*来批量接收，as 来指定接收�
 console.log(info.fn());//我是laowang！今年90岁了
 console.log(info.age);//90
 console.log(info.name);//laowang
+```
+
+## 27. 内存泄露-内存溢出-栈溢出-堆溢出
+1. 内存泄漏（Memory Leak）是指程序中已动态分配的堆内存由于某种原因程序未释放或无法释放，造成系统内存的浪费，导致程序运行速度减慢甚至系统崩溃等严重后果。
+
+2. 内存溢出(Out Of Memory，简称OOM)是指应用系统中存在无法回收的内存或使用的内存过多，最终使得程序运行要用到的内存大于能提供的最大内存。此时程序就运行不了，系统会提示内存溢出，有时候会自动关闭软件，重启电脑或者软件后释放掉一部分内存又可以正常运行该软件，而由系统配置、数据流、用户代码等原因而导致的内存溢出错误，即使用户重新执行任务依然无法避免。
+
+3. ①栈溢出：**是缓冲区溢出的一种**。 由于缓冲区溢出而使得有用的存储单元被改写,往往会引发不可预料的后果。程序在运行过程中，为了临时存取数据的需要，一般都要分配一些内存空间，通常称这些空间为缓冲区。**如果向缓冲区中写入超过其本身长度的数据，以致于缓冲区无法容纳，就会造成缓冲区以外的存储单元被改写，这种现象就称为缓冲区溢出**。缓冲区长度一般与用户自己定义的缓冲变量的类型有关。②**栈溢出是由于C语言系列没有内置检查机制来确保复制到缓冲区的数据不得大于缓冲区的大小，因此当这个数据足够大的时候，将会溢出缓冲区的范围。**
+
+4. 堆溢出：**属于缓冲区溢出**。一旦程序确定，堆栈内存空间的大小就是固定的，当数据已经把堆栈的空间占满时，再往里面存放数据就会超出容量，发生上溢；当堆栈中的已经没有数据时，再取数据就无法取到了，发生下溢。需要注意的是，栈分为顺序栈和链栈，链栈不会发生溢出，顺序栈会发生溢出。
+
+## 28. 闭包
+1. 函数可作为返回值，函数作为参数来传递。
+2. 优点：①变量常驻内存，对于实现某些业务很有帮助，比如计数器之类的②可以使函数外部访问函数内部变量③私有化，一定程度上解决了命名冲突，可以实现变量的私有化。
+3. 缺点：①1.闭包使函数中的变量都被保存在内存中，内存消耗很大，不能滥用闭包，否则会造成网页的性能问题，导致内存泄露（在IE中可能导致内存泄露）。解决方法是：在退出函数之前，将不使用的局部变量全部删除。②存在这样的可能，变量常驻在内存中，其占用内存无法被GC回收，导致内存溢出
+4. this指向
+```
+谁调用this就是谁。如果在全局范围中，this就是window，如果在对象内部，this就指向这个对象。
+var name = 'The window';
+var obj={
+	name: 'The Object',
+	getName: function(){
+	    return function(){
+			  return this.name;
+		}
+	}
+};
+一：
+console.log(obj.getName()())  // The Window
+二：
+var myobj = obj.getName(); //myobj接收到匿名函数 function(){return this.name;}  
+Console.log(myobj());  //  The Window  相当于 return window.name
+```
+5. 闭包示例
+```
+function foo(){
+            var a=20
+            function bar(){
+                a=a*2;
+                return a
+            }
+            return bar   //返回一个内嵌函数
+        }
+        var baz = foo()  //函数在外面调用，能访问的a变量,   函数运行在定义他们的作用域中
+                        //bar定义在foo中，就能访问foo定义的所有变量
+        console.log('111',baz)
+        console.log('222',baz()) //40
+        console.log('222',baz()) //80
+        console.log('222',baz())  //160
+
+        var baz2 = foo()
+        console.log('222',baz2()) //40
+```
+## 29. event事件
+1. 当一个事件发生时，和当前这个对象发生的这个事件有关的一些详细的信息都会临时保存到一个指定的地方--event对象，供我们在需要的时候调用
+
+## 30. 事件流（捕获阶段-》目标阶段-》冒泡阶段）（事件捕获和事件冒泡的结合体）
+1. 捕获阶段的处理函数最先执行，其次是目标阶段的处理函数，最后是冒泡阶段的处理函数。目标阶段的处理函数，先注册的先执行，后注册的后执行。
+2. 事件捕获：当一个元素接收到事件  
+![buhuo](../.vuepress/public/buhuo.png)  
+3. 事件冒泡：当一个元素接收到事件，会把他接收到的所有传播给他的父级  
+![maopao](../.vuepress/public/maopao.png)  
+
+## 31. 事件委托机制（事件代理）
+1. 事件委托： 事件委托就是利用**冒泡的原理**，把事件加到父元素或祖先元素上，触发执行效果。提高JavaScript性能。事件委托可以显著的提高事件的处理速度，减少内存的占用。
+2. 委托示例`https://blog.csdn.net/qq_27674439/article/details/100767050`
+```
+    <ul>
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+    </ul>
+
+    <script>
+      var ul = documeng.getElementByTagName('ul')[0]
+
+      // 只给ul添加点击事件即可
+      ul.onClick = function(e){
+        e = e || window.event;
+        
+        // 每个触发的事件里，通过事件对象.target能拿到触发事件的源头元素，也就是 事件源
+        // e.target代表被点击的的li
+        console.log(e.target.innerHTML)
+      }
+    </script>
 ```
