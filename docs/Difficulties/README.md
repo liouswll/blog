@@ -1193,10 +1193,40 @@ function foo(){
       // 只给ul添加点击事件即可
       ul.onClick = function(e){
         e = e || window.event;
-        
+
         // 每个触发的事件里，通过事件对象.target能拿到触发事件的源头元素，也就是 事件源
         // e.target代表被点击的的li
         console.log(e.target.innerHTML)
+      }
+    </script>
+```
+3. 添加点击事件 //需要给ul添加点击事件
+```
+    <input type='button' value='添加一个li' id='add' />
+    <ul>
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+    </ul>
+
+    <script>
+      var ul = documeng.getElementByTagName('ul')[0]
+
+      // 只给ul添加点击事件
+      ul.onClick = function(e){
+        e = e || window.event;
+
+        // 判断事件源是不是li
+        if(e.target.nodeName.toLowerCase() == 'li' ){
+          alert(e.target.innerHTML)
+        }
+
+        // 给新增按钮添加点击事件
+        document.getElenentById('add').onClick = function(){
+          var li = document.createElement('li');
+          li.innerHTML = '我是新增的li';
+          ul.appendChild(li)
+        }
       }
     </script>
 ```
