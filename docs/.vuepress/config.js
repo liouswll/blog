@@ -79,7 +79,8 @@ module.exports = {
 
         
         ["DOM", "DOM"],
-        ["BOM", "BOM"]
+        ["BOM", "BOM"],
+        ["Reg", "Reg"],
       ],
 
 
