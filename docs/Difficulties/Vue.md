@@ -406,4 +406,37 @@ export default {
 </script>
 
 ```
+## onRef 子组件向父组件传递数据
+`https://www.jianshu.com/p/c3e31d62bf76`
+1. 父组件：
+```
+<InsureCustomerInfo
+    dataSource={info}
+    onRemoveData={this.onRemoveDat
+    flag={flag}
+    onRef={(ref) => { this.cus = ref }}
+/>
 
+
+ handleCancelEdit = () => {
+        const cus = this.cus;
+        const fam = this.fam;
+        const con = this.con;
+        const cusForm = cus.props.form;
+        const famForm = fam.props.form;
+        const conForm = con.props.form;
+        cusForm.resetFields();
+        famForm.resetFields();
+        conForm.resetFields();
+        this.setState({
+            flag: true
+        });
+    }
+```
+2. 子组件
+```
+    componentDidMount() {
+        const { onRef } = this.props;
+        onRef && onRef(this);
+    }
+```
