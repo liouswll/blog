@@ -1230,3 +1230,80 @@ function foo(){
       }
     </script>
 ```
+
+## 32.Blob对象（文件流下载）
+`https://www.cnblogs.com/hhhyaaon/p/5928152.html`
+`https://juejin.im/post/6850037282691678221#heading-13`
+1. Blob：表示二进制类型的对象。
+2. Blob对象：Blob对象表示一个不可变，原始数据的**类文件对象**。Blob表示的不一定是JavaScript原生格式的数据。**File基于Blob**，继承了Blob的功能，**将其扩展使它支持用户系统上的文件**。
+3. 语法：
+```
+var aBlob = new Blob(array, options)
+
+array是一个有ArrayBuffer, ArrayBufferView, Blob, DOMString 等构成的Array, 或者其他类似的对象混合体，它将会被放进Blob。DOMStrings会被编码为UTF-8。
+
+options 是一个可选BlobPropertyBag字典，有两个属性：
+1. type：默认为" "，代表被放进Blob数组中的内容MIME类型。type: "text/xml"  type: "text/plain"
+2. endings：用于指定包含行结束符 \n 的字符如何被写入。它是下面两个值中的一个：
+  ① "native": 代表行结束符会被更改为适合宿主操作系统文件系统的换行符
+  ② "transparent": 默认值，代表会保持blob中保存的结束符不变
+
+构造函数
+var debug = {hello: "world"};
+var blob = new Blob([JSON.stringify(debug)], {type : 'application/json'});
+
+生成的对象如下
+Blob {
+  size: 17
+  type: "application/json"
+  __proto__: Blob
+}
+```
+4. 属性：①Blob.size，只读，对象中多包含数据的大小（字节为单位） ②Blob.type，只读，字符串，表明Blob对象所包含数据的MIME类型。如果是位置，则为空字符串。
+>MIME(Multipurpose Internet Mail Extensions)多用途互联网邮件扩展类型。是设定某种扩展名的文件用一种应用程序来打开的方式类型，当该扩展名文件被访问的时候，浏览器会自动使用指定应用程序来打开。多用于指定一些客户端自定义的文件名，以及一些媒体文件打开方式。
+
+5. 方法：
+```
+1.
+slice() 方法用于创建一个包含源 Blob的指定字节范围内的数据的新 Blob 对象
+
+Blob.slice(start:number, end:number, contentType:string)
+start：开始索引，默认为0
+end：截取结束索引（不包括end）
+contentType：新Blob的MIME类型，默认为空字符串
+
+var blob = new Blob(['asdasasdasdasd'], {type: "text/plain"});
+blob.slice(0, 5, type: "text/plain")   // Blob{size: 5, type: "text/plain"}
+```
+
+```
+2.
+stream() 返回一个ReadableStream对象，读取它将返回包含在Blob中的数据。
+var stream = blob.stream();
+
+ReadableStream：ReadableStream 接口呈现了一个可读取的二进制流操作。Fetch API 通过Response的属性 body提供了一个具体的 ReadableStream 对象。
+
+构造函数：
+ReadableStream()
+创建并从给定的Handler返回一个可读流对象
+```
+
+```
+3.
+text() 返回一个 Promise 对象且包含 blob 所有内容的 UTF-8 格式的 USVString。
+
+USVString：返回一个 Promise 对象且包含 blob 所有内容的二进制格式的 ArrayBuffer。除了不允许不成对的代理代码之外， USVString 等同于 DOMString。
+```
+
+```
+4.
+arrayBuffer() 返回一个 Promise 对象且包含 blob 所有内容的二进制格式的 ArrayBuffer。
+```
+
+6. 分段上传
+7. 存储下载数据（通过URL下载文件）
+8. blob复制粘贴
+
+
+## 33. a标签下载（文件下载）
+1. `<a href="/i/w3school_logo_white.gif" download="w3logo">`

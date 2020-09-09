@@ -414,7 +414,7 @@ export default {
     dataSource={info}
     onRemoveData={this.onRemoveDat
     flag={flag}
-    onRef={(ref) => { this.cus = ref }}
+    onRef={(ref) => { this.cus = ref }} // 获取整个Child元素
 />
 
 
@@ -440,3 +440,4 @@ export default {
         onRef && onRef(this);
     }
 ```
+
