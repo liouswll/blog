@@ -81,3 +81,52 @@
         mode: 'production'
     };
     ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## NPM install --save 、 --save-dev 、-g
+1. **devDependencies 用于开发环境**
+2. **dependencies 用于线上环境**
+>dependencies依赖的包不仅线上环境可以用，开发环境也能使用，反之则不行
+
+#### NPM install moduleName --save  缩写 -S 
+1. 将项目模块写入到package.json的**dependencies节点**
+2. 安装模块到当前node_modules文件夹下
+3. 运行npm install时，会将模块下载到当前node_modules目录下
+
+#### NPM install moduleName --save-dev   缩写 -D
+1. 将项目模块写入到package.json的**devDependencies节点**
+2. 安装模块到当前node_modules文件夹下
+3. 运行npm install时，会将模块下载到当前node_modules目录下
+
+#### NPM install moduleName -g
+1. 安装模块到全局，不会在项目node_modules目录中安装
+2. 不会将模块信息写入到dependencies或devDependencies节点
+3. 运行npm install时，不会下载该模块
+
+**devDependencies节点下的模块是开发时候需要的，如构建工具glup、webpack，预处理器less、sass这些只在开发环境有用，所以使用–save-dev安装  
+dependencies节点下的模块是线上代码运行需要的，如axios、vue-router、vuex，所以需要使用–save安装**

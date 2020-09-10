@@ -302,7 +302,7 @@ stringObject.substr(start不可为负数,length为起始时的长度)
 var str="Hello world!"
 document.write(str.substring(3,7))
 ```
-#### 对象遍历
+## 对象遍历
 >**可枚举属性是指那些内部 “可枚举” 标志设置为 true 的属性**。对于通过直接的赋值和属性初始化的属性，该标识值默认为即为 true。但是对于通过 **Object.defineProperty** 等定义的属性，该标识值默认为 false。  
 其中js中基本包装类型的原型属性是不可枚举的，如Object, Array, Number等。  
 **可枚举**的属性可以通过**for...in**循环进行遍历（除非该属性名是一个Symbol），或者通过**Object.keys()方法**返回一个可枚举属性的数组。**其不会返回不可枚举的属性**
