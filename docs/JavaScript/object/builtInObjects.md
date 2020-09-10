@@ -302,3 +302,62 @@ stringObject.substr(start不可为负数,length为起始时的长度)
 var str="Hello world!"
 document.write(str.substring(3,7))
 ```
+#### 对象遍历
+>**可枚举属性是指那些内部 “可枚举” 标志设置为 true 的属性**。对于通过直接的赋值和属性初始化的属性，该标识值默认为即为 true。但是对于通过 **Object.defineProperty** 等定义的属性，该标识值默认为 false。  
+其中js中基本包装类型的原型属性是不可枚举的，如Object, Array, Number等。  
+**可枚举**的属性可以通过**for...in**循环进行遍历（除非该属性名是一个Symbol），或者通过**Object.keys()方法**返回一个可枚举属性的数组。**其不会返回不可枚举的属性**
+1. for in 循环是最基础的遍历对象的方式，它还会**得到对象原型链上的属性**
+```
+// 创建一个对象并指定其原型，bar 为原型上的属性 _proto_上
+const obj = Object.create({
+ bar: 'bar'
+})
+ 
+// foo 为对象自身的属性
+obj.foo = 'foo'
+for (let key in obj) {
+ console.log(obj[key]) // foo, bar
+}
+```
+
+2. Object.keys()一个对象方法，该方法返回**对象自身属性名组成的数组**，它会**自动过滤掉原型链上的属性**，然后可以通过数组的 forEach() 方法来遍历。
+```
+// simple array
+var arr = ['a', 'b', 'c'];
+console.log(Object.keys(arr)); // console: ['0', '1', '2']
+
+
+// array like object
+var obj = { 0: 'a', 1: 'b', 2: 'c' };
+console.log(Object.keys(obj)); // console: ['0', '1', '2']
+
+Object.keys(obj).forEach(()=>{
+    console.log(obj[key])  // 可枚举属性 1 2 3 
+})
+```
+
+3. Object.getOwnPropertyNames() 也是 ES5 新增的一个对象方法，该方法**返回对象自身属性名组成的数组**，**包括不可枚举的属性**，也可以通过数组的 forEach 方法来遍历
+```
+// 创建一个对象并指定其原型，bar 为原型上的属性
+// baz 为对象自身的属性并且不可枚举
+const obj = Object.create({
+ bar: 'bar'
+}, {
+ baz: {
+  value: 'baz',
+  enumerable: false
+ }
+})
+ 
+obj.foo = 'foo'
+ 
+// 不包括不可枚举的 baz 属性
+Object.keys(obj).forEach((key) => {
+ console.log(obj[key]) // foo
+})
+ 
+// 包括不可枚举的 baz 属性
+Object.getOwnPropertyNames(obj).forEach((key) => {
+ console.log(obj[key]) // baz, foo
+})
+```
