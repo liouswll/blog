@@ -1037,7 +1037,7 @@ console.log(add(1)(2)(3)(4)(5))          // 15
 ![prototype2](../.vuepress/public/prototype2.png)  
 
 
-## 23. 无模块化
+## 23. defer-async（无模块化）
 1. 引入js
 2. 缺点：①污染全局②不利于维护
 3. defer：渲染完再执行。async：下载完就执行
