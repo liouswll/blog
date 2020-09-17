@@ -26,6 +26,7 @@ module.exports = {
         { text: "Node", link: "/Node/"},
 
         { text: "PLAN", link: "/Plan/" },
+        { text: "GU", link: "/Gu/" },
       ],
     sidebar:{
       "/JavaScript/":[
@@ -136,6 +137,11 @@ module.exports = {
 
       "/Plan/": [
         ["","计划"],
+      ],
+
+      "/Gu/": [
+        ["","粗略知识图"],
+        ["Knowledge","知识点"],
       ]
     }
   },
