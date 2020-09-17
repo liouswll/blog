@@ -375,7 +375,7 @@ console -> promise -> setTimeout
 
 
 
-## 8.axios请求
+## 8. axios请求
 #### get请求 一般多用于获取数据
 - 不带参数     　　
 1. 方式一: axios({ methods: 'get', url: '/ulr' })  
@@ -558,6 +558,8 @@ console.log(add.apply(s,[5,6])); // 1+2+5+6 = 14
 ```
 
 
+
+
 ## 14. set和map
 1. Set, 类似数组，成员值唯一。无重复的值。
 2. 生成set数据
@@ -692,6 +694,8 @@ for (let [key, value] of map) {
 ```
 
 
+
+
 ## 15. Iterator(遍历器)和for-of循环
 ### Iterator(遍历器)
 1. JS原有的表示"集合"的数据结构，主要是Array，Object，Es6添加了Map，Set。四种数据集合，可以组合使用，定义自己的数据结构。比如数组的成员是Map，Map的成员是对象。这样就需要一种统一的接口机制。来处理所有不同的数据结构。
@@ -801,6 +805,9 @@ Set和Map
     // a 1    b 2     999 3
 ```
 
+
+
+
 ## 16. Generator函数的语法
 - 其函数是ES6提供的一种异步编程解决方案。执行Generator函数会返回一个遍历器对象，也就是说除了状态机，还是一个遍历器对象生成函数。返回的遍历对象可一次遍历Generqtor函数内部的每一个状态。
 
@@ -855,6 +862,10 @@ setTimeout(function () {
 })()
 // SyntaxError: Unexpected number
 ```
+
+
+
+
 ## 17. next()的参数和Iterator接口关系和for-of循环
 1. next函数会携带一个参数，该参数会被当成上一个yield表达式的返回值。
 ```
@@ -902,6 +913,9 @@ for (let v of foo()) {
 
 上面代码使用for...of循环，依次显示 5 个yield表达式的值。这里需要注意，一旦next方法的返回对象的done属性为true，for...of循环就会中止，且不包含该返回对象，所以上面代码的return语句返回的6，不包括在for...of循环之中
 ```
+
+
+
 ## 18. Array.from
 - Array.from() 方法从一个类似数组或可迭代对象创建一个新的，浅拷贝的数组实例。
 ```
@@ -912,6 +926,9 @@ console.log(Array.from([1, 2, 3], x => x + x));
 // expected output: Array [2, 4, 6]
 
 ```
+
+
+
 
 ## 19. 高阶函数和函数柯里化【手动实现map】【bind】
 1. 高阶函数定义：接受函数作为参数或者返回函数的函数。常见的方法有map,filter,bind,apply。
@@ -1022,8 +1039,13 @@ console.log(add(1)(2)(3)(4)(5))          // 15
 
 ```
 
+
+
 ## 20. 箭头函数中This
 - 箭头函数的 this 始终指向**函数定义时的 this，而非执行时**。箭头函数需要记着这句话：“箭头函数中没有 this 绑定，必须通过查找作用域链来决定其值，如果箭头函数被非箭头函数包含，则 this 绑定的是最近一层非箭头函数的 this，否则，this 为 undefined”。
+
+
+
 
 ## 21. this指向
 1. 当做普通函数执行，this指向window。（fn()）
@@ -1031,16 +1053,26 @@ console.log(add(1)(2)(3)(4)(5))          // 15
 3. 如果使用apply、call或者bind来调用一个函数，函数内部的this就将指向传入的第一个参数。（注：使用这几个方法可以改变this的指向）
 4. 如果函数被作为一个方法进行调用，比如：obj.method() --- 那么this就该函数的调用者。（这里是obj）
 
+
+
+
+
 ## 22. 原型链
 1. 当调用某种方法或查找某种属性时，首先会在自身调用和查找，如果自身并没有该属性或方法，则会去它的__proto__属性中调用查找，也就是它构造函数的prototype中调用查找。
 ![prototype](../.vuepress/public/prototype.png)  
 ![prototype2](../.vuepress/public/prototype2.png)  
 
 
+
+
+
 ## 23. defer-async（无模块化）
 1. 引入js
 2. 缺点：①污染全局②不利于维护
 3. defer：渲染完再执行。async：下载完就执行
+
+
+
 
 ## 24. 模块化（commonJS）
 1. commonJS一个模块化规范（nodeJS，webpack支持）。
@@ -1069,10 +1101,14 @@ console.log(example.addX(1)); // 6
 7. 优点：CommonJS 规范在服务器端率先完成了 JavaScript 的模块化，**解决了依赖、全局变量污染的问题**，这也是 js 运行在服务器端的必要条件。
 
 
+
+
 ## 25. export-export default
 0. export与export default均可用于导出常量、函数、文件、模块等
 1. 在一个文件或模块中，export、import可以有多个，export default仅有一个
 2. 通过export方式导出，在导入时要加{ }，export default则不需要。使用export default命令，为模块指定默认输出，这样就不需要知道所要加载模块的变量名。
+
+
 
 
 ## 26. 模块化（ES6）
@@ -1116,6 +1152,10 @@ console.log(info.age);//90
 console.log(info.name);//laowang
 ```
 
+
+
+
+
 ## 27. 内存泄露-内存溢出-栈溢出-堆溢出
 1. 内存泄漏（Memory Leak）是指程序中已动态分配的堆内存由于某种原因程序未释放或无法释放，造成系统内存的浪费，导致程序运行速度减慢甚至系统崩溃等严重后果。
 
@@ -1124,6 +1164,9 @@ console.log(info.name);//laowang
 3. ①栈溢出：**是缓冲区溢出的一种**。 由于缓冲区溢出而使得有用的存储单元被改写,往往会引发不可预料的后果。程序在运行过程中，为了临时存取数据的需要，一般都要分配一些内存空间，通常称这些空间为缓冲区。**如果向缓冲区中写入超过其本身长度的数据，以致于缓冲区无法容纳，就会造成缓冲区以外的存储单元被改写，这种现象就称为缓冲区溢出**。缓冲区长度一般与用户自己定义的缓冲变量的类型有关。②**栈溢出是由于C语言系列没有内置检查机制来确保复制到缓冲区的数据不得大于缓冲区的大小，因此当这个数据足够大的时候，将会溢出缓冲区的范围。**
 
 4. 堆溢出：**属于缓冲区溢出**。一旦程序确定，堆栈内存空间的大小就是固定的，当数据已经把堆栈的空间占满时，再往里面存放数据就会超出容量，发生上溢；当堆栈中的已经没有数据时，再取数据就无法取到了，发生下溢。需要注意的是，栈分为顺序栈和链栈，链栈不会发生溢出，顺序栈会发生溢出。
+
+
+
 
 ## 28. 闭包
 1. 函数可作为返回值，函数作为参数来传递。
@@ -1167,8 +1210,15 @@ function foo(){
         var baz2 = foo()
         console.log('222',baz2()) //40
 ```
+
+
+
+
 ## 29. event事件
 1. 当一个事件发生时，和当前这个对象发生的这个事件有关的一些详细的信息都会临时保存到一个指定的地方--event对象，供我们在需要的时候调用
+
+
+
 
 ## 30. 事件流（捕获阶段-》目标阶段-》冒泡阶段）（事件捕获和事件冒泡的结合体）
 1. 捕获阶段的处理函数最先执行，其次是目标阶段的处理函数，最后是冒泡阶段的处理函数。目标阶段的处理函数，先注册的先执行，后注册的后执行。
@@ -1176,6 +1226,9 @@ function foo(){
 ![buhuo](../.vuepress/public/buhuo.png)  
 3. 事件冒泡：当一个元素接收到事件，会把他接收到的所有传播给他的父级  
 ![maopao](../.vuepress/public/maopao.png)  
+
+
+
 
 ## 31. 事件委托机制（事件代理）
 1. 事件委托： 事件委托就是利用**冒泡的原理**，把事件加到父元素或祖先元素上，触发执行效果。提高JavaScript性能。事件委托可以显著的提高事件的处理速度，减少内存的占用。
@@ -1231,7 +1284,10 @@ function foo(){
     </script>
 ```
 
-## 32.Blob对象（文件流下载）
+
+
+
+## 32. Blob对象（文件流下载）
 `https://www.cnblogs.com/hhhyaaon/p/5928152.html`
 `https://juejin.im/post/6850037282691678221#heading-13`
 1. Blob：表示二进制类型的对象。
@@ -1305,5 +1361,142 @@ arrayBuffer() 返回一个 Promise 对象且包含 blob 所有内容的二进制
 8. blob复制粘贴
 
 
+
+
 ## 33. a标签下载（文件下载）
 1. `<a href="/i/w3school_logo_white.gif" download="w3logo">`
+
+
+
+
+## 34. 浏览器渲染的过程
+1. HTML和CSS各自解析，生成DOM树和CSSOM树
+2. 合并为渲染树
+3. 根据渲染树进行布局
+4. 最后调用GPU进行绘制，显示
+
+
+
+
+## 35. 重排（回流）和重绘
+#### 重排（回流）：当元素的尺寸或者位置发生变化，需要重新计算渲染树。
+1. DOM的几何属性发生变化（height, width, padding, margin, border）
+2. DOM元素的移动
+3. 读写offset, scroll, client等属性出发回流
+4. 调用window.getComputedStyle会出发回流
+#### 重绘：DOM的样式发生变化，但没有影响DOM的几何属性。重绘由于DOM位置信息不需要更新，省去布局过程，因性能上优于回流。
+1. DOM样式发生变化
+
+![chongPH](../.vuepress/public/chongPH.png)
+
+
+
+
+
+## 36. 浏览器缓存
+`https://blog.csdn.net/woleigequshawanyier/article/details/86152516`
+>Service Worker ：和Web Worker类似，是独立的线程，我们可以在这个线程中缓存文件，在主线程需要的时候读取这里的文件，Service Worker使我们可以自由选择缓存哪些文件以及文件的匹配、读取规则，并且缓存是持续性的。  
+Memory Cache（内存缓存）：即内存缓存，内存缓存不是持续性的，缓存会随着进程释放而释放  
+Disk Cache（硬盘缓存）：即硬盘缓存，相较于内存缓存，硬盘缓存的持续性和容量更优，它会根据HTTP header的字段判断哪些资源需要缓存  
+Push Cache（推送缓存）：即推送缓存，是HTTP/2的内容，目前应用较少  
+以上缓存都没命中就会进行网络请求  
+
+
+#### 强缓存（优先级较高，在命中强缓存失败的情况下，才会走协商缓存）
+1. 利用http头中的**Expires**和**Cache-Control**两个字段控制。强缓存中，当请求再次发生时，浏览器会根据其中的expires和cache-control判断资源是否命中强缓存。若命中直接从缓存中获取资源，不会再与服务端发生通信。
+2. http1.0
+```
+当服务器返回响应时，在 Response Headers 中将过期时间写入 expires 字段
+expires: Wed, 11 Sep 2019 16:12:18 GMT
+
+expires 是一个时间戳，接下来如果我们试图再次向服务器请求资源。
+浏览器就会先对比本地时间和 expires 的时间戳，如果本地时间小于 expires 设定的过期时间，那么就直接去缓存中取这个资源。
+
+问题：对“本地时间”的依赖。（修改客户端时间）
+```
+3. http1.1
+```
+1.
+Cache-Control 可以视作是 expires 的完全替代方案。在当下的前端实践里，我们继续使用 expires 的唯一目的就是向下兼容
+
+2.
+Cache-Control 中，我们通过 max-age 来控制资源的有效期。max-age 不是一个时间戳，而是一个时间长度。
+cache-control: max-age=31536000
+它意味着该资源在 31536000 秒以内都是有效的，完美地规避了时间戳带来的潜在问题。
+
+3.
+s-maxage 就是用于表示 cache 服务器上（比如 cache CDN）的缓存的有效时间的，并只对 public 缓存有效。
+s-maxage仅在代理服务器中生效，客户端中我们只考虑max-age。
+cache-control: max-age=3600, s-maxage=31536000
+同时出现s-maxage优先级高
+
+4.
+no-store与no-cache
+no-cache 绕开了浏览器：我们为资源设置了 no-cache 后，每一次发起请求都不会再去询问浏览器的缓存情况，而是直接向服务端去确认该资源是否过期（即走我们下文即将讲解的协商缓存的路线）。
+
+no-store 比较绝情，顾名思义就是不使用任何缓存策略。在 no-cache 的基础上，它连服务端的缓存确认也绕开了，只允许你直接向服务端发送请求、并下载完整的响应。
+
+```
+
+
+
+#### public private 
+1. public 与 private 是针对资源是否能够被代理服务缓存而存在的一组对立概念。
+2. 为资源设置了 public，那么它既可以被浏览器缓存，也可以被代理服务器缓存
+3. 设置了 private，则该资源只能被浏览器缓存
+
+
+
+
+#### 协商缓存：协商缓存依赖于服务端与浏览器之间的通信。
+1. 协商缓存机制下，浏览器需要向服务器去询问缓存的相关信息，进而判断是重新发起请求、下载完整的响应，还是从本地获取缓存的资源。
+2. 如果服务端提示缓存资源未改动（Not Modified），资源会被重定向到浏览器缓存，这种情况下网络请求对应的状态码是 304（如下图）。
+![304](../.vuepress/public/304.png)
+
+3. 协商缓存的实现：从 Last-Modified 到 Etag
+```
+1. 
+Last-Modified 是一个时间戳，如果我们启用了协商缓存，它会在首次请求时随着 Response Headers 返回： Last-Modified: Fri, 27 Oct 2017 06:35:57 GMT
+
+2. 
+随后我们每次请求时，会带上一个叫 If-Modified-Since 的时间戳字段。
+它的值正是上一次 response 返回给它的 last-modified 值：If-Modified-Since: Fri, 27 Oct 2017 06:35:57 GMT
+
+3. 
+服务器接收到这个时间戳后，会比对该时间戳和资源在服务器上的最后修改时间是否一致，从而判断资源是否发生了变化。如果发生了变化，就会返回一个完整的响应内容，并在 Response Headers 中添加新的 Last-Modified 值；否则，返回如上图的 304 响应，Response Headers 不会再添加 Last-Modified 字段。
+
+问题：
+我们编辑了文件，但文件的内容没有改变。服务端并不清楚我们是否真正改变了文件，它仍然通过最后编辑时间进行判断。因此这个资源在再次被请求时，会被当做新资源，进而引发一次完整的响应——不该重新请求的时候，也会重新请求。
+
+当我们修改文件的速度过快时（比如花了 100ms 完成了改动），由于 If-Modified-Since 只能检查到以秒为最小计量单位的时间差，所以它是感知不到这个改动的——该重新请求的时候，反而没有重新请求了。
+
+```
+
+4. 为了解决这样的问题，Etag 作为 Last-Modified 的补充出现了。
+>Etag 是由服务器为每个资源生成的唯一的标识字符串，这个标识字符串是基于文件内容编码的，只要文件内容不同，它们对应的 Etag 就是不同的，反之亦然。因此 Etag 能够精准地感知文件的变化。
+```
+1.
+首次请求响应头里获取到一个最初的标识符字符串：ETag: W/"2a3b-1602480f459"
+
+下一次请求时，请求头里就会带上一个值相同的、名为 if-None-Match 的字符串供服务端比对了：If-None-Match: W/"2a3b-1602480f459"
+
+2.
+Etag 在感知文件变化上比 Last-Modified 更加准确，优先级也更高。当 Etag 和 Last-Modified 同时存在时，以 Etag 为准
+
+弊端：Etag 的生成过程需要服务器额外付出开销，会影响服务端的性能。
+```
+
+
+
+
+
+## 37. 盒模型
+![IEW3C](../.vuepress/public/IEW3C.png)
+
+#### 标准盒模型（W3C盒模型）：范围包括margin，border，padding，content。并且content部分不包含其他部分。
+1. 标准盒模型的content范围内的高度和宽度是不变的，padding和border是在content的范围外进行增加，将盒模型撑大。content范围内的大小始终不变。刚好对应上标准盒模型的名称content-box。    box-sizing: content-box;
+
+#### IE盒模型：范围包括margin，border，padding，content。但是content部分包含border，padding。
+1. 怪异盒模型的border范围内的高度和大小是不变的，padding和border是在border范围内进行增加，会压缩content大小，border范围内的大小始终不变。刚好对应上怪异盒模型的名称border-box。     box-sizing: border-box;
+
+>box-sizing:inherit	 规定应从父元素继承 box-sizing 属性的值。
