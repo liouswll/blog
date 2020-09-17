@@ -1395,11 +1395,14 @@ arrayBuffer() 返回一个 Promise 对象且包含 blob 所有内容的二进制
 
 ## 36. 浏览器缓存
 `https://blog.csdn.net/woleigequshawanyier/article/details/86152516`
+`https://www.jianshu.com/p/54cc04190252`
 >Service Worker ：和Web Worker类似，是独立的线程，我们可以在这个线程中缓存文件，在主线程需要的时候读取这里的文件，Service Worker使我们可以自由选择缓存哪些文件以及文件的匹配、读取规则，并且缓存是持续性的。  
 Memory Cache（内存缓存）：即内存缓存，内存缓存不是持续性的，缓存会随着进程释放而释放  
 Disk Cache（硬盘缓存）：即硬盘缓存，相较于内存缓存，硬盘缓存的持续性和容量更优，它会根据HTTP header的字段判断哪些资源需要缓存  
 Push Cache（推送缓存）：即推送缓存，是HTTP/2的内容，目前应用较少  
 以上缓存都没命中就会进行网络请求  
+
+![HC](../.vuepress/public/HC.png)
 
 
 #### 强缓存（优先级较高，在命中强缓存失败的情况下，才会走协商缓存）
