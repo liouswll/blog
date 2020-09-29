@@ -2,34 +2,71 @@ module.exports = {
   title: 'lious的博客',
   description: '前端开发空间站',
   base: "/Blog/",
-  themeConfig:{
-    nav: [{text: "主页", link: "/"      },
-        { text: "JavaScript", link: "/JavaScript/" },
-        { text: "Vue", link: "/Vue/"},
-        { text: "React", link: "/React/"},
-        // { text: "Flutter", link: "/flutter/"},
-        { text: "Webpack", link: "/Webpack/"},
-        { text: "Git", link: "/git/"},
-        { text: "Websocket", link: "/Websocket/" },
-        { text: "HTTP", link: "/Http/" },
-        // { text: "前端难点集中", 
-        // items: [ 
-        //   { text: "html", link:"/web/html/"},
-        //   { text: "css", link:"/web/css/"},
-        //   ]
-        // },
-        { text: "前端难点集中", link: "/Difficulties/" },
-        {
-          text: "前端算法", link: "/Algorithm/"
-        },
+  themeConfig: {
+    nav: [{
+        text: "主页",
+        link: "/"
+      },
+      {
+        text: "JavaScript",
+        link: "/JavaScript/"
+      },
+      {
+        text: "Vue",
+        link: "/Vue/"
+      },
+      {
+        text: "React",
+        link: "/React/"
+      },
+      // { text: "Flutter", link: "/flutter/"},
+      {
+        text: "Webpack",
+        link: "/Webpack/"
+      },
+      {
+        text: "Git",
+        link: "/git/"
+      },
+      {
+        text: "Websocket",
+        link: "/Websocket/"
+      },
+      {
+        text: "HTTP",
+        link: "/Http/"
+      },
+      // { text: "前端难点集中", 
+      // items: [ 
+      //   { text: "html", link:"/web/html/"},
+      //   { text: "css", link:"/web/css/"},
+      //   ]
+      // },
+      {
+        text: "前端难点集中",
+        link: "/Difficulties/"
+      },
+      {
+        text: "前端算法",
+        link: "/Algorithm/"
+      },
 
-        { text: "Node", link: "/Node/"},
+      {
+        text: "Node",
+        link: "/Node/"
+      },
 
-        { text: "PLAN", link: "/Plan/" },
-        { text: "GU", link: "/Gu/" },
-      ],
-    sidebar:{
-      "/JavaScript/":[
+      {
+        text: "PLAN",
+        link: "/Plan/"
+      },
+      {
+        text: "GU",
+        link: "/Gu/"
+      },
+    ],
+    sidebar: {
+      "/JavaScript/": [
         ["", "JavaScript"],
         {
           title: "基本知识",
@@ -41,7 +78,7 @@ module.exports = {
             ['jsAPI/type', "类型"]
           ]
         },
-        
+
         // {
         //   title: "函数",
         //   name: "函数",
@@ -78,7 +115,7 @@ module.exports = {
           ]
         },
 
-        
+
         ["DOM", "DOM"],
         ["BOM", "BOM"],
         ["Reg", "Reg"],
@@ -88,20 +125,20 @@ module.exports = {
 
 
 
-      "/Algorithm/":[
+      "/Algorithm/": [
         ["", "排序"],
         ["Algorithm01", "递归"],
         ["Algorithm02", "二叉树和二叉查找树"],
         ["Algorithm03", "数组结构介绍"],
       ],
-      
+
       "/Git/": [
         ["", "Git"]
       ],
 
       "/Websocket/": [
         ["", "Websocket"]
-      ], 
+      ],
       "/React/": [
         ["", "基础概念"],
         ["LifeCycle", "生命周期"],
@@ -109,18 +146,18 @@ module.exports = {
         ["Guidance", "高级指引"],
         ["Hook", "HooK"],
       ],
-      
+
       "/Vue/": [
-        ["","基础概念"],
-        ["AllLife","生命周期"],
-        ["Vue3","Vue3"],
-        ["vueX","vueX"],
+        ["", "基础概念"],
+        ["AllLife", "生命周期"],
+        ["Vue3", "Vue3"],
+        ["vueX", "vueX"],
       ],
 
       "/Webpack/": [
         ["", "概念"]
       ],
-      
+
       "/Http/": [
         ["", "Http"]
       ],
@@ -136,12 +173,12 @@ module.exports = {
       ],
 
       "/Plan/": [
-        ["","计划"],
+        ["", "计划"],
       ],
 
       "/Gu/": [
-        ["","粗略知识图"],
-        ["Knowledge","知识点"],
+        ["", "粗略知识图"],
+        ["Knowledge", "知识点"],
       ]
     }
   },
