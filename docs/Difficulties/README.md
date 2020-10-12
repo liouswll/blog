@@ -1503,3 +1503,29 @@ Etag 在感知文件变化上比 Last-Modified 更加准确，优先级也更高
 1. 怪异盒模型的border范围内的高度和大小是不变的，padding和border是在border范围内进行增加，会压缩content大小，border范围内的大小始终不变。刚好对应上怪异盒模型的名称border-box。     box-sizing: border-box;
 
 >box-sizing:inherit	 规定应从父元素继承 box-sizing 属性的值。
+
+
+## 38. 实现只执行一次的函数
+1. 只会执行一次
+```
+function once (fn) {
+  let called = false
+  return function () {
+    if (!called) {
+      called = true
+      fn.apply(this, arguments)
+    }
+  }
+}
+
+
+function test() {
+  console.log('执行成功');
+}
+const executeOnce = once(test)
+executeOnce()
+// 执行成功
+executeOnce()
+// undefined
+
+```
