@@ -465,3 +465,37 @@ export default {
 
 实际上对所有的DOM，Vue都可能会采取复用策略，遇到渲染顺序不准确的，可以向key方向考虑。
 ```
+
+
+## 16. hookEvent的使用
+`https://juejin.im/post/6872128694639394830#heading-7`
+1. hookEvent模板式的注入声明周期函数钩子。
+```
+加载list需要很长时间，中间加载loading
+<List @hook:updated= 'handleTableUpdated'></List>
+```
+2. 组件销毁的新方式
+```
+旧
+mounted(){
+  this.thirdPartyPlugin = thirdPartyPlugin()
+},
+
+beforeDestroy(){
+  this.thirdPartyPlugin.destroy()
+}
+```
+
+```
+新
+mounted(){
+  const this.thirdPartyPlugin = thirdPartyPlugin()
+  this.$on('hook:beforeDestory', () => {
+    this.thirdPartyPlugin.destory();
+  })
+}
+
+```
+
+
+## 18. 
