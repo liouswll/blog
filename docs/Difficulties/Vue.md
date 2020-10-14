@@ -1,4 +1,4 @@
-## vue2.x到vue3.x
+## 1. vue2.x到vue3.x
 
 #### 双向绑定
 - **vue2.x** 通过Object.defineproperty重定义data中的属性get和set方法，从而劫持data中的set和get操作。存在问题：
@@ -8,7 +8,7 @@
  - **vue3.x** 采用Proxy和Reflect实现双向绑定，它在目标对象之前架设一层“拦截”，外界对该对象的访问，都必须先通过这层拦截，因此提供了一种机制，可以对外界的访问进行过滤和改写。我们可以这样认为，Proxy是Object.defineProperty的全方位加强版。
    1. Proxy有多达13种拦截方法,不限于apply、ownKeys、deleteProperty、has等等是Object.defineProperty不具备的。Object.defineProperty不能做的Proxy还能做。
    2. Proxy作为新标准，得到了各大浏览器厂商的大力支持，性能持续优化。唯一的不足就是兼容性的问题，而且无法通过polyfill解决。
-## vue3 Proxy
+## 2. vue3 Proxy
 - 理解为在对象之前设置一个“拦截”，当该对象被访问的时候，都必须经过这层拦截。意味着你可以在这层拦截中进行各种操作。比如你可以在这层拦截中对原对象进行处理，返回你想返回的数据结构。
 ```
 - 基础
@@ -40,13 +40,13 @@ p.a = 111;
 console.log(p.a); // 111
 ```
 
-## vue3 Vue.set
+## 3. vue3 Vue.set
 - Vue.set( target, key, value )  
 target：要更改的数据源(可以是对象或者数组)  
 key：要更改的具体数据  
 value ：重新赋的值  
 
-## vue3 
+## 4. vue3 
 - 示例 参考资料https://juejin.im/post/5e13ecbe6fb9a04846508ab2
 ```
 <body>
@@ -223,14 +223,14 @@ Vue.createApp().mount(App, '#app')
 
 ```
 
-## Vue中的ref $refs
+## 5. Vue中的ref $refs
 1. ref 被用来给元素或者子组件注册引用信息。引用信息将会注册在父组件的$refs上对象上。  
 普通的DOM元素上，那就指向DOM元素。子组件上，指向组件实例。
 
 2. $refs 一个对象，持有已注册过ref的所有子组件。
 
 
-## Vue异步DOM更新（含ref）
+## 6. Vue异步DOM更新（含ref）
 ```
 (ref $refs示例)
 <template>
@@ -267,7 +267,7 @@ export default {
 同步渲染的那种效果。我们就是希望能够及时拿到先要的数据该怎么做呢（nextTick基本使用）
 ```
 
-## nextTick基本使用（及时取到先要数据）
+## 7. nextTick基本使用（及时取到先要数据）
 1. vue的全局还有实例中提供了nextTickAPI，用法：首先接受一个回调函数，即这个回调会在**DOM更新后执行**
 ```
 add() {
@@ -285,11 +285,11 @@ add() {
 // 10 10
 ```
 
-## 插槽
+## 8. 插槽
 https://juejin.im/post/6864570298767769607#heading-10
 
 
-## 动态组件和异步组件
+## 9. 动态组件和异步组件
 1. component元素绑定一个is属性实现。
 ```
 <template>
@@ -337,7 +337,7 @@ export default {
   },
 ```
 
-## keep-alive是vue一个内置组件（主要就是要实现组件缓存）
+## 10.keep-alive是vue一个内置组件（主要就是要实现组件缓存）
 1. keep-alive缓存，用`<keep-alive>`标签将动态目标包裹。
 ```
  <keep-alive>
@@ -384,7 +384,7 @@ export default {
   4. destory 把缓存中所有组件都销毁。
 ```
 
-## 混入
+## 11. 混入
 1. 混入提供了一种非常灵活的方式，来分发vue组件中可复用功能。一个混入的对象可以包含任意组件的对象。
 ```
 <template>
@@ -406,7 +406,7 @@ export default {
 </script>
 
 ```
-## onRef 子组件向父组件传递数据
+## 12. onRef 子组件向父组件传递数据
 `https://www.jianshu.com/p/c3e31d62bf76`
 1. 父组件：
 ```
@@ -442,8 +442,14 @@ export default {
 ```
 
 
-## Vue组件之间的数据传递
+## 13. Vue组件之间的数据传递
 1. 若子组件给父组件传值，可使用 $emit 方法
 2. 祖孙组件之间可以使用 provide 和 inject 方式跨层级传值，允许一个祖先组件向其所有子孙后代。
 3. 若子组件使用 $emit('say') 派发事件，父组件可使用 @say 监听
 4. 若父组件给子组件传值，子组件可通过 props 接受数据
+
+## 14. Props校验
+1. js为弱类语言，可使用type为Props进行**类型**或者**默认值**的指定。 
+2. 设置：type 可设置为 `String Number Boolean Array Object Date Function Symbol`
+3. 设置为自定义函数
+4. 设置为自定义的构造函数
