@@ -498,4 +498,66 @@ mounted(){
 ```
 
 
-## 18. 
+## 18. v-loader中的scoped
+1. 当`<style>`标签有scoped时.css只作用于当前元素，通过使用PostCss转换。会添加专属的[data-v-f3f3eg9]
+```
+<style scoped>
+.example{           // .example[data-v-f3f3eg9]{
+  coloe: red;
+}
+</style>
+
+<template>
+  <div calss = "example"> hi </div>             //<div calss = "example"  data-v-f3f3eg9> hi </div>     
+</template>
+```
+
+
+
+## 19. 动态指令参数
+```
+<template>
+  <button @[someEvent] = 'handSomeEvent()'></button>
+</template>
+
+<script>
+  data(){
+    return{
+      someEvent:someCondition ? "Click" : "dblclick"
+    }
+  },
+  methods:{
+    handSomeEvent(){
+
+    }
+  }
+</script>
+
+```
+
+## 20. watch immediate  
+1. 组件中watch一个值，进行一些页面初始化或者更新操作，如this.getDetails()
+```
+watch(){
+  id:{
+    handler(newVuale){
+      this.getDetail(newValue)
+    }
+  }
+}
+watch 在最初绑定的时候是不会执行的，要等到id改变时才执行监听，这可能会导致第一次渲染出错。
+
+
+想watch中声明了id后立即执行handler方法，可以加上immediate：true
+watch(){
+  id:{
+    handler(newValue){
+      this.getDetail(newValue)
+    }
+  },
+  // watch中声明了id后，立即执行handler方法。
+  immediate:true
+}
+```
+
+## 21. 
