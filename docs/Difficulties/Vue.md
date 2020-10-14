@@ -453,3 +453,15 @@ export default {
 2. 设置：type 可设置为 `String Number Boolean Array Object Date Function Symbol`
 3. 设置为自定义函数
 4. 设置为自定义的构造函数
+
+## 15. key值的使用
+1. v-for，如果不使用key，value会默认使用一种"就地复用"的策略进行更新。在一些情况下会导致渲染的不正确。
+2. v-router，会遇到 /path/:id，这样只改变id号的场景，但是渲染的是不同的组件。**由于router-view是复用的，单纯的改变id号是不会刷新router-view**。
+```
+解决方法
+为每个router-view添加不同的key，让vue每次切换路由的参数的时候，认为是不同的组件从而得到更新
+
+<router-view :key = 'key'></router-view>
+
+实际上对所有的DOM，Vue都可能会采取复用策略，遇到渲染顺序不准确的，可以向key方向考虑。
+```
