@@ -153,3 +153,4 @@ PT，退市的股票。
 
 ## 选股示例
 ![19](../.vuepress/moneyGu/19.png)
+![20](../.vuepress/moneyGu/20.png)
