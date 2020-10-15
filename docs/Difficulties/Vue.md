@@ -575,3 +575,84 @@ watch(){
 }
 ```
 > 需要注意，虽然解决了闪烁的问题，但这段时间内如果什么都不处理的话，会直接白屏，这并不是我们想要的效果，我们应该加一个 loading 或者骨架屏的效果，提升用户体验。
+
+
+## 22. v-once v-pre
+1. v-once 渲染元素或者组件一次。重新渲染的话，元素/组件及其所有子节点会被视为**静态内容**跳过。
+2. v-pre  决定要不要跳过这个元素和子元素的编译。
+
+## 23. 表单输入控制
+1. 表单修饰符
+```
+.number 自动将用户输入转化为数值类型
+<input v-model.number = "age"  type = "number" />
+
+.trim 自动过滤用户输入的首尾空白字符
+<input v-model.trim = "msg"/>
+```
+
+2. change事件
+```
+<imput v-model="value2" type="text" @change="inputChange(value2)" />
+
+metho: {
+  inputChange(val){
+    if(!val) return ''
+    val = val.toString()
+    this.value2 = val.charAt(0).toUpperCase()+val.slice(1)
+  }
+}
+```
+
+3. filter过滤器
+```
+<input v-model="value1" type="text" />
+
+vue.filter('capitalize', function(value){
+  if(!value) return ''
+  value = value.toString()
+  return value.charAt(0).toUpperCase() + value.slice(1)
+})
+
+watch: {
+  value1(val){
+    this.value1 = this.$option.filters.capitalize(val)
+  }
+}
+```
+
+4. 自定义指令
+声明一个全局指令
+```
+
+```
+
+## 24. 事件：特殊变量$event
+1. 原生事件：绑定事件后，传入除了原生对象之外的参数。监听原生DOM事件，方法以原生事件对象为唯一参数（默认值）。想在内联处理器中访问原始的dom事件（同时想传其他参数），可以使用$event传入。
+`https://juejin.im/post/6872128694639394830#heading-17`
+```
+<input v-model = "value1" @change = "inputChange('hellow', $event)" />
+
+methods: {
+  inputChange(msg, e){
+    console.log(msg, e)
+  }
+}
+```
+
+2. 自定义事件：$event是从子组件中捕获的值。监听el-input的传递过来值的同时，传递其他的参数。
+```
+<el-input
+  v-model = "value2"
+  @change = "change($event, 'hellow')"
+  placeholder = "Input sonething here"
+/>
+
+methods: {
+  change(e, val){
+    console.log("evevt is " + e); // el-input 输入的值
+    console.log(val) // hellow
+  }
+}
+```
+
