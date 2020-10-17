@@ -142,6 +142,7 @@ module.exports = {
       "/React/": [
         ["", "基础概念"],
         ["LifeCycle", "生命周期"],
+        ["Router", "路由"],
         ["Redux", "Redux"],
         ["Guidance", "高级指引"],
         ["Hook", "HooK"],
