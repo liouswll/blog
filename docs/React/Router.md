@@ -39,3 +39,37 @@ window.addEventListener('hashChange', () => {
 
 ### Router的基本使用 react-router主要API提供的一些组件，
 1. BrowserRouter或HashRouter组件
+- Router中包含了对路径改变时候的监听，并且会将相应的路径传递给子组件
+- BrowserRouter使用了history模式
+- HashRouter使用了hash模式
+
+2. Link和NavLink
+- 跳转使用Link最后会被渲染成a链接
+- NavLink是在Link基础之上增加了一些样式属性
+- to属性: link组件中最重要的属性, 用于设置跳转到的路径
+
+3. Route组件用于路径的匹配
+- path(属性)：用户设置匹配到的路径
+- component(属性)：设置到匹配名的后面，渲染组件。
+- exact(属性)：精准匹配，只有精准匹配到完全一样的路径，才会渲染对应的组件。
+```
+import { BorwserRouter, Link, Route }  from 'react-router-dom'
+export default class App extends PureComponent {
+    render(){
+        return (
+            <div>
+                <BrowserRouter>
+                    <Link to="/">主页</Link>
+                    <Link to="/about">关于</Link>
+                    <Link to="profile">我的</Link>     
+
+                    <Route exact path="/" component = {Home}    >
+                    <Route exact path="/" component =Profile{abut}>
+                    <Route exact path="/Profile" component = {Profile}>
+                </BrowserRouter>
+            </div>
+        )
+    }
+}
+```
+
