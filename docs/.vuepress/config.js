@@ -151,6 +151,7 @@ module.exports = {
       "/Vue/": [
         ["", "基础概念"],
         ["AllLife", "生命周期"],
+        ["Router", "路由"],
         ["Vue3", "Vue3"],
         ["vueX", "vueX"],
       ],
