@@ -96,6 +96,9 @@ arr[5] = "Martin"
 document.write(arr + "<br />")
 arr.splice(2,3,"William")
 document.write(arr)
+
+George,John,Thomas,James,Adrew,Martin
+George,John,William,Martin
 ```
 
 - toSource() 返回该对象的源代码。
