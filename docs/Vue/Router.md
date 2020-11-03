@@ -23,6 +23,8 @@ router.push({name: 'user', params: {userid: 123}})
 
 // 带参数查询，变成/register?plan=private
 router.push({path: 'user', query: { plan:'private'}})
+接受
+const a = this.$route.query.plan
 
 ```
 >提供的params，path会被忽略，上述例子中的 query 并不属于这种情况。取而代之的是下面例子的做法，你需要提供路由的 name 或手写完整的带有参数的 path：
