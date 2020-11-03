@@ -12,6 +12,10 @@ module.exports = {
         link: "/JavaScript/"
       },
       {
+        text: "ES6",
+        link: "/es6/"
+      },
+      {
         text: "Vue",
         link: "/Vue/"
       },
@@ -123,7 +127,9 @@ module.exports = {
 
 
 
-
+      "/Es6/": [
+        ["", "Es6"]
+      ],
 
       "/Algorithm/": [
         ["", "排序"],
