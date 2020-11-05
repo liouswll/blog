@@ -76,10 +76,13 @@ console.log(returnedTarget);
 // expected output: Object { a: 1, b: 4, c: 5 }
 ```
 
-## 3. instanceof，hasOwnProperty，in，isArray
+## 3. instanceof，hasOwnProperty，in，isArray, for-in
 1. instanceof
 - 用于检测构造函数的 prototype 属性是否出现在某个实例对象的原型链。
-instanceof只适用于构造函数创建返回的复杂对象和实例。
+
+- **运算符用来测试一个对象在其原型链中是否出现一个构造函数的 prototype 属性**
+
+- instanceof只适用于构造函数创建返回的复杂对象和实例。
 >任何时间判断一个对象（复杂值）是否是Object的实例时，它都将返回true，因为所有对象都继承自Object()构造函数。  
 >instanceof使用场景，判断在一个继承关系中实例是否属于它的父类。
 ```
@@ -1630,4 +1633,64 @@ console.log(obj.info.name);   // hello
 >**SON.parse(JSON.stringify)实现了一个深拷贝。这就是日常开发中使用较为频繁的一个深拷贝方法，它可以实现一些不是那么复杂的数据类型的深拷贝。不支持函数，undefined，Date，RegExp**。
 
 4. 递归克隆实现一个深拷贝
+>**https://juejin.im/post/6889327058158092302#heading-5**
+
+```
+// 递归深拷贝对象
+function deepClone(target){
+  if(target instanceof Object){
+      let dist = {};
+      for(let key in target){
+        // 递归调用自己获取到每个值
+          dist[key] = deepClone(target[key]);
+      }
+      return dist;
+  }else{
+      return target;
+  }
+}
+
+let obj1 = {
+  name:"hello",
+  child:{
+    name:"小明"
+  }
+}
+let obj2 = deepClone(obj1);
+console.log(obj2 !== obj1);                         // true
+console.log(obj2.name === obj1.name);               // true
+console.log(obj2.child !== obj1.child);             // true
+console.log(obj2.child.name === obj1.child.name);   // true
+obj2.name = "World";
+console.log(obj1.name === 'hello');                 // true
+
+```
+
+```
+// 递归循环求和
+//for 循环写法：
+    var sum=0;
+    for (var i=0;i<=5;i++){
+        sum+=i;
+    }
+    console.log(sum);
+----------------------分割线---------------------------
+
+   function getSum(x) {
+        if (x==1){
+          return 1
+        }
+        return x+getSum(x-1);
+    };
+
+    var sum1=getSum(5);
+    console.log(sum1);
+    console.log(getSum(10));
+```
+>代码执行getSum(5)—>进入函数,此时的x是5,执行的是5+getSum(4),此时代码等待
+此时5+getSum(4),代码先不进行计算,先执行getSum(4),进入函数,执行的是4+getSum(3),等待, 先执行的是getSum(3),进入函数,执行3+getSum(2),等待,先执行getSum(2),进入函数,执行 2+getSum(1);等待, 先执行getSum(1),执行的是x==1的判断,return 1,所以,
+此时getSum(1)的结果是1,开始向外走出去
+2+getSum(1) 此时的结果是:2+1
+
+
 
