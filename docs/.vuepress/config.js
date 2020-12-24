@@ -123,6 +123,7 @@ module.exports = {
         ["DOM", "DOM"],
         ["BOM", "BOM"],
         ["Reg", "Reg"],
+        ["JSDesignMode", "JS设计模式"],
       ],
 
 

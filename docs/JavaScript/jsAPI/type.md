@@ -12,7 +12,7 @@ max + 1 == max +2  -> ×(错)
 2. Symbol:返回的Symbol值都是唯一的。不重复不可变的值。
 
 #### 引用类型
-1. 对象（Object）。其中对象类型包括：数组（Arra），函数（function），还有两个特殊的对象：正则（RegExp），日期（date）
+1. 对象（Object）。其中对象类型包括：数组（Array），函数（function），还有两个特殊的对象：正则（RegExp），日期（date）
 2. object — typeof(arr)  //object	Undefined 与 null 的值相等，但类型不相等：
 
 
