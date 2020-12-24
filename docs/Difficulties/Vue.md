@@ -656,3 +656,13 @@ methods: {
 }
 ```
 
+## 25. vue的双向绑定
+>https://segmentfault.com/a/1190000019722065  示例
+![vue-Observer](../.vuepress/public/vue-Observer.png)
+- 利用 Object.defineProperty() 对数据进行劫持，设置一个监听器 Observer，用来监听数据对象的属性，如果属性上发生变化了，交由 Dep 通知订阅者 Watcher 去更新数据，最后指令解析器 Compile 解析对应的指令，进而会执行对应的更新函数，从而更新视图，实现了双向绑定。
+```
+Observer (数据劫持)
+Dep (发布订阅)
+Watcher (数据监听)
+Compile (模版编译)
+```
