@@ -1692,5 +1692,35 @@ console.log(obj1.name === 'hello');                 // true
 此时getSum(1)的结果是1,开始向外走出去
 2+getSum(1) 此时的结果是:2+1
 
+## 41. 对象-数组互换
 
+```
+结构
+autoPublishDate: {workDay: "1", weekend: "1", statutoryHoliday: "1"}
+```
+```
+对象->数组
+const autoPublishArr = [];
+const autoPublishDate = dataSource && dataSource.autoPublishDate;
+for( let key in autoPublishDate) {
+  if(autoPublishDate[key] == 1) {
+    autoPublishArr.push(key)   
+  }
+}   
+// [1, 1, 1]     
+```
+
+```
+数组->对象
+const autoPublishDate = {
+                workDay: 0,
+                weekend: 0,
+                statutoryHoliday: 0
+            };
+values.autoPublishDate.map( item => {
+                autoPublishDate[item] = 1
+            })
+values.autoPublishDate = autoPublishDate;
+// {}
+```
 
