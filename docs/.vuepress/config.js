@@ -65,6 +65,10 @@ module.exports = {
         link: "/Plan/"
       },
       {
+        text: "Type-Script",
+        link: "/Type-Script/"
+      },
+      {
         text: "GU",
         link: "/Gu/"
       },
@@ -179,6 +183,10 @@ module.exports = {
 
       "/Node/": [
         ["", "Node"]
+      ],
+
+      "/Type-Script/": [
+        ["", "TypeScript"]
       ],
 
       "/Plan/": [

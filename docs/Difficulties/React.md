@@ -1,4 +1,4 @@
-## Hook
+## 1. Hook
 - React Hooks要解决的问题是状态共享，这里的状态共享是指只共享状态逻辑复用，并不是指数据之间的共享  
 
 - React Hook 
@@ -46,7 +46,7 @@ class Example extends React.Component {
 **在React Hook中，class Example组件变成了函数式组件，但是这个函数式组件却拥有的自己的状态，同时还可以更新自身的状态。这一切都得益于useState这个Hook，useState 会返回一对值：当前状态和一个让你更新它的函数，你可以在事件处理函数中或其他一些地方调用这个函数。它类似 class 组件的 this.setState，但是它不会把新的 state 和旧的 state 进行合并**
 
 
-## React复用状态逻辑的解决方案
+## 2. React复用状态逻辑的解决方案
 - Mixin -> 高阶组件 -> Render Props -> Hook
 ####  Mixin到高阶组件
 - Mixin继承看作是通过扩展收集功能的一种途径。.我们定义的每一个新的对象都有一个原型，从中它可以继承更多的属性，原型可以从其他对象继承而来，但是更重要的是，能够为任意数量的对象定义属性，我们可以利用这一事实来促进功能重用。
@@ -257,3 +257,9 @@ useEffect(() => {
 }, [count]); // 仅在 count 更改时更新
 
 ```
+
+
+
+
+## 3. Antd design for React 
+#### input同时
