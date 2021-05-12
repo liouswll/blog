@@ -61,7 +61,7 @@ function hello(){
 </script>
 ```
 
-## 2. Object.assign()
+## 2. Object.assign() Object.keys()
 1. 方法用于将所有可枚举属性的值从一个或多个源对象复制到目标对象。它将返回目标对象。`Object.assign(target, ...sources)`
 ```
 const target = { a: 1, b: 2 };
@@ -75,6 +75,21 @@ console.log(target);
 console.log(returnedTarget);
 // expected output: Object { a: 1, b: 4, c: 5 }
 ```
+2. 方法会返回一个由一个给定对象的自身可枚举属性组成的数组，数组中属性名的排列顺序和正常循环遍历该对象时返回的顺序一致 。
+```
+// simple array
+var arr = ['a', 'b', 'c'];
+console.log(Object.keys(arr)); // console: ['0', '1', '2']
+
+// array like object
+var obj = { 0: 'a', 1: 'b', 2: 'c' };
+console.log(Object.keys(obj)); // console: ['0', '1', '2']
+
+// array like object with random key ordering
+var anObj = { 100: 'a', 2: 'b', 7: 'c' };
+console.log(Object.keys(anObj)); // console: ['2', '7', '100']
+```
+
 
 ## 3. instanceof，hasOwnProperty，in，isArray, for-in
 1. instanceof

@@ -263,3 +263,7 @@ useEffect(() => {
 
 ## 3. Antd design for React 
 #### input同时
+
+
+## 4. react render执行流程
+`https://www.jianshu.com/p/021736302706`
