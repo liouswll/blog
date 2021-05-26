@@ -67,7 +67,7 @@ function hello(){
 const target = { a: 1, b: 2 };
 const source = { b: 4, c: 5 };
 
-const returnedTarget = Object.assign(target, source);
+const returnedTarget = Object.assign({可有默认值},target, source);
 // target目标对象。 sources源对象。
 
 console.log(target);
