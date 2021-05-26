@@ -1738,4 +1738,5 @@ values.autoPublishDate.map( item => {
 values.autoPublishDate = autoPublishDate;
 // {}
 ```
-
+## 42. 数组去重
+`https://segmentfault.com/a/1190000016418021?utm_source=tag-newest`
