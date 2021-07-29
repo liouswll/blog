@@ -239,3 +239,6 @@ Vue.createApp().mount(App, '#app')
 |destroyed  |onUnmounted|
 |errorCaptured  |onErrorCaptured|
 
+
+## vite
+`https://juejin.cn/post/6986899594491723806#heading-6`

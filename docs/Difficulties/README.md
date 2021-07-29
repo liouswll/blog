@@ -1740,3 +1740,9 @@ values.autoPublishDate = autoPublishDate;
 ```
 ## 42. 数组去重
 `https://segmentfault.com/a/1190000016418021?utm_source=tag-newest`
+
+## 43. 函数什么情况下 必须使用箭头函数或者bind绑定this
+`https://blog.csdn.net/qq_34829447/article/details/81705977`
+
+## 44. Ref
+`https://juejin.cn/post/6985425164976521253?from=right_recommend#heading-11`

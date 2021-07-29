@@ -226,3 +226,17 @@ const routes = [
   }
 
 ```
+## BrowserRouter HashRouter
+BrowserRouter：
+HashRouter
+
+底层原理：底层原理使用H5的history API，不兼容IE9及以下版本         
+底层原理：使用URL的哈希值，兼容性更好
+
+path形式：路径中没有#，localhost:3000/demo/test  
+path形式：路径包含#，localhost:3000/#/demo/test
+
+刷新后对路由state参数的影响 ：没有任何影响，因为state保存在history对象中  
+刷新后对路由state参数的影响 ：刷新后会导致路由state参数的丢失！
+
+备注：HashRouter可以用于解决一些路径错误相关的问题。

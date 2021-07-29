@@ -267,3 +267,8 @@ useEffect(() => {
 
 ## 4. react render执行流程
 `https://www.jianshu.com/p/021736302706`
+
+
+## 5. React-diffing算法
+`https://juejin.cn/post/6988446977541275661?from=main_page`
+1. 虚拟DOM->真是DOM，会通过diffing算法进行比较，如果已经渲染过一次再进行渲染，会对相同的key值节点进行比较，如果内容相同，会复用原来的真实DOM。
