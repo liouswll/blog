@@ -272,3 +272,42 @@ useEffect(() => {
 ## 5. React-diffing算法
 `https://juejin.cn/post/6988446977541275661?from=main_page`
 1. 虚拟DOM->真是DOM，会通过diffing算法进行比较，如果已经渲染过一次再进行渲染，会对相同的key值节点进行比较，如果内容相同，会复用原来的真实DOM。
+
+
+## 6. 父组件点击子组件执行
+```
+import React, {Component} from 'react';
+
+export default class Parent extends Component {
+    render() {
+        return(
+            <div>
+                <Child onRef={this.onRef} />
+                <button onClick={this.click} >click</button>
+            </div>
+        )
+    }
+
+    onRef = (ref) => {
+        this.child = ref
+    }
+
+    click = (e) => {
+        this.child.myName()
+    }
+
+}
+
+class Child extends Component {
+    componentDidMount(){
+        this.props.onRef(this)
+    }
+
+    myName = () => alert('xiaohesong')
+
+    render() {
+        return ('woqu')
+    }
+}
+
+```
