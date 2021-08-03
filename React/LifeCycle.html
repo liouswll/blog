@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>生命周期 | lious的博客</title>
+    <meta name="generator" content="VuePress 1.5.1">
+    
+    <meta name="description" content="前端开发空间站">
+    <link rel="preload" href="/Blog/assets/css/0.styles.16d8b4f8.css" as="style"><link rel="preload" href="/Blog/assets/js/app.10aa662d.js" as="script"><link rel="preload" href="/Blog/assets/js/2.b786c2ed.js" as="script"><link rel="preload" href="/Blog/assets/js/43.7412b549.js" as="script"><link rel="prefetch" href="/Blog/assets/js/10.2ae6b466.js"><link rel="prefetch" href="/Blog/assets/js/11.31a9d7ae.js"><link rel="prefetch" href="/Blog/assets/js/12.7dde8683.js"><link rel="prefetch" href="/Blog/assets/js/13.2be3647b.js"><link rel="prefetch" href="/Blog/assets/js/14.8588ad8d.js"><link rel="prefetch" href="/Blog/assets/js/15.1a77e164.js"><link rel="prefetch" href="/Blog/assets/js/16.f3e559f8.js"><link rel="prefetch" href="/Blog/assets/js/17.dc22235e.js"><link rel="prefetch" href="/Blog/assets/js/18.fed95f8f.js"><link rel="prefetch" href="/Blog/assets/js/19.b7edd622.js"><link rel="prefetch" href="/Blog/assets/js/20.175e3723.js"><link rel="prefetch" href="/Blog/assets/js/21.22b161ae.js"><link rel="prefetch" href="/Blog/assets/js/22.bc2dea31.js"><link rel="prefetch" href="/Blog/assets/js/23.8e66fc0e.js"><link rel="prefetch" href="/Blog/assets/js/24.a8ea2992.js"><link rel="prefetch" href="/Blog/assets/js/25.180597cb.js"><link rel="prefetch" href="/Blog/assets/js/26.2c191c37.js"><link rel="prefetch" href="/Blog/assets/js/27.8bc84815.js"><link rel="prefetch" href="/Blog/assets/js/28.dcb16474.js"><link rel="prefetch" href="/Blog/assets/js/29.a2613858.js"><link rel="prefetch" href="/Blog/assets/js/3.686b262b.js"><link rel="prefetch" href="/Blog/assets/js/30.87c12977.js"><link rel="prefetch" href="/Blog/assets/js/31.74c2b223.js"><link rel="prefetch" href="/Blog/assets/js/32.5d070126.js"><link rel="prefetch" href="/Blog/assets/js/33.a7693155.js"><link rel="prefetch" href="/Blog/assets/js/34.f49eb3fe.js"><link rel="prefetch" href="/Blog/assets/js/35.cbd7f428.js"><link rel="prefetch" href="/Blog/assets/js/36.47e56105.js"><link rel="prefetch" href="/Blog/assets/js/37.c10d8cb6.js"><link rel="prefetch" href="/Blog/assets/js/38.aab4c75b.js"><link rel="prefetch" href="/Blog/assets/js/39.e45d95a7.js"><link rel="prefetch" href="/Blog/assets/js/4.99a22f15.js"><link rel="prefetch" href="/Blog/assets/js/40.57ad0f94.js"><link rel="prefetch" href="/Blog/assets/js/41.86a1e1fa.js"><link rel="prefetch" href="/Blog/assets/js/42.1e2e8fd9.js"><link rel="prefetch" href="/Blog/assets/js/44.07764500.js"><link rel="prefetch" href="/Blog/assets/js/45.24c56a4b.js"><link rel="prefetch" href="/Blog/assets/js/46.9fb95f70.js"><link rel="prefetch" href="/Blog/assets/js/47.9c4728fc.js"><link rel="prefetch" href="/Blog/assets/js/48.ff5a0c9c.js"><link rel="prefetch" href="/Blog/assets/js/49.40abf6ce.js"><link rel="prefetch" href="/Blog/assets/js/5.c5721a11.js"><link rel="prefetch" href="/Blog/assets/js/50.47537aa4.js"><link rel="prefetch" href="/Blog/assets/js/6.c15f2b30.js"><link rel="prefetch" href="/Blog/assets/js/7.54430d36.js"><link rel="prefetch" href="/Blog/assets/js/8.37eb3f01.js"><link rel="prefetch" href="/Blog/assets/js/9.1fb0ff27.js">
+    <link rel="stylesheet" href="/Blog/assets/css/0.styles.16d8b4f8.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/Blog/" class="home-link router-link-active"><!----> <span class="site-name">lious的博客</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/Blog/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><a href="/Blog/JavaScript/" class="nav-link">
+  JavaScript
+</a></div><div class="nav-item"><a href="/Blog/es6/" class="nav-link">
+  ES6
+</a></div><div class="nav-item"><a href="/Blog/Vue/" class="nav-link">
+  Vue
+</a></div><div class="nav-item"><a href="/Blog/React/" class="nav-link router-link-active">
+  React
+</a></div><div class="nav-item"><a href="/Blog/Webpack/" class="nav-link">
+  Webpack
+</a></div><div class="nav-item"><a href="/Blog/git/" class="nav-link">
+  Git
+</a></div><div class="nav-item"><a href="/Blog/Websocket/" class="nav-link">
+  Websocket
+</a></div><div class="nav-item"><a href="/Blog/Http/" class="nav-link">
+  HTTP
+</a></div><div class="nav-item"><a href="/Blog/Difficulties/" class="nav-link">
+  前端难点集中
+</a></div><div class="nav-item"><a href="/Blog/Algorithm/" class="nav-link">
+  前端算法
+</a></div><div class="nav-item"><a href="/Blog/Node/" class="nav-link">
+  Node
+</a></div><div class="nav-item"><a href="/Blog/Plan/" class="nav-link">
+  PLAN
+</a></div><div class="nav-item"><a href="/Blog/Type-Script/" class="nav-link">
+  Type-Script
+</a></div><div class="nav-item"><a href="/Blog/Gu/" class="nav-link">
+  GU
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/Blog/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><a href="/Blog/JavaScript/" class="nav-link">
+  JavaScript
+</a></div><div class="nav-item"><a href="/Blog/es6/" class="nav-link">
+  ES6
+</a></div><div class="nav-item"><a href="/Blog/Vue/" class="nav-link">
+  Vue
+</a></div><div class="nav-item"><a href="/Blog/React/" class="nav-link router-link-active">
+  React
+</a></div><div class="nav-item"><a href="/Blog/Webpack/" class="nav-link">
+  Webpack
+</a></div><div class="nav-item"><a href="/Blog/git/" class="nav-link">
+  Git
+</a></div><div class="nav-item"><a href="/Blog/Websocket/" class="nav-link">
+  Websocket
+</a></div><div class="nav-item"><a href="/Blog/Http/" class="nav-link">
+  HTTP
+</a></div><div class="nav-item"><a href="/Blog/Difficulties/" class="nav-link">
+  前端难点集中
+</a></div><div class="nav-item"><a href="/Blog/Algorithm/" class="nav-link">
+  前端算法
+</a></div><div class="nav-item"><a href="/Blog/Node/" class="nav-link">
+  Node
+</a></div><div class="nav-item"><a href="/Blog/Plan/" class="nav-link">
+  PLAN
+</a></div><div class="nav-item"><a href="/Blog/Type-Script/" class="nav-link">
+  Type-Script
+</a></div><div class="nav-item"><a href="/Blog/Gu/" class="nav-link">
+  GU
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/Blog/React/" aria-current="page" class="sidebar-link">基础概念</a></li><li><a href="/Blog/React/LifeCycle.html" aria-current="page" class="active sidebar-link">生命周期</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/Blog/React/LifeCycle.html#生命周期" class="sidebar-link">生命周期</a></li></ul></li><li><a href="/Blog/React/Router.html" class="sidebar-link">路由</a></li><li><a href="/Blog/React/Redux.html" class="sidebar-link">Redux</a></li><li><a href="/Blog/React/Guidance.html" class="sidebar-link">高级指引</a></li><li><a href="/Blog/React/Hook.html" class="sidebar-link">HooK</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="生命周期"><a href="#生命周期" class="header-anchor">#</a> 生命周期</h2> <ol><li>生命周期</li></ol> <ul><li>加载阶段	Mouting</li> <li>更新阶段	Updating</li> <li>卸载阶段	Unmounting</li></ul> <ol start="3"><li>旧生命周期</li></ol> <ul><li>Mounting(加载阶段)</li> <li>constructor()	加载时调用一次，可以初始化state</li> <li>getDefaultProps()	设置初始的props，也可以设置组件的默认属性</li> <li>getInitialState()		初始化state，可以直接在constructor中定义this.state</li> <li>componentWillMount()	组件加载时使用，整个生命周期只调用一次，此时可以修改state</li> <li>render()	创建虚拟DOM，进行diff算法，更新DOM树</li> <li>componentDidMount()	组件渲染调用，只调用一次。</li> <li>Updating(更新阶段)</li> <li>componentWillReceiveProps(nextProps)	组件加载时不调用，只有在接受新的props时调用</li> <li>shouldComponentUpdate(nextProps, nextState)	组件接收到新的props，state时调用。return true时会更新Dom（进行Diff算法），return false 能阻止更新（不调用render）</li> <li>componentWillUpdate()	组件加载时不调用，只有更新是才调用，此时可以修改state</li> <li>render()	创建虚拟DOM，进行diff算法，更新DOM树</li> <li>componentDidUpdate() 	组价加载时不调用，更新完成后调用</li> <li>Unmounting(卸载阶段)</li> <li>componentWillUnmount()	组件渲染之后掉用，只调用一次
+<strong>新旧图示生命周期</strong></li></ul> <ol start="4"><li>新生命周期
+-Mounting(加载阶段)</li></ol> <div class="language- extra-class"><pre class="language-text"><code>construntor()	加载时调用一次，初始化state
+
+getDerivedStateFormProps(props, state)	组件每次被render的时候，包括在组件构建之后(虚拟dom之后，实际dom挂载之前)，每次获取新的props或state之后；每次接收新的props之后都会返回一个对象作为新的state，返回null则说明不需要更新state；配合componentDidUpdate，可以覆盖componentWillReceiveProps的所有用法
+
+render() react最重要的步骤，创建虚拟dom，进行diff算法，更新dom树都在此进行
+
+componentDidMount()  组件渲染之后调用，只调用一次
+
+</code></pre></div><ul><li>Updating(更新)</li></ul> <div class="language- extra-class"><pre class="language-text"><code>getDerivedStateFormProps(props, state)	组件每次被render的时候，包括在组件构建之后(虚拟dom之后，实际dom挂载之前)，每次获取新的props或state之后；每次接收新的props之后都会返回一个对象作为新的state，返回null则说明不需要更新state；配合componentDidUpdate，可以覆盖componentWillReceiveProps的所有用法
+
+shouldComponentUpdate(nextProps, nextState) 组件接受到新的Props或者state时调用，return true时会更新，return false时不更新
+render() react最重要的步骤，创建虚拟dom，进行diff算法，更新dom树都在此进行
+
+getSnapshotBeforeUpdate(prevProps, prevState) update发生的时候，在render之后，在组件dom渲染之前；返回一个值，作为componentDidUpdate的第三个参数；配合componentDidUpdate, 可以覆盖componentWillUpdate的所有用法
+
+componentDidUpdate  组件加载时不调用，组件更新完成后调用
+</code></pre></div><ul><li>Unmounting（卸载阶段）
+组件渲染之后调用，只调用一次</li> <li>Error Handling(错误处理)
+componentDidCatch(error，info)  任何一处的javascript报错会触发</li></ul></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/Blog/React/" class="prev router-link-active">
+        基础概念
+      </a></span> <span class="next"><a href="/Blog/React/Router.html">
+        路由
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/Blog/assets/js/app.10aa662d.js" defer></script><script src="/Blog/assets/js/2.b786c2ed.js" defer></script><script src="/Blog/assets/js/43.7412b549.js" defer></script>
+  </body>
+</html>
