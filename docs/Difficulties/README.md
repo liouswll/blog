@@ -74,6 +74,21 @@ console.log(target);
 // expected output: Object { a: 1, b: 4, c: 5 }
 console.log(returnedTarget);
 // expected output: Object { a: 1, b: 4, c: 5 }
+
+
+Object.assign(
+                        {}, 
+                        this.state.params, 
+                        { 
+                            num: this.state.putInHighSeasonValue,
+                            classes: type,
+                            userId: userInfo.userId 
+                        }
+                    )
+
+
+
+
 ```
 2. 方法会返回一个由一个给定对象的自身可枚举属性组成的数组，数组中属性名的排列顺序和正常循环遍历该对象时返回的顺序一致 。
 ```
@@ -1746,3 +1761,64 @@ values.autoPublishDate = autoPublishDate;
 
 ## 44. Ref
 `https://juejin.cn/post/6985425164976521253?from=right_recommend#heading-11`
+
+## 45. 异步方法
+```
+handleSave = () => {
+        return new Promise((r,j) => {
+            console.log(this.planInfo)
+            const { reviewNo, dataDeil } = this.state
+            const { dispatch } = this.props
+
+            const creditScore = this.planInfo && this.planInfo.props && this.planInfo.props.creditScore || dataDeil && dataDeil.baseInfo.creditScore || ''
+            const regu = /^[1-9]\d*|0$/
+            if (creditScore && (!regu.test(creditScore))) return message.warn('请填写正确的芝麻信用分')
+
+            dispatch({
+                type: 'reviewRisk/handSaveCreditScore',
+                payload: {
+                    reviewNo: reviewNo,
+                    creditScore: this.planInfo && this.planInfo.props && this.planInfo.props.creditScore || dataDeil && dataDeil.baseInfo.creditScore || ''
+                },
+                callback: (res) => {
+                    message.success('芝麻信用分保存成功')
+                    dispatch({
+                        type: 'reviewRisk/handSaveTemp',
+                        payload: {
+                            reviewNo: reviewNo,
+                            reviewStep: 40,
+                            remark: this.planInfo && this.planInfo.props && this.planInfo.props.manualRecheckInfo || dataDeil && dataDeil.manualRecheckInfo.remark || ''
+                        },
+                        callback: (res) => {
+                            message.success('备注保存成功')
+                            r();
+                        }
+                    })
+                }
+            })
+            this.setState({ btnSaveLoading: true })
+            setTimeout(() => { this.setState({ btnSaveLoading: false }) }, 3000);
+        });
+
+    }
+
+
+
+handleOnSubmitClick = async () => {
+        const { dataDeil } = this.state
+        if (this.state.showModal == '') return message.warn('请选择提交类型')
+        if ((this.planInfo && this.planInfo.props && this.planInfo.props.creditScore || dataDeil && dataDeil.baseInfo.creditScore) && (this.planInfo && this.planInfo.props && this.planInfo.props.manualRecheckInfo || dataDeil && dataDeil.manualRecheckInfo.remark)) {
+            await this.handleSave()
+            if (this.state.showModal == '1') {
+                this.child.handleSureClick()
+            }
+            if (this.state.showModal == '2') {
+                this.child.handleSureClick()
+            }
+            this.setState({ btnLoading: true })
+            setTimeout(() => { this.setState({ btnLoading: false }) }, 3000);
+        } else {
+            message.warn('芝麻分和备注不能为空')
+        }
+    }
+```
