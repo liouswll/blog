@@ -1,5 +1,5 @@
 module.exports = {
-  title: 'lious的博客',
+  title: 'lious',
   description: '前端开发空间站',
   base: "/Blog/",
   themeConfig: {
