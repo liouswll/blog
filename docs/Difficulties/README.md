@@ -1822,3 +1822,52 @@ handleOnSubmitClick = async () => {
         }
     }
 ```
+
+
+## 46 JSONP
+```
+
+//动态创建 script
+var script = document.createElement('script');
+
+// 设置回调函数
+function getData(data) {
+    console.log(data);
+}
+
+//设置 script 的 src 属性，并设置请求地址
+script.src = 'http://localhost:3000/?callback=getData';
+
+// 让 script 生效
+document.body.appendChild(script);
+
+
+https://coding.imooc.com/learn/questiondetail/197438.html 
+JSONP发起的请求会默认设置一个名字为getData 的回调函数。这就要求后端返回的内容要是getData({result: 0, data: 1572409891, msg: “成功”}) 包裹的格式
+```
+
+## 47 跨域
+```
+document.domain 基础域名相同 子域名不同
+
+
+window.name 利用在一个浏览器窗口内，载入所有的域名都是共享一个window.name
+
+
+CORS(Cross-origin resource sharing)跨域资源共享 服务器设置对CORS的支持原理：服务器设置Access-Control-Allow-Origin HTTP响应头之后，浏览器将会允许跨域请求
+
+
+proxy代理 目前常用方式,通过服务器设置代理
+
+
+window.postMessage() 利用h5新特性window.postMessage()
+
+```
+
+## 48 cookie
+```
+document.cookie = "name=value;expires=date日期";
+
+
+https://www.jb51.net/article/61512.htm
+```
