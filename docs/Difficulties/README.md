@@ -1871,3 +1871,7 @@ document.cookie = "name=value;expires=date日期";
 
 https://www.jb51.net/article/61512.htm
 ```
+
+### 49 全局弹窗
+`https://juejin.cn/post/7076288644016766984#heading-0`
+
