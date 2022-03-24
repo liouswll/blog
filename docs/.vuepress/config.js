@@ -179,7 +179,6 @@ module.exports = {
         ["", "JS注意点-难点"],
         ["Vue", "Vue注意点-难点"],
         ["React", "React注意点-难点"],
-        ["nolo", "nolo"]
       ],
 
       "/Node/": [
