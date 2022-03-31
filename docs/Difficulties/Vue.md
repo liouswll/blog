@@ -670,3 +670,72 @@ Compile (模版编译)
 ## 26. 单元测试
 `https://www.jianshu.com/p/ba76cfcac72c`
 
+## 27. vue实现组件递归（嵌套自身）
+`https://blog.csdn.net/weixin_43245095/article/details/109504127`
+```
+// 递归组件 demo.vue   自己调用自己
+<template>
+  <div>
+    <div v-for="(item, index) in treeData" :key="index">
+      <p>{{ item.title }}</p>
+      <div class="children" v-if="item.children">
+     <!-- 嵌套自身 -->
+        <Demo :treeData="item.children"></Demo>
+      </div>
+    </div>
+  </div>
+</template>
+<script>
+export default {
+  name: "Demo",
+  props: ["treeData"],
+  data() {
+    return {};
+  },
+  created() {},
+};
+</script>
+<style  scoped>
+.children {
+  padding-left: 10px;
+}
+</style>
+
+```
+
+```
+父组件调用demo.vue
+<demo :treeData="treeData" ></demo>
+//   模拟递归
+      treeData: [
+        {
+          title: "递归层1",
+          children: [
+            {
+              title: "递归层1-1",
+              children: [
+                {
+                  title: "递归层1-1-1",
+                },
+                {
+                  title: "递归层1-2-1",
+                  children: [
+                    {
+                      title: "递归层1-2-1-1",
+                    },
+                    {
+                      title: "递归层1-2-1-2",
+                    },
+                  ],
+                },
+              ],
+            },
+            {
+              title: "递归层1-2",
+            },
+          ],
+        },
+      ],
+
+
+```
