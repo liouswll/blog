@@ -1564,7 +1564,7 @@ executeOnce()
 ```
 
 ## 39 url输入到结束过程 
-0. [https://juejin.im/post/6881603705548832775#heading-10]掘金
+0. `https://juejin.im/post/6881603705548832775#heading-10`    `https://juejin.cn/post/6844904054074654728`（侧重）   掘金
 1. url解析
 2. DNS域名解析
 - 缓存
@@ -1872,6 +1872,11 @@ document.cookie = "name=value;expires=date日期";
 https://www.jb51.net/article/61512.htm
 ```
 
-### 49 全局弹窗
+## 49 全局弹窗
 `https://juejin.cn/post/7076288644016766984#heading-0`
 
+## 50 hash和history区别
+`https://juejin.cn/post/7029246706638127117`
+hash模式 window.onhashchange 方法监听路由
+history模式 通过pushState replaceState方式修改路由的改变
+ 
