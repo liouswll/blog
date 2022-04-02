@@ -311,3 +311,5 @@ class Child extends Component {
 }
 
 ```
+
+## 7 Conponent和PureConponent区别

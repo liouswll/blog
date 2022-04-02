@@ -473,7 +473,6 @@ Nginx相当于起了个跳板机的作用，跳板机的域名是client.com，�
 
 
 
-
 ## HTTP1.1
 1. 长连接，增加connection字段，通过设置keep-alive保持http连接不断开。避免每次客户端和服务器重复的建立释放tcp连接。提高网络利用率，关闭时设置connection为false。
 
@@ -488,7 +487,6 @@ Nginx相当于起了个跳板机的作用，跳板机的域名是client.com，�
 
 
 
-
 ## HTTP2.0
 1. 采用二进制格式传输数据，Http1.1使用文本格式。
 
@@ -499,3 +497,17 @@ Nginx相当于起了个跳板机的作用，跳板机的域名是client.com，�
 4. 支持服务器推送。服务器可以主动推送给客户端信息。
 ![http2](../.vuepress/public/http2.png)
 >只要有了请求结果数据，可以立即返回，不关心顺序问题，因为数据都被组装成了一个个frame帧，记录自己所属的数据流id，客户端接收到以后根据数据流id再组装即可。
+
+
+
+## 301 302 
+`https://blog.csdn.net/5207/article/details/52668300`
+301是说访问的资源已经永久删除啦，客户端要根据新的URI访问重定向；而302的意思就是说访问的资源可能暂时先用location的URI访问，但旧资源还在的，下次你再来访问的时候可能就不用重定向了。
+
+## 304
+1. Last-Modified：最后的修改时间(服务器会添加)
+2. If-Modified-Since：当用户第二次请求index.html时，在请求中包含一个名为If-Modified-Since请求头，它的值就是第一次请求时服务器通过Last-Modified响应头发送给浏览器的值，即index.html最后的修改时间
+3. 服务器会发响应码304，表示index.html与浏览器上次缓存的相同，无需再次发送(节省传输成本)，浏览器可以显示自己的缓存页面，如果比对不同，那么说明index.html已经做了修改，服务器会响应200。
+
+> 当用户第一次请求index.html时，服务器会添加一个名为Last-Modified响应头，这个头说明了index.html的最后修改时间，浏览器会把index.html内容，以及最后响应时间缓存下来。当用户第二次请求index.html时，在请求中包含一个名为If-Modified-Since请求头，它的值就是第一次请求时服务器通过Last-Modified响应头发送给浏览器的值，即index.html最后的修改时间，If-Modified-Since请求头就是在告诉服务器，我这里浏览器缓存的index.html最后修改时间是这个，您看看现在的index.html最后修改时间是不是这个，如果还是，那么您就不用再响应这个index.html内容了，我会把缓存的内容直接显示出来。而服务器端会获取If-Modified-Since值，与index.html的当前最后修改时间比对，如果相同，服务器会发响应码304，表示index.html与浏览器上次缓存的相同，无需再次发送(节省传输成本)，浏览器可以显示自己的缓存页面，如果比对不同，那么说明index.html已经做了修改，服务器会响应200。
+
