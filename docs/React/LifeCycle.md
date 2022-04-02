@@ -5,6 +5,7 @@
 - 更新阶段	Updating
 - 卸载阶段	Unmounting
 3. 旧生命周期
+```
 - Mounting(加载阶段)
 - constructor()	加载时调用一次，可以初始化state
 - getDefaultProps()	设置初始的props，也可以设置组件的默认属性
@@ -22,6 +23,7 @@
 
 - Unmounting(卸载阶段)
 - componentWillUnmount()	组件渲染之后掉用，只调用一次
+```
 **新旧图示生命周期**
 4. 新生命周期
 -Mounting(加载阶段)
