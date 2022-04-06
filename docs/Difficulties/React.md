@@ -312,4 +312,17 @@ class Child extends Component {
 
 ```
 
-## 7 Conponent和PureConponent区别
+## 7 Component和PureConponent区别
+```
+PureComponent 通过 prop 和 state 的浅比较来实现 shouldComponentUpdate，当 prop 或 state 的值或者引用地址发生改变时，组件就会发生更新
+Component 只要 state 发生改变， 不论值是否与之前的相等，都会触发更新
+```
+
+1. Purecomponent通过props和state浅对比来实现shouldComponentUpdate()
+>注意：在 PureComponent 中，当对传入的对象或者数组进行直接赋值时，因为并没有改变其引用地址，所以就不引起重新渲染。
+>在PureComponent中，如果包含比较复杂的数据结构，可能会因深层的数据不一致而产生错误的否定判断，导致界面得不到更新
+>每当shouldComponentUpdate被调用时，组件默认的会重新渲染。
+>浅比较：将检查原始值是否有相同的值（例如：1 == 1或者ture==true）,数组和对象引用是否相同。
+
+2. Component不会比较当前和下个状态的props和state。
+
