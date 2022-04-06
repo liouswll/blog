@@ -313,6 +313,7 @@ class Child extends Component {
 ```
 
 ## 7 Component和PureConponent区别
+`https://juejin.cn/post/6943148190174707748`
 ```
 PureComponent 通过 prop 和 state 的浅比较来实现 shouldComponentUpdate，当 prop 或 state 的值或者引用地址发生改变时，组件就会发生更新
 Component 只要 state 发生改变， 不论值是否与之前的相等，都会触发更新

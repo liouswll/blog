@@ -1880,3 +1880,5 @@ https://www.jb51.net/article/61512.htm
 hash模式 window.onhashchange 方法监听路由
 history模式 通过pushState replaceState方式修改路由的改变
  
+ ## 前端的权限管理
+ `https://blog.csdn.net/weixin_40599109/article/details/113728974`
