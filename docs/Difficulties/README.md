@@ -165,6 +165,9 @@ for (let key in obj1) {
 - isArray() 方法用于判断一个对象是否为数组，如果对象是数组返回 true，否则返回 false。
 - Array.isArray(obj)  // obj必需，要判断的对象。
 
+4. includes
+- 方法用来判断一个数组是否包含一个指定的值，根据情况，如果包含则返回 true，否则返回 false
+- [1,2].includes(1)  
 ## 4.JS阻止冒泡和取消默认事件(默认行为)
 
 - js冒泡和捕获是事件的两种行为，使用event.stopPropagation()起到阻止捕获和冒泡阶段中当前事件的进一步传播。
@@ -1880,5 +1883,5 @@ https://www.jb51.net/article/61512.htm
 hash模式 window.onhashchange 方法监听路由
 history模式 通过pushState replaceState方式修改路由的改变
  
- ## 前端的权限管理
+## 51 前端的权限管理
  `https://blog.csdn.net/weixin_40599109/article/details/113728974`
