@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>工厂模式 | lious</title>
+    <meta name="generator" content="VuePress 1.5.1">
+    
+    <meta name="description" content="前端开发空间站">
+    <link rel="preload" href="/Blog/assets/css/0.styles.16d8b4f8.css" as="style"><link rel="preload" href="/Blog/assets/js/app.9c47bd80.js" as="script"><link rel="preload" href="/Blog/assets/js/2.b786c2ed.js" as="script"><link rel="preload" href="/Blog/assets/js/7.f8ea1854.js" as="script"><link rel="prefetch" href="/Blog/assets/js/10.2ae6b466.js"><link rel="prefetch" href="/Blog/assets/js/11.533bbb72.js"><link rel="prefetch" href="/Blog/assets/js/12.8e74b9fc.js"><link rel="prefetch" href="/Blog/assets/js/13.2be3647b.js"><link rel="prefetch" href="/Blog/assets/js/14.1badd55b.js"><link rel="prefetch" href="/Blog/assets/js/15.f7f64fd6.js"><link rel="prefetch" href="/Blog/assets/js/16.72a686a6.js"><link rel="prefetch" href="/Blog/assets/js/17.db6d94f8.js"><link rel="prefetch" href="/Blog/assets/js/18.bc0ab2ef.js"><link rel="prefetch" href="/Blog/assets/js/19.e02c1cba.js"><link rel="prefetch" href="/Blog/assets/js/20.d91c50f5.js"><link rel="prefetch" href="/Blog/assets/js/21.22b161ae.js"><link rel="prefetch" href="/Blog/assets/js/22.bc2dea31.js"><link rel="prefetch" href="/Blog/assets/js/23.8e66fc0e.js"><link rel="prefetch" href="/Blog/assets/js/24.bcb02ed7.js"><link rel="prefetch" href="/Blog/assets/js/25.086b542b.js"><link rel="prefetch" href="/Blog/assets/js/26.b4fa9650.js"><link rel="prefetch" href="/Blog/assets/js/27.56fc3609.js"><link rel="prefetch" href="/Blog/assets/js/28.482e48d5.js"><link rel="prefetch" href="/Blog/assets/js/29.08475c58.js"><link rel="prefetch" href="/Blog/assets/js/3.686b262b.js"><link rel="prefetch" href="/Blog/assets/js/30.ba2aca8b.js"><link rel="prefetch" href="/Blog/assets/js/31.5d7b81c9.js"><link rel="prefetch" href="/Blog/assets/js/32.72d44b49.js"><link rel="prefetch" href="/Blog/assets/js/33.25e091aa.js"><link rel="prefetch" href="/Blog/assets/js/34.0b495ba3.js"><link rel="prefetch" href="/Blog/assets/js/35.0c41c066.js"><link rel="prefetch" href="/Blog/assets/js/36.5cb79c2b.js"><link rel="prefetch" href="/Blog/assets/js/37.ad8db7c0.js"><link rel="prefetch" href="/Blog/assets/js/38.1f99eb01.js"><link rel="prefetch" href="/Blog/assets/js/39.b05cd399.js"><link rel="prefetch" href="/Blog/assets/js/4.94ea306f.js"><link rel="prefetch" href="/Blog/assets/js/40.ec81b87a.js"><link rel="prefetch" href="/Blog/assets/js/41.6f245bcc.js"><link rel="prefetch" href="/Blog/assets/js/42.2a727e6b.js"><link rel="prefetch" href="/Blog/assets/js/43.2e2eee59.js"><link rel="prefetch" href="/Blog/assets/js/44.36c49c87.js"><link rel="prefetch" href="/Blog/assets/js/45.cb2389f6.js"><link rel="prefetch" href="/Blog/assets/js/46.6f746980.js"><link rel="prefetch" href="/Blog/assets/js/47.7987c6b9.js"><link rel="prefetch" href="/Blog/assets/js/48.15d01434.js"><link rel="prefetch" href="/Blog/assets/js/49.728714a6.js"><link rel="prefetch" href="/Blog/assets/js/5.c5721a11.js"><link rel="prefetch" href="/Blog/assets/js/6.99fdf330.js"><link rel="prefetch" href="/Blog/assets/js/8.f72b32ca.js"><link rel="prefetch" href="/Blog/assets/js/9.9a3b5fa5.js">
+    <link rel="stylesheet" href="/Blog/assets/css/0.styles.16d8b4f8.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/Blog/" class="home-link router-link-active"><!----> <span class="site-name">lious</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/Blog/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><a href="/Blog/JavaScript/" class="nav-link router-link-active">
+  JavaScript
+</a></div><div class="nav-item"><a href="/Blog/es6/" class="nav-link">
+  ES6
+</a></div><div class="nav-item"><a href="/Blog/Vue/" class="nav-link">
+  Vue
+</a></div><div class="nav-item"><a href="/Blog/React/" class="nav-link">
+  React
+</a></div><div class="nav-item"><a href="/Blog/Webpack/" class="nav-link">
+  Webpack
+</a></div><div class="nav-item"><a href="/Blog/git/" class="nav-link">
+  Git
+</a></div><div class="nav-item"><a href="/Blog/Websocket/" class="nav-link">
+  Websocket
+</a></div><div class="nav-item"><a href="/Blog/Http/" class="nav-link">
+  HTTP
+</a></div><div class="nav-item"><a href="/Blog/Difficulties/" class="nav-link">
+  前端难点集中
+</a></div><div class="nav-item"><a href="/Blog/Algorithm/" class="nav-link">
+  前端算法
+</a></div><div class="nav-item"><a href="/Blog/Node/" class="nav-link">
+  Node
+</a></div><div class="nav-item"><a href="/Blog/Plan/" class="nav-link">
+  PLAN
+</a></div><div class="nav-item"><a href="/Blog/Type-Script/" class="nav-link">
+  Type-Script
+</a></div><div class="nav-item"><a href="/Blog/Gu/" class="nav-link">
+  GU
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/Blog/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><a href="/Blog/JavaScript/" class="nav-link router-link-active">
+  JavaScript
+</a></div><div class="nav-item"><a href="/Blog/es6/" class="nav-link">
+  ES6
+</a></div><div class="nav-item"><a href="/Blog/Vue/" class="nav-link">
+  Vue
+</a></div><div class="nav-item"><a href="/Blog/React/" class="nav-link">
+  React
+</a></div><div class="nav-item"><a href="/Blog/Webpack/" class="nav-link">
+  Webpack
+</a></div><div class="nav-item"><a href="/Blog/git/" class="nav-link">
+  Git
+</a></div><div class="nav-item"><a href="/Blog/Websocket/" class="nav-link">
+  Websocket
+</a></div><div class="nav-item"><a href="/Blog/Http/" class="nav-link">
+  HTTP
+</a></div><div class="nav-item"><a href="/Blog/Difficulties/" class="nav-link">
+  前端难点集中
+</a></div><div class="nav-item"><a href="/Blog/Algorithm/" class="nav-link">
+  前端算法
+</a></div><div class="nav-item"><a href="/Blog/Node/" class="nav-link">
+  Node
+</a></div><div class="nav-item"><a href="/Blog/Plan/" class="nav-link">
+  PLAN
+</a></div><div class="nav-item"><a href="/Blog/Type-Script/" class="nav-link">
+  Type-Script
+</a></div><div class="nav-item"><a href="/Blog/Gu/" class="nav-link">
+  GU
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/Blog/JavaScript/" aria-current="page" class="sidebar-link">JavaScript</a></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>基本知识</span> <span class="arrow right"></span></p> <!----></section></li><li><a href="/Blog/JavaScript/function.html" class="sidebar-link">函数</a></li><li><a href="/Blog/JavaScript/form.html" class="sidebar-link">表单</a></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>对象</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>面向对象</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/Blog/JavaScript/orientedObjects/orientedObjects.html" aria-current="page" class="active sidebar-link">创建对象模式</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/Blog/JavaScript/orientedObjects/orientedObjects.html#工厂模式" class="sidebar-link">工厂模式</a></li><li class="sidebar-sub-header"><a href="/Blog/JavaScript/orientedObjects/orientedObjects.html#构造函数" class="sidebar-link">构造函数</a></li><li class="sidebar-sub-header"><a href="/Blog/JavaScript/orientedObjects/orientedObjects.html#原型模式" class="sidebar-link">原型模式</a></li><li class="sidebar-sub-header"><a href="/Blog/JavaScript/orientedObjects/orientedObjects.html#组合使用构造函数和原型模式" class="sidebar-link">组合使用构造函数和原型模式</a></li><li class="sidebar-sub-header"><a href="/Blog/JavaScript/orientedObjects/orientedObjects.html#动态原型模式" class="sidebar-link">动态原型模式</a></li><li class="sidebar-sub-header"><a href="/Blog/JavaScript/orientedObjects/orientedObjects.html#寄生构造函数" class="sidebar-link">寄生构造函数</a></li><li class="sidebar-sub-header"><a href="/Blog/JavaScript/orientedObjects/orientedObjects.html#稳妥构造函数模式" class="sidebar-link">稳妥构造函数模式</a></li></ul></li><li><a href="/Blog/JavaScript/orientedObjects/inheritance.html" class="sidebar-link">继承</a></li></ul></section></li><li><a href="/Blog/JavaScript/DOM.html" class="sidebar-link">DOM</a></li><li><a href="/Blog/JavaScript/BOM.html" class="sidebar-link">BOM</a></li><li><a href="/Blog/JavaScript/Reg.html" class="sidebar-link">Reg</a></li><li><a href="/Blog/JavaScript/JSDesignMode.html" class="sidebar-link">JS设计模式</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="工厂模式"><a href="#工厂模式" class="header-anchor">#</a> 工厂模式</h2> <p><img src="/Blog/assets/img/factory.0a5abc32.png" alt="factory"></p> <h2 id="构造函数"><a href="#构造函数" class="header-anchor">#</a> 构造函数</h2> <ul><li>构造函数就是一个普通的函数，创建方式和普通函数没有区别，不同的是构造函数习惯上首字母大写。</li> <li>构造函数和普通函数的区别就是调用方式的不同，普通函数是直接调用，而构造函数需要使用new关键字来调用。</li></ul> <h4 id="执行流程"><a href="#执行流程" class="header-anchor">#</a> 执行流程</h4> <ol><li>立刻创建一个新的对象</li> <li>将新建的对象设置为函数中this, 在构造函数中可以使用this来引用新建的对象</li> <li>逐行执行函数中的代码</li> <li>将新建的对象作为返回值返回
+<img src="/Blog/assets/img/functionGz.51b4fc12.png" alt="functionGz"></li></ol> <h4 id="问题"><a href="#问题" class="header-anchor">#</a> <strong>问题</strong></h4> <div class="language- extra-class"><pre class="language-text"><code>function Person(name,age,job){
+    this.name = name;
+    this.age = age;
+    this.job = job;
+    this.sayName = new Function(&quot;alert(this.name)&quot;)
+}
+每个构造函数上的Person实例，都包含一个不同的Function实例(以显示name属性)的本质。
+以这种方式创建函数，会导致不同的作用域链和标识符解析。
+person1.sayName  == person2.sayName  // false
+
+——解决
+创建两个完成同样任务的Function实例没有必要，有this对象在，不用在执行代码前就把函数绑定到特定的对象上。
+function Person(name,age,job){
+    this.name = name;
+    this.age = age;
+    this.job = job;
+    this.sayName = sayName；
+}
+function sayName(){
+    alert(this.name)
+}
+</code></pre></div><h2 id="原型模式"><a href="#原型模式" class="header-anchor">#</a> 原型模式</h2> <p><img src="/Blog/assets/img/prototypeYX.c8974d40.png" alt="prototypeYX"></p> <h4 id="问题1"><a href="#问题1" class="header-anchor">#</a> 问题1</h4> <div class="language- extra-class"><pre class="language-text"><code>由其共享的本性导致
+function Person() {
+
+}
+Person.prototype = {
+    name: 'as',
+    age: 11,
+    job: 'asda',
+    sayName: function(){
+        alert(this.name);
+    }
+}
+把Person.property设置为以对象字面量形式创建新对象。结果相同但其constructor属性不再指向Person
+
+每创建一个函数，就会同时创建它的prototype对象，对象会自动获取constructor属性。这里本质上完全
+重写了prototype对象，constructor属性也变成了新对象的constructor属性（指向object构造函数）
+Person.prototype = {
+    constructor： Person,
+    name: 'as',
+    age: 11,
+    job: 'asda',
+    sayName: function(){
+        alert(this.name);
+    }
+}
+
+</code></pre></div><h4 id="问题2"><a href="#问题2" class="header-anchor">#</a> 问题2</h4> <p><img src="/Blog/assets/img/prototypeYXERROR.c7b10b2f.png" alt="prototypeYXERROR"></p> <h2 id="组合使用构造函数和原型模式"><a href="#组合使用构造函数和原型模式" class="header-anchor">#</a> 组合使用构造函数和原型模式</h2> <div class="language- extra-class"><pre class="language-text"><code>function Person(name,age,job){
+this.name = name;
+this.age = age;
+this.job = job;
+this.firend = ['ahao','ada'];
+}
+Person.prototype = {
+constructor: Person,
+sayName:function(){
+console.log(this.name);
+}
+};
+var p1 = new Person('wh',24,'web开发');
+var p2 = new Person('lsf',47,'超市上班');
+
+p1.firend.push('asong');
+console.log(p1.firend); // [&quot;ahao&quot;, &quot;ada&quot;, &quot;asong&quot;]
+console.log(p2.firend); // [&quot;ahao&quot;, &quot;ada&quot;]
+console.log(p1.firend === p2.firend); // false
+console.log(p1.sayName === p2.sayName); // true
+</code></pre></div><h2 id="动态原型模式"><a href="#动态原型模式" class="header-anchor">#</a> 动态原型模式</h2> <div class="language- extra-class"><pre class="language-text"><code>function Person(name, age, job){
+    // 属性
+    this.name = name;
+    this.age = age;
+    this.job = job;
+    // 方法
+    if(typeOf this.sayName != &quot;function&quot;){
+        Person.prototype.sayName = finction(){
+            alert(this.name);
+        }
+    }
+}
+</code></pre></div><h2 id="寄生构造函数"><a href="#寄生构造函数" class="header-anchor">#</a> 寄生构造函数</h2> <div class="language- extra-class"><pre class="language-text"><code>基本思想：创建一个构造函数，该函数仅仅封装创建的对象的代码，然后再返回新创建的对象。
+function Person(){
+    var o = new Object();
+    o.name = name;
+    o.age = age;
+    o.job = job;
+    o.sayName = function(){
+        alert(this.name)
+    };
+    return o;
+}
+var friend = new Person('a', 12, '教师')
+friend.sayName(); // a
+
+返回的对象和构造函数或者与构造函数的原型属性之间没有关系，也就是说，构造函数返回的对象
+与构造函数在外部创建的对象没有什么不同。不能依赖insstanceOf操作符确定对象类型。
+</code></pre></div><h2 id="稳妥构造函数模式"><a href="#稳妥构造函数模式" class="header-anchor">#</a> 稳妥构造函数模式</h2> <ul><li>与寄生构造函数类似。有两点不同：</li></ul> <blockquote><p>1.创建对象的实例方法不引用this。<br>
+2.不使用new操作符调用构造函数</p></blockquote> <div class="language- extra-class"><pre class="language-text"><code>function Person(){
+    // 创建返回的对象
+    var o = new Object()
+    // 定义私有变量和函数
+
+    // 添加方法
+    o.sayName = function(){
+        alert(name)
+    }
+    // 返回对象
+    return o;
+}
+
+这种模式创建的对象中，除了sayName()方法之外，没有其他的办法访问name值。
+var friend = Person('a', 12, '教师');
+friend.sayName(); // a
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/Blog/JavaScript/object/globalObjects.html" class="prev">
+        全局对象
+      </a></span> <span class="next"><a href="/Blog/JavaScript/orientedObjects/inheritance.html">
+        继承
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/Blog/assets/js/app.9c47bd80.js" defer></script><script src="/Blog/assets/js/2.b786c2ed.js" defer></script><script src="/Blog/assets/js/7.f8ea1854.js" defer></script>
+  </body>
+</html>

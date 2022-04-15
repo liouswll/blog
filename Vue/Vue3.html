@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>vue2.x到vue3.x | lious</title>
+    <meta name="generator" content="VuePress 1.5.1">
+    
+    <meta name="description" content="前端开发空间站">
+    <link rel="preload" href="/Blog/assets/css/0.styles.16d8b4f8.css" as="style"><link rel="preload" href="/Blog/assets/js/app.9c47bd80.js" as="script"><link rel="preload" href="/Blog/assets/js/2.b786c2ed.js" as="script"><link rel="preload" href="/Blog/assets/js/48.15d01434.js" as="script"><link rel="prefetch" href="/Blog/assets/js/10.2ae6b466.js"><link rel="prefetch" href="/Blog/assets/js/11.533bbb72.js"><link rel="prefetch" href="/Blog/assets/js/12.8e74b9fc.js"><link rel="prefetch" href="/Blog/assets/js/13.2be3647b.js"><link rel="prefetch" href="/Blog/assets/js/14.1badd55b.js"><link rel="prefetch" href="/Blog/assets/js/15.f7f64fd6.js"><link rel="prefetch" href="/Blog/assets/js/16.72a686a6.js"><link rel="prefetch" href="/Blog/assets/js/17.db6d94f8.js"><link rel="prefetch" href="/Blog/assets/js/18.bc0ab2ef.js"><link rel="prefetch" href="/Blog/assets/js/19.e02c1cba.js"><link rel="prefetch" href="/Blog/assets/js/20.d91c50f5.js"><link rel="prefetch" href="/Blog/assets/js/21.22b161ae.js"><link rel="prefetch" href="/Blog/assets/js/22.bc2dea31.js"><link rel="prefetch" href="/Blog/assets/js/23.8e66fc0e.js"><link rel="prefetch" href="/Blog/assets/js/24.bcb02ed7.js"><link rel="prefetch" href="/Blog/assets/js/25.086b542b.js"><link rel="prefetch" href="/Blog/assets/js/26.b4fa9650.js"><link rel="prefetch" href="/Blog/assets/js/27.56fc3609.js"><link rel="prefetch" href="/Blog/assets/js/28.482e48d5.js"><link rel="prefetch" href="/Blog/assets/js/29.08475c58.js"><link rel="prefetch" href="/Blog/assets/js/3.686b262b.js"><link rel="prefetch" href="/Blog/assets/js/30.ba2aca8b.js"><link rel="prefetch" href="/Blog/assets/js/31.5d7b81c9.js"><link rel="prefetch" href="/Blog/assets/js/32.72d44b49.js"><link rel="prefetch" href="/Blog/assets/js/33.25e091aa.js"><link rel="prefetch" href="/Blog/assets/js/34.0b495ba3.js"><link rel="prefetch" href="/Blog/assets/js/35.0c41c066.js"><link rel="prefetch" href="/Blog/assets/js/36.5cb79c2b.js"><link rel="prefetch" href="/Blog/assets/js/37.ad8db7c0.js"><link rel="prefetch" href="/Blog/assets/js/38.1f99eb01.js"><link rel="prefetch" href="/Blog/assets/js/39.b05cd399.js"><link rel="prefetch" href="/Blog/assets/js/4.94ea306f.js"><link rel="prefetch" href="/Blog/assets/js/40.ec81b87a.js"><link rel="prefetch" href="/Blog/assets/js/41.6f245bcc.js"><link rel="prefetch" href="/Blog/assets/js/42.2a727e6b.js"><link rel="prefetch" href="/Blog/assets/js/43.2e2eee59.js"><link rel="prefetch" href="/Blog/assets/js/44.36c49c87.js"><link rel="prefetch" href="/Blog/assets/js/45.cb2389f6.js"><link rel="prefetch" href="/Blog/assets/js/46.6f746980.js"><link rel="prefetch" href="/Blog/assets/js/47.7987c6b9.js"><link rel="prefetch" href="/Blog/assets/js/49.728714a6.js"><link rel="prefetch" href="/Blog/assets/js/5.c5721a11.js"><link rel="prefetch" href="/Blog/assets/js/6.99fdf330.js"><link rel="prefetch" href="/Blog/assets/js/7.f8ea1854.js"><link rel="prefetch" href="/Blog/assets/js/8.f72b32ca.js"><link rel="prefetch" href="/Blog/assets/js/9.9a3b5fa5.js">
+    <link rel="stylesheet" href="/Blog/assets/css/0.styles.16d8b4f8.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/Blog/" class="home-link router-link-active"><!----> <span class="site-name">lious</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/Blog/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><a href="/Blog/JavaScript/" class="nav-link">
+  JavaScript
+</a></div><div class="nav-item"><a href="/Blog/es6/" class="nav-link">
+  ES6
+</a></div><div class="nav-item"><a href="/Blog/Vue/" class="nav-link router-link-active">
+  Vue
+</a></div><div class="nav-item"><a href="/Blog/React/" class="nav-link">
+  React
+</a></div><div class="nav-item"><a href="/Blog/Webpack/" class="nav-link">
+  Webpack
+</a></div><div class="nav-item"><a href="/Blog/git/" class="nav-link">
+  Git
+</a></div><div class="nav-item"><a href="/Blog/Websocket/" class="nav-link">
+  Websocket
+</a></div><div class="nav-item"><a href="/Blog/Http/" class="nav-link">
+  HTTP
+</a></div><div class="nav-item"><a href="/Blog/Difficulties/" class="nav-link">
+  前端难点集中
+</a></div><div class="nav-item"><a href="/Blog/Algorithm/" class="nav-link">
+  前端算法
+</a></div><div class="nav-item"><a href="/Blog/Node/" class="nav-link">
+  Node
+</a></div><div class="nav-item"><a href="/Blog/Plan/" class="nav-link">
+  PLAN
+</a></div><div class="nav-item"><a href="/Blog/Type-Script/" class="nav-link">
+  Type-Script
+</a></div><div class="nav-item"><a href="/Blog/Gu/" class="nav-link">
+  GU
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/Blog/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><a href="/Blog/JavaScript/" class="nav-link">
+  JavaScript
+</a></div><div class="nav-item"><a href="/Blog/es6/" class="nav-link">
+  ES6
+</a></div><div class="nav-item"><a href="/Blog/Vue/" class="nav-link router-link-active">
+  Vue
+</a></div><div class="nav-item"><a href="/Blog/React/" class="nav-link">
+  React
+</a></div><div class="nav-item"><a href="/Blog/Webpack/" class="nav-link">
+  Webpack
+</a></div><div class="nav-item"><a href="/Blog/git/" class="nav-link">
+  Git
+</a></div><div class="nav-item"><a href="/Blog/Websocket/" class="nav-link">
+  Websocket
+</a></div><div class="nav-item"><a href="/Blog/Http/" class="nav-link">
+  HTTP
+</a></div><div class="nav-item"><a href="/Blog/Difficulties/" class="nav-link">
+  前端难点集中
+</a></div><div class="nav-item"><a href="/Blog/Algorithm/" class="nav-link">
+  前端算法
+</a></div><div class="nav-item"><a href="/Blog/Node/" class="nav-link">
+  Node
+</a></div><div class="nav-item"><a href="/Blog/Plan/" class="nav-link">
+  PLAN
+</a></div><div class="nav-item"><a href="/Blog/Type-Script/" class="nav-link">
+  Type-Script
+</a></div><div class="nav-item"><a href="/Blog/Gu/" class="nav-link">
+  GU
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/Blog/Vue/" aria-current="page" class="sidebar-link">基础概念</a></li><li><a href="/Blog/Vue/AllLife.html" class="sidebar-link">生命周期</a></li><li><a href="/Blog/Vue/Router.html" class="sidebar-link">路由</a></li><li><a href="/Blog/Vue/Vue3.html" aria-current="page" class="active sidebar-link">Vue3</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/Blog/Vue/Vue3.html#vue2-x到vue3-x" class="sidebar-link">vue2.x到vue3.x</a></li><li class="sidebar-sub-header"><a href="/Blog/Vue/Vue3.html#vue3-proxy" class="sidebar-link">vue3 Proxy</a></li><li class="sidebar-sub-header"><a href="/Blog/Vue/Vue3.html#vue3-vue-set" class="sidebar-link">vue3 Vue.set</a></li><li class="sidebar-sub-header"><a href="/Blog/Vue/Vue3.html#vue3" class="sidebar-link">vue3</a></li><li class="sidebar-sub-header"><a href="/Blog/Vue/Vue3.html#生命周期对比" class="sidebar-link">生命周期对比</a></li><li class="sidebar-sub-header"><a href="/Blog/Vue/Vue3.html#vite" class="sidebar-link">vite</a></li></ul></li><li><a href="/Blog/Vue/vueX.html" class="sidebar-link">vueX</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="vue2-x到vue3-x"><a href="#vue2-x到vue3-x" class="header-anchor">#</a> vue2.x到vue3.x</h2> <ol><li>Object.defineProperty =&gt; Proxy</li> <li>重构了虚拟DOM</li> <li>OptionApi =&gt; Composition API</li></ol> <h4 id="双向绑定"><a href="#双向绑定" class="header-anchor">#</a> 双向绑定</h4> <ul><li><p><strong>vue2.x</strong> 通过Object.defineproperty重定义data中的属性get和set方法，从而劫持data中的set和get操作。存在问题：</p> <ol><li>实例创建后添加的属性监听不到，数据劫持是在数据初始化的过程中执行。具体在beforeCreate和Create生命周期内完成，可以通过$set解决后续天骄监听属性的问题。</li> <li>defineProperty()无法监听数组的变化，当直接用index设置数组项是不会被检测出来的，如：<code>this.showData[1] = {a:1}</code>。当然也能用$set解决。通过下面八种方法操作数组，Vue能检测到数据变化，分别为：push()、pop()、shift()、unshift()、splice()、sort()、reverse()</li></ol></li> <li><p><strong>vue3.x</strong> 采用Proxy和Reflect实现双向绑定，它在目标对象之前架设一层“拦截”，外界对该对象的访问，都必须先通过这层拦截，因此提供了一种机制，可以对外界的访问进行过滤和改写。我们可以这样认为，Proxy是Object.defineProperty的全方位加强版。</p> <ol><li>Proxy有多达13种拦截方法,不限于apply、ownKeys、deleteProperty、has等等是Object.defineProperty不具备的。Object.defineProperty不能做的Proxy还能做。</li> <li>Proxy作为新标准，得到了各大浏览器厂商的大力支持，性能持续优化。唯一的不足就是兼容性的问题，而且无法通过polyfill解决。</li></ol></li></ul> <h2 id="vue3-proxy"><a href="#vue3-proxy" class="header-anchor">#</a> vue3 Proxy</h2> <ul><li>理解为在对象之前设置一个“拦截”，当该对象被访问的时候，都必须经过这层拦截。意味着你可以在这层拦截中进行各种操作。比如你可以在这层拦截中对原对象进行处理，返回你想返回的数据结构。</li></ul> <div class="language- extra-class"><pre class="language-text"><code>- 基础
+const p = new Proxy(target, handler);
+target： 所要拦截的目标对象（可以是任何类型的对象，包括原生数组，函数，甚至另一个代理）
+handler：一个对象，定义要拦截的行为
+const p = new Proxy({}, {
+    get(target, propKey) {
+        return '哈哈，你被我拦截了';
+    }
+});
+console.log(p.name);
+// 哈哈，你被我拦截了
+
+
+- Proxy是用来操作对象的。代理的目的是为了拓展对象的能力。
+const p = new Proxy({}, {
+    set(target, propKey, value) {
+        if (propKey === 'name') {
+            throw new TypeError('name属性不允许修改');
+        }
+        // 不是 name 属性，直接保存
+        target[propKey] = value;
+    }
+});
+p.name = 'proxy';
+// TypeError: name属性不允许修改
+p.a = 111;
+console.log(p.a); // 111
+</code></pre></div><h2 id="vue3-vue-set"><a href="#vue3-vue-set" class="header-anchor">#</a> vue3 Vue.set</h2> <ul><li>Vue.set( target, key, value )<br>
+target：要更改的数据源(可以是对象或者数组)<br>
+key：要更改的具体数据<br>
+value ：重新赋的值</li></ul> <h2 id="vue3"><a href="#vue3" class="header-anchor">#</a> vue3</h2> <ul><li>示例 参考资料https://juejin.im/post/5e13ecbe6fb9a04846508ab2</li></ul> <div class="language- extra-class"><pre class="language-text"><code>&lt;body&gt;
+    &lt;div id=&quot;app&quot;&gt;&lt;/div&gt;
+&lt;/body&gt;
+&lt;script src=&quot;./index.js&quot;&gt;&lt;/script&gt;
+
+
+const { reactive } = Vue
+var App = {
+  template: `
+    &lt;div class=&quot;container&quot;&gt;
+         {{message}}
+    &lt;/div&gt;`,
+  setup() {
+  	const state = reactive({message: &quot;Hello World!!!&quot;})
+	return {
+		...state
+	}
+  }
+}
+Vue.createApp().mount(App, '#app')
+
+</code></pre></div><ul><li>OptionApi =&gt; Composition API<br>
+setup, reactive等函数</li> <li>setup<div class="language- extra-class"><pre class="language-text"><code>const { reactive } = Vue
+let App = {
+template: `
+    &lt;div class=&quot;container&quot;&gt;
+        &lt;input v-model=&quot;state.value&quot;/&gt;{{state.value}}
+    &lt;/div&gt;`,
+setup() {
+    const state = reactive({ value: '' })
+    return { state }
+}
+}
+Vue.createApp().mount(App, '#app')
+
+ setup实际上是一个组件的入口，它运行在组件被实例化时候，props 属性被定义之后，实际上等价于 2 版本的beforeCreate 和 Created 这两个生命周期。
+
+ setup接受两个参数，第一个参数是props， 另一个参数是context，所以大家在使用2.0时习惯的在this下获取属性的方式 ，在 vue3.0 中，变成了：
+ setup(props, ctx) {
+    console.log(props, ctx)
+}
+
+- 传值
+let Child = {
+    template: `&lt;div&gt;{{title}}&lt;/div&gt;`,
+    setup(props, context) {
+        console.log(props)
+    }
+}
+let App = {
+    template: `
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;Child title=&quot;test props&quot;/&gt;
+        &lt;/div&gt;`,
+    components: { Child }
+}
+Vue.createApp().mount(App, '#app')
+
+
+</code></pre></div></li> <li>reactive<br>
+在Vue3中，我们可以把数据经过 reactive 加工变成响应式的对象，用于模版的渲染数据， 当然Vue的向下兼容 还是允许我们使用data的方式实现<div class="language- extra-class"><pre class="language-text"><code>const { reactive, toRefs } = Vue
+let App = {
+template: `
+    &lt;div class=&quot;container&quot;&gt;
+        count: {{count}}
+        &lt;button @click=&quot;handlerCountAdd&quot;&gt; Click ++ &lt;/button&gt;
+    &lt;/div&gt;`,
+    setup() {
+        const state = reactive({ count: 0 })
+        const handlerCountAdd = () =&gt; {
+            state.count++
+        }
+        return { ...toRefs(state), handlerCountAdd }
+    }
+}
+Vue.createApp().mount(App, '#app')
+</code></pre></div></li> <li>toRefs</li></ul> <ol><li>先说下 ref ，vue3提供的ref让我们有机会创建单个的响应式的对象，在setup函数中return出去之后，在模板中可直接访问<div class="language- extra-class"><pre class="language-text"><code>const App = {
+template: `
+    &lt;div class=&quot;container&quot;&gt;
+        {{value}}     
+    &lt;/div&gt;`,
+setup() {
+    const value = ref(1)
+    return { value }
+}
+}
+Vue.createApp().mount(App, '#app')
+</code></pre></div></li> <li>那上文提到的 reactive创建的响应式对象 在模板中访问的话，则需要state.xxx。，vue3提供的toRefs正是为我们解决这个问题的，toRefs把一组的响应式对象拆成单个的响应式对象，就能够在模板中直接访问了。<div class="language- extra-class"><pre class="language-text"><code>const App = {
+template: `
+    &lt;div class=&quot;container&quot;&gt;
+        {{value}}
+        // {{state.value}} 不使用toRefs
+    &lt;/div&gt;`,
+setup() {
+    const state = reactive({ value: 'reactive' })
+    return toRefs(state)
+}
+}
+Vue.createApp().mount(App, '#app')
+</code></pre></div></li></ol> <ul><li>computed 计算属性</li></ul> <div class="language- extra-class"><pre class="language-text"><code>反转字符串 demo
+let App = {
+  template: `
+    &lt;div class=&quot;container&quot;&gt;
+        value: &lt;input v-model=&quot;value&quot;/&gt;
+        &lt;br/&gt;
+        rvalue: {{rvalue}}
+    &lt;/div&gt;`,
+  setup() {
+    const state = reactive({
+      value: '',
+      rvalue: computed(() =&gt;
+        state.value
+          .split('')
+          .reverse()
+          .join('')
+      )
+    })
+    return toRefs(state)
+  }
+}
+Vue.createApp().mount(App, '#app')
+
+</code></pre></div><ul><li>数据响应式 effect和watch
+effect和watch都可以监听到咱们数据的变化<br>
+effect 在响应式数据变化的时候就会执行，执行次数根据响应式数据的个数来决定<br>
+watch则点击一次 ，只会触发执行一次</li></ul> <div class="language- extra-class"><pre class="language-text"><code>let App = {
+  template: `
+    &lt;div class=&quot;container&quot;&gt;
+        &lt;button @click=&quot;handlerCountAdd&quot;&gt; Click ++ &lt;/button&gt;
+    &lt;/div&gt;`,
+  setup() {
+    const state = reactive({ count: 0, value: 1 })
+    const r = ref(1)
+    const s = ref(1)
+    const t = ref(1)
+    const handlerCountAdd = () =&gt; {
+      r.value *= 1
+      s.value *= 2
+      t.value *= 3
+    }
+    watch([r, s, t], val =&gt; {
+      console.log('watch', val)
+    })
+    //effect(() =&gt; {
+    //  console.log('effect', [r.value, s.value, t.value])
+    //})
+    return { handlerCountAdd }
+  }
+}
+Vue.createApp().mount(App, '#app')
+
+</code></pre></div><h2 id="生命周期对比"><a href="#生命周期对比" class="header-anchor">#</a> 生命周期对比</h2> <table><thead><tr><th>vue2</th> <th>vue3</th></tr></thead> <tbody><tr><td>beforeCreate</td> <td>setup(替代)</td></tr> <tr><td>created</td> <td>setup(替代)</td></tr> <tr><td>beforeMount</td> <td>onBeforeMount</td></tr> <tr><td>mounted</td> <td>onMounted</td></tr> <tr><td>beforeUpdate</td> <td>onBeforeUpdate</td></tr> <tr><td>updated</td> <td>onBeforeUpdate</td></tr> <tr><td>beforeDestroy</td> <td>onUnmounted</td></tr> <tr><td>destroyed</td> <td>onUnmounted</td></tr> <tr><td>errorCaptured</td> <td>onErrorCaptured</td></tr></tbody></table> <h2 id="vite"><a href="#vite" class="header-anchor">#</a> vite</h2> <p><code>https://juejin.cn/post/6986899594491723806#heading-6</code></p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/Blog/Vue/Router.html" class="prev">
+        路由
+      </a></span> <span class="next"><a href="/Blog/Vue/vueX.html">
+        vueX
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/Blog/assets/js/app.9c47bd80.js" defer></script><script src="/Blog/assets/js/2.b786c2ed.js" defer></script><script src="/Blog/assets/js/48.15d01434.js" defer></script>
+  </body>
+</html>

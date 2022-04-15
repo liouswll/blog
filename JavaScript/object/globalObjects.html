@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>JS Function(JS全局对象) | lious</title>
+    <meta name="generator" content="VuePress 1.5.1">
+    
+    <meta name="description" content="前端开发空间站">
+    <link rel="preload" href="/Blog/assets/css/0.styles.16d8b4f8.css" as="style"><link rel="preload" href="/Blog/assets/js/app.9c47bd80.js" as="script"><link rel="preload" href="/Blog/assets/js/2.b786c2ed.js" as="script"><link rel="preload" href="/Blog/assets/js/35.0c41c066.js" as="script"><link rel="prefetch" href="/Blog/assets/js/10.2ae6b466.js"><link rel="prefetch" href="/Blog/assets/js/11.533bbb72.js"><link rel="prefetch" href="/Blog/assets/js/12.8e74b9fc.js"><link rel="prefetch" href="/Blog/assets/js/13.2be3647b.js"><link rel="prefetch" href="/Blog/assets/js/14.1badd55b.js"><link rel="prefetch" href="/Blog/assets/js/15.f7f64fd6.js"><link rel="prefetch" href="/Blog/assets/js/16.72a686a6.js"><link rel="prefetch" href="/Blog/assets/js/17.db6d94f8.js"><link rel="prefetch" href="/Blog/assets/js/18.bc0ab2ef.js"><link rel="prefetch" href="/Blog/assets/js/19.e02c1cba.js"><link rel="prefetch" href="/Blog/assets/js/20.d91c50f5.js"><link rel="prefetch" href="/Blog/assets/js/21.22b161ae.js"><link rel="prefetch" href="/Blog/assets/js/22.bc2dea31.js"><link rel="prefetch" href="/Blog/assets/js/23.8e66fc0e.js"><link rel="prefetch" href="/Blog/assets/js/24.bcb02ed7.js"><link rel="prefetch" href="/Blog/assets/js/25.086b542b.js"><link rel="prefetch" href="/Blog/assets/js/26.b4fa9650.js"><link rel="prefetch" href="/Blog/assets/js/27.56fc3609.js"><link rel="prefetch" href="/Blog/assets/js/28.482e48d5.js"><link rel="prefetch" href="/Blog/assets/js/29.08475c58.js"><link rel="prefetch" href="/Blog/assets/js/3.686b262b.js"><link rel="prefetch" href="/Blog/assets/js/30.ba2aca8b.js"><link rel="prefetch" href="/Blog/assets/js/31.5d7b81c9.js"><link rel="prefetch" href="/Blog/assets/js/32.72d44b49.js"><link rel="prefetch" href="/Blog/assets/js/33.25e091aa.js"><link rel="prefetch" href="/Blog/assets/js/34.0b495ba3.js"><link rel="prefetch" href="/Blog/assets/js/36.5cb79c2b.js"><link rel="prefetch" href="/Blog/assets/js/37.ad8db7c0.js"><link rel="prefetch" href="/Blog/assets/js/38.1f99eb01.js"><link rel="prefetch" href="/Blog/assets/js/39.b05cd399.js"><link rel="prefetch" href="/Blog/assets/js/4.94ea306f.js"><link rel="prefetch" href="/Blog/assets/js/40.ec81b87a.js"><link rel="prefetch" href="/Blog/assets/js/41.6f245bcc.js"><link rel="prefetch" href="/Blog/assets/js/42.2a727e6b.js"><link rel="prefetch" href="/Blog/assets/js/43.2e2eee59.js"><link rel="prefetch" href="/Blog/assets/js/44.36c49c87.js"><link rel="prefetch" href="/Blog/assets/js/45.cb2389f6.js"><link rel="prefetch" href="/Blog/assets/js/46.6f746980.js"><link rel="prefetch" href="/Blog/assets/js/47.7987c6b9.js"><link rel="prefetch" href="/Blog/assets/js/48.15d01434.js"><link rel="prefetch" href="/Blog/assets/js/49.728714a6.js"><link rel="prefetch" href="/Blog/assets/js/5.c5721a11.js"><link rel="prefetch" href="/Blog/assets/js/6.99fdf330.js"><link rel="prefetch" href="/Blog/assets/js/7.f8ea1854.js"><link rel="prefetch" href="/Blog/assets/js/8.f72b32ca.js"><link rel="prefetch" href="/Blog/assets/js/9.9a3b5fa5.js">
+    <link rel="stylesheet" href="/Blog/assets/css/0.styles.16d8b4f8.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/Blog/" class="home-link router-link-active"><!----> <span class="site-name">lious</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/Blog/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><a href="/Blog/JavaScript/" class="nav-link router-link-active">
+  JavaScript
+</a></div><div class="nav-item"><a href="/Blog/es6/" class="nav-link">
+  ES6
+</a></div><div class="nav-item"><a href="/Blog/Vue/" class="nav-link">
+  Vue
+</a></div><div class="nav-item"><a href="/Blog/React/" class="nav-link">
+  React
+</a></div><div class="nav-item"><a href="/Blog/Webpack/" class="nav-link">
+  Webpack
+</a></div><div class="nav-item"><a href="/Blog/git/" class="nav-link">
+  Git
+</a></div><div class="nav-item"><a href="/Blog/Websocket/" class="nav-link">
+  Websocket
+</a></div><div class="nav-item"><a href="/Blog/Http/" class="nav-link">
+  HTTP
+</a></div><div class="nav-item"><a href="/Blog/Difficulties/" class="nav-link">
+  前端难点集中
+</a></div><div class="nav-item"><a href="/Blog/Algorithm/" class="nav-link">
+  前端算法
+</a></div><div class="nav-item"><a href="/Blog/Node/" class="nav-link">
+  Node
+</a></div><div class="nav-item"><a href="/Blog/Plan/" class="nav-link">
+  PLAN
+</a></div><div class="nav-item"><a href="/Blog/Type-Script/" class="nav-link">
+  Type-Script
+</a></div><div class="nav-item"><a href="/Blog/Gu/" class="nav-link">
+  GU
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/Blog/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><a href="/Blog/JavaScript/" class="nav-link router-link-active">
+  JavaScript
+</a></div><div class="nav-item"><a href="/Blog/es6/" class="nav-link">
+  ES6
+</a></div><div class="nav-item"><a href="/Blog/Vue/" class="nav-link">
+  Vue
+</a></div><div class="nav-item"><a href="/Blog/React/" class="nav-link">
+  React
+</a></div><div class="nav-item"><a href="/Blog/Webpack/" class="nav-link">
+  Webpack
+</a></div><div class="nav-item"><a href="/Blog/git/" class="nav-link">
+  Git
+</a></div><div class="nav-item"><a href="/Blog/Websocket/" class="nav-link">
+  Websocket
+</a></div><div class="nav-item"><a href="/Blog/Http/" class="nav-link">
+  HTTP
+</a></div><div class="nav-item"><a href="/Blog/Difficulties/" class="nav-link">
+  前端难点集中
+</a></div><div class="nav-item"><a href="/Blog/Algorithm/" class="nav-link">
+  前端算法
+</a></div><div class="nav-item"><a href="/Blog/Node/" class="nav-link">
+  Node
+</a></div><div class="nav-item"><a href="/Blog/Plan/" class="nav-link">
+  PLAN
+</a></div><div class="nav-item"><a href="/Blog/Type-Script/" class="nav-link">
+  Type-Script
+</a></div><div class="nav-item"><a href="/Blog/Gu/" class="nav-link">
+  GU
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/Blog/JavaScript/" aria-current="page" class="sidebar-link">JavaScript</a></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>基本知识</span> <span class="arrow right"></span></p> <!----></section></li><li><a href="/Blog/JavaScript/function.html" class="sidebar-link">函数</a></li><li><a href="/Blog/JavaScript/form.html" class="sidebar-link">表单</a></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>对象</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/Blog/JavaScript/object/objects.html" class="sidebar-link">对象</a></li><li><a href="/Blog/JavaScript/object/dataType.html" class="sidebar-link">数据类型和内存分析</a></li><li><a href="/Blog/JavaScript/object/builtInObjects.html" class="sidebar-link">内置对象</a></li><li><a href="/Blog/JavaScript/object/globalObjects.html" aria-current="page" class="active sidebar-link">全局对象</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/Blog/JavaScript/object/globalObjects.html#js-function-js全局对象" class="sidebar-link">JS Function(JS全局对象)</a></li><li class="sidebar-sub-header"><a href="/Blog/JavaScript/object/globalObjects.html#全局函数" class="sidebar-link">全局函数</a></li><li class="sidebar-sub-header"><a href="/Blog/JavaScript/object/globalObjects.html#全局属性" class="sidebar-link">全局属性</a></li><li class="sidebar-sub-header"><a href="/Blog/JavaScript/object/globalObjects.html#包装类" class="sidebar-link">包装类</a></li></ul></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>面向对象</span> <span class="arrow right"></span></p> <!----></section></li><li><a href="/Blog/JavaScript/DOM.html" class="sidebar-link">DOM</a></li><li><a href="/Blog/JavaScript/BOM.html" class="sidebar-link">BOM</a></li><li><a href="/Blog/JavaScript/Reg.html" class="sidebar-link">Reg</a></li><li><a href="/Blog/JavaScript/JSDesignMode.html" class="sidebar-link">JS设计模式</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="js-function-js全局对象"><a href="#js-function-js全局对象" class="header-anchor">#</a> JS Function(JS全局对象)</h2> <ul><li>全局属性和函数可用于所有内建的 JavaScript 对象。</li> <li>全局对象只是一个对象，而不是类。既没有构造函数，也无法实例化一个新的全局对象。</li></ul> <h2 id="全局函数"><a href="#全局函数" class="header-anchor">#</a> 全局函数</h2> <ul><li>decodeURI()	解码某个编码的 URI。</li> <li>decodeURIComponent()	解码一个编码的 URI 组件。</li> <li>encodeURI()			把字符串编码为 URI。</li> <li>encodeURIComponent()	把字符串编码为 URI 组件。</li> <li>escape()	对字符串进行编码。</li> <li>eval()		计算 JavaScript 字符串，并把它作为脚本代码来执行。</li> <li>getClass()	返回一个 JavaObject 的 JavaClass。</li> <li>isFinite()	检查某个值是否为有穷大的数。</li> <li>isNaN()		检查某个值是否是数字。</li> <li>Number()	把对象的值转换为数字。</li> <li>parseFloat()	解析一个字符串并返回一个浮点数。</li> <li>parseInt()	解析一个字符串并返回一个整数。</li> <li>String()		把对象的值转换为字符串。</li> <li>unescape()	对由 escape() 编码的字符串进行解码。</li></ul> <h2 id="全局属性"><a href="#全局属性" class="header-anchor">#</a> 全局属性</h2> <p>Infinity		代表正的无穷大的数值。<br>
+java		代表 java.* 包层级的一个 JavaPackage。<br>
+NaN		指示某个值是不是数字值。<br>
+Packages	根 JavaPackage 对象。<br>
+undefined	指示未定义的值。</p> <h2 id="包装类"><a href="#包装类" class="header-anchor">#</a> 包装类</h2> <ul><li>在JS中为我们提供了三个包装类，通过这三个包装类可以将基本数据类型的数据转换为对象</li> <li>String() 可以将基本数据类型字符串转换为String对象</li> <li>Number() 可以将基本数据类型的数字转换为Number对象</li> <li>Boolean() 可以将基本数据类型的布尔值转换为Boolean对象</li> <li>注意：在实际应用中不会使用基本数据类型的对象</li></ul></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/Blog/JavaScript/object/builtInObjects.html" class="prev">
+        内置对象
+      </a></span> <span class="next"><a href="/Blog/JavaScript/orientedObjects/orientedObjects.html">
+        创建对象模式
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/Blog/assets/js/app.9c47bd80.js" defer></script><script src="/Blog/assets/js/2.b786c2ed.js" defer></script><script src="/Blog/assets/js/35.0c41c066.js" defer></script>
+  </body>
+</html>

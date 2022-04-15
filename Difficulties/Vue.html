@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>1. vue2.x到vue3.x | lious</title>
+    <meta name="generator" content="VuePress 1.5.1">
+    
+    <meta name="description" content="前端开发空间站">
+    <link rel="preload" href="/Blog/assets/css/0.styles.16d8b4f8.css" as="style"><link rel="preload" href="/Blog/assets/js/app.9c47bd80.js" as="script"><link rel="preload" href="/Blog/assets/js/2.b786c2ed.js" as="script"><link rel="preload" href="/Blog/assets/js/14.1badd55b.js" as="script"><link rel="prefetch" href="/Blog/assets/js/10.2ae6b466.js"><link rel="prefetch" href="/Blog/assets/js/11.533bbb72.js"><link rel="prefetch" href="/Blog/assets/js/12.8e74b9fc.js"><link rel="prefetch" href="/Blog/assets/js/13.2be3647b.js"><link rel="prefetch" href="/Blog/assets/js/15.f7f64fd6.js"><link rel="prefetch" href="/Blog/assets/js/16.72a686a6.js"><link rel="prefetch" href="/Blog/assets/js/17.db6d94f8.js"><link rel="prefetch" href="/Blog/assets/js/18.bc0ab2ef.js"><link rel="prefetch" href="/Blog/assets/js/19.e02c1cba.js"><link rel="prefetch" href="/Blog/assets/js/20.d91c50f5.js"><link rel="prefetch" href="/Blog/assets/js/21.22b161ae.js"><link rel="prefetch" href="/Blog/assets/js/22.bc2dea31.js"><link rel="prefetch" href="/Blog/assets/js/23.8e66fc0e.js"><link rel="prefetch" href="/Blog/assets/js/24.bcb02ed7.js"><link rel="prefetch" href="/Blog/assets/js/25.086b542b.js"><link rel="prefetch" href="/Blog/assets/js/26.b4fa9650.js"><link rel="prefetch" href="/Blog/assets/js/27.56fc3609.js"><link rel="prefetch" href="/Blog/assets/js/28.482e48d5.js"><link rel="prefetch" href="/Blog/assets/js/29.08475c58.js"><link rel="prefetch" href="/Blog/assets/js/3.686b262b.js"><link rel="prefetch" href="/Blog/assets/js/30.ba2aca8b.js"><link rel="prefetch" href="/Blog/assets/js/31.5d7b81c9.js"><link rel="prefetch" href="/Blog/assets/js/32.72d44b49.js"><link rel="prefetch" href="/Blog/assets/js/33.25e091aa.js"><link rel="prefetch" href="/Blog/assets/js/34.0b495ba3.js"><link rel="prefetch" href="/Blog/assets/js/35.0c41c066.js"><link rel="prefetch" href="/Blog/assets/js/36.5cb79c2b.js"><link rel="prefetch" href="/Blog/assets/js/37.ad8db7c0.js"><link rel="prefetch" href="/Blog/assets/js/38.1f99eb01.js"><link rel="prefetch" href="/Blog/assets/js/39.b05cd399.js"><link rel="prefetch" href="/Blog/assets/js/4.94ea306f.js"><link rel="prefetch" href="/Blog/assets/js/40.ec81b87a.js"><link rel="prefetch" href="/Blog/assets/js/41.6f245bcc.js"><link rel="prefetch" href="/Blog/assets/js/42.2a727e6b.js"><link rel="prefetch" href="/Blog/assets/js/43.2e2eee59.js"><link rel="prefetch" href="/Blog/assets/js/44.36c49c87.js"><link rel="prefetch" href="/Blog/assets/js/45.cb2389f6.js"><link rel="prefetch" href="/Blog/assets/js/46.6f746980.js"><link rel="prefetch" href="/Blog/assets/js/47.7987c6b9.js"><link rel="prefetch" href="/Blog/assets/js/48.15d01434.js"><link rel="prefetch" href="/Blog/assets/js/49.728714a6.js"><link rel="prefetch" href="/Blog/assets/js/5.c5721a11.js"><link rel="prefetch" href="/Blog/assets/js/6.99fdf330.js"><link rel="prefetch" href="/Blog/assets/js/7.f8ea1854.js"><link rel="prefetch" href="/Blog/assets/js/8.f72b32ca.js"><link rel="prefetch" href="/Blog/assets/js/9.9a3b5fa5.js">
+    <link rel="stylesheet" href="/Blog/assets/css/0.styles.16d8b4f8.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/Blog/" class="home-link router-link-active"><!----> <span class="site-name">lious</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/Blog/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><a href="/Blog/JavaScript/" class="nav-link">
+  JavaScript
+</a></div><div class="nav-item"><a href="/Blog/es6/" class="nav-link">
+  ES6
+</a></div><div class="nav-item"><a href="/Blog/Vue/" class="nav-link">
+  Vue
+</a></div><div class="nav-item"><a href="/Blog/React/" class="nav-link">
+  React
+</a></div><div class="nav-item"><a href="/Blog/Webpack/" class="nav-link">
+  Webpack
+</a></div><div class="nav-item"><a href="/Blog/git/" class="nav-link">
+  Git
+</a></div><div class="nav-item"><a href="/Blog/Websocket/" class="nav-link">
+  Websocket
+</a></div><div class="nav-item"><a href="/Blog/Http/" class="nav-link">
+  HTTP
+</a></div><div class="nav-item"><a href="/Blog/Difficulties/" class="nav-link router-link-active">
+  前端难点集中
+</a></div><div class="nav-item"><a href="/Blog/Algorithm/" class="nav-link">
+  前端算法
+</a></div><div class="nav-item"><a href="/Blog/Node/" class="nav-link">
+  Node
+</a></div><div class="nav-item"><a href="/Blog/Plan/" class="nav-link">
+  PLAN
+</a></div><div class="nav-item"><a href="/Blog/Type-Script/" class="nav-link">
+  Type-Script
+</a></div><div class="nav-item"><a href="/Blog/Gu/" class="nav-link">
+  GU
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/Blog/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><a href="/Blog/JavaScript/" class="nav-link">
+  JavaScript
+</a></div><div class="nav-item"><a href="/Blog/es6/" class="nav-link">
+  ES6
+</a></div><div class="nav-item"><a href="/Blog/Vue/" class="nav-link">
+  Vue
+</a></div><div class="nav-item"><a href="/Blog/React/" class="nav-link">
+  React
+</a></div><div class="nav-item"><a href="/Blog/Webpack/" class="nav-link">
+  Webpack
+</a></div><div class="nav-item"><a href="/Blog/git/" class="nav-link">
+  Git
+</a></div><div class="nav-item"><a href="/Blog/Websocket/" class="nav-link">
+  Websocket
+</a></div><div class="nav-item"><a href="/Blog/Http/" class="nav-link">
+  HTTP
+</a></div><div class="nav-item"><a href="/Blog/Difficulties/" class="nav-link router-link-active">
+  前端难点集中
+</a></div><div class="nav-item"><a href="/Blog/Algorithm/" class="nav-link">
+  前端算法
+</a></div><div class="nav-item"><a href="/Blog/Node/" class="nav-link">
+  Node
+</a></div><div class="nav-item"><a href="/Blog/Plan/" class="nav-link">
+  PLAN
+</a></div><div class="nav-item"><a href="/Blog/Type-Script/" class="nav-link">
+  Type-Script
+</a></div><div class="nav-item"><a href="/Blog/Gu/" class="nav-link">
+  GU
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/Blog/Difficulties/" aria-current="page" class="sidebar-link">JS注意点-难点</a></li><li><a href="/Blog/Difficulties/Vue.html" aria-current="page" class="active sidebar-link">Vue注意点-难点</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/Blog/Difficulties/Vue.html#_1-vue2-x到vue3-x" class="sidebar-link">1. vue2.x到vue3.x</a></li><li class="sidebar-sub-header"><a href="/Blog/Difficulties/Vue.html#_2-vue3-proxy" class="sidebar-link">2. vue3 Proxy</a></li><li class="sidebar-sub-header"><a href="/Blog/Difficulties/Vue.html#_3-vue3-vue-set" class="sidebar-link">3. vue3 Vue.set</a></li><li class="sidebar-sub-header"><a href="/Blog/Difficulties/Vue.html#_4-vue3" class="sidebar-link">4. vue3</a></li><li class="sidebar-sub-header"><a href="/Blog/Difficulties/Vue.html#_5-vue中的ref-refs" class="sidebar-link">5. Vue中的ref $refs</a></li><li class="sidebar-sub-header"><a href="/Blog/Difficulties/Vue.html#_6-vue异步dom更新（含ref）" class="sidebar-link">6. Vue异步DOM更新（含ref）</a></li><li class="sidebar-sub-header"><a href="/Blog/Difficulties/Vue.html#_7-nexttick基本使用（及时取到先要数据）" class="sidebar-link">7. nextTick基本使用（及时取到先要数据）</a></li><li class="sidebar-sub-header"><a href="/Blog/Difficulties/Vue.html#_8-插槽" class="sidebar-link">8. 插槽</a></li><li class="sidebar-sub-header"><a href="/Blog/Difficulties/Vue.html#_9-动态组件和异步组件" class="sidebar-link">9. 动态组件和异步组件</a></li><li class="sidebar-sub-header"><a href="/Blog/Difficulties/Vue.html#_10-keep-alive是vue一个内置组件（主要就是要实现组件缓存）" class="sidebar-link">10.keep-alive是vue一个内置组件（主要就是要实现组件缓存）</a></li><li class="sidebar-sub-header"><a href="/Blog/Difficulties/Vue.html#_11-混入" class="sidebar-link">11. 混入</a></li><li class="sidebar-sub-header"><a href="/Blog/Difficulties/Vue.html#_12-onref-子组件向父组件传递数据" class="sidebar-link">12. onRef 子组件向父组件传递数据</a></li><li class="sidebar-sub-header"><a href="/Blog/Difficulties/Vue.html#_13-vue组件之间的数据传递" class="sidebar-link">13. Vue组件之间的数据传递</a></li><li class="sidebar-sub-header"><a href="/Blog/Difficulties/Vue.html#_14-props校验" class="sidebar-link">14. Props校验</a></li><li class="sidebar-sub-header"><a href="/Blog/Difficulties/Vue.html#_15-key值的使用" class="sidebar-link">15. key值的使用</a></li><li class="sidebar-sub-header"><a href="/Blog/Difficulties/Vue.html#_16-hookevent的使用" class="sidebar-link">16. hookEvent的使用</a></li><li class="sidebar-sub-header"><a href="/Blog/Difficulties/Vue.html#_18-v-loader中的scoped" class="sidebar-link">18. v-loader中的scoped</a></li><li class="sidebar-sub-header"><a href="/Blog/Difficulties/Vue.html#_19-动态指令参数" class="sidebar-link">19. 动态指令参数</a></li><li class="sidebar-sub-header"><a href="/Blog/Difficulties/Vue.html#_20-watch-immediate" class="sidebar-link">20. watch immediate</a></li><li class="sidebar-sub-header"><a href="/Blog/Difficulties/Vue.html#_21-v-cloak解决页面闪烁问题" class="sidebar-link">21. v-cloak解决页面闪烁问题</a></li><li class="sidebar-sub-header"><a href="/Blog/Difficulties/Vue.html#_22-v-once-v-pre" class="sidebar-link">22. v-once v-pre</a></li><li class="sidebar-sub-header"><a href="/Blog/Difficulties/Vue.html#_23-表单输入控制" class="sidebar-link">23. 表单输入控制</a></li><li class="sidebar-sub-header"><a href="/Blog/Difficulties/Vue.html#_24-事件：特殊变量-event" class="sidebar-link">24. 事件：特殊变量$event</a></li><li class="sidebar-sub-header"><a href="/Blog/Difficulties/Vue.html#_25-vue的双向绑定" class="sidebar-link">25. vue的双向绑定</a></li><li class="sidebar-sub-header"><a href="/Blog/Difficulties/Vue.html#_26-单元测试" class="sidebar-link">26. 单元测试</a></li><li class="sidebar-sub-header"><a href="/Blog/Difficulties/Vue.html#_27-vue实现组件递归（嵌套自身）" class="sidebar-link">27. vue实现组件递归（嵌套自身）</a></li></ul></li><li><a href="/Blog/Difficulties/React.html" class="sidebar-link">React注意点-难点</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="_1-vue2-x到vue3-x"><a href="#_1-vue2-x到vue3-x" class="header-anchor">#</a> 1. vue2.x到vue3.x</h2> <h4 id="双向绑定"><a href="#双向绑定" class="header-anchor">#</a> 双向绑定</h4> <ul><li><p><strong>vue2.x</strong> 通过Object.defineproperty重定义data中的属性get和set方法，从而劫持data中的set和get操作。存在问题：</p> <ol><li>实例创建后添加的属性监听不到，数据劫持是在数据初始化的过程中执行。具体在beforeCreate和Create生命周期内完成，可以通过$set解决后续天骄监听属性的问题。</li> <li>defineProperty()无法监听数组的变化，当直接用index设置数组项是不会被检测出来的，如：<code>this.showData[1] = {a:1}</code>。当然也能用$set解决。通过下面八种方法操作数组，Vue能检测到数据变化，分别为：push()、pop()、shift()、unshift()、splice()、sort()、reverse()</li></ol></li> <li><p><strong>vue3.x</strong> 采用Proxy和Reflect实现双向绑定，它在目标对象之前架设一层“拦截”，外界对该对象的访问，都必须先通过这层拦截，因此提供了一种机制，可以对外界的访问进行过滤和改写。我们可以这样认为，Proxy是Object.defineProperty的全方位加强版。</p> <ol><li>Proxy有多达13种拦截方法,不限于apply、ownKeys、deleteProperty、has等等是Object.defineProperty不具备的。Object.defineProperty不能做的Proxy还能做。</li> <li>Proxy作为新标准，得到了各大浏览器厂商的大力支持，性能持续优化。唯一的不足就是兼容性的问题，而且无法通过polyfill解决。</li></ol></li></ul> <h2 id="_2-vue3-proxy"><a href="#_2-vue3-proxy" class="header-anchor">#</a> 2. vue3 Proxy</h2> <ul><li>理解为在对象之前设置一个“拦截”，当该对象被访问的时候，都必须经过这层拦截。意味着你可以在这层拦截中进行各种操作。比如你可以在这层拦截中对原对象进行处理，返回你想返回的数据结构。</li></ul> <div class="language- extra-class"><pre class="language-text"><code>- 基础
+const p = new Proxy(target, handler);
+target： 所要拦截的目标对象（可以是任何类型的对象，包括原生数组，函数，甚至另一个代理）
+handler：一个对象，定义要拦截的行为
+const p = new Proxy({}, {
+    get(target, propKey) {
+        return '哈哈，你被我拦截了';
+    }
+});
+console.log(p.name);
+// 哈哈，你被我拦截了
+
+
+- Proxy是用来操作对象的。代理的目的是为了拓展对象的能力。
+const p = new Proxy({}, {
+    set(target, propKey, value) {
+        if (propKey === 'name') {
+            throw new TypeError('name属性不允许修改');
+        }
+        // 不是 name 属性，直接保存
+        target[propKey] = value;
+    }
+});
+p.name = 'proxy';
+// TypeError: name属性不允许修改
+p.a = 111;
+console.log(p.a); // 111
+</code></pre></div><h2 id="_3-vue3-vue-set"><a href="#_3-vue3-vue-set" class="header-anchor">#</a> 3. vue3 Vue.set</h2> <ul><li>Vue.set( target, key, value )<br>
+target：要更改的数据源(可以是对象或者数组)<br>
+key：要更改的具体数据<br>
+value ：重新赋的值</li></ul> <h2 id="_4-vue3"><a href="#_4-vue3" class="header-anchor">#</a> 4. vue3</h2> <ul><li>示例 参考资料https://juejin.im/post/5e13ecbe6fb9a04846508ab2</li></ul> <div class="language- extra-class"><pre class="language-text"><code>&lt;body&gt;
+    &lt;div id=&quot;app&quot;&gt;&lt;/div&gt;
+&lt;/body&gt;
+&lt;script src=&quot;./index.js&quot;&gt;&lt;/script&gt;
+
+
+const { reactive } = Vue
+var App = {
+  template: `
+    &lt;div class=&quot;container&quot;&gt;
+         {{message}}
+    &lt;/div&gt;`,
+  setup() {
+  	const state = reactive({message: &quot;Hello World!!!&quot;})
+	return {
+		...state
+	}
+  }
+}
+Vue.createApp().mount(App, '#app')
+
+</code></pre></div><ul><li>OptionApi =&gt; Composition API<br>
+setup, reactive等函数</li> <li>setup<div class="language- extra-class"><pre class="language-text"><code>const { reactive } = Vue
+let App = {
+template: `
+    &lt;div class=&quot;container&quot;&gt;
+        &lt;input v-model=&quot;state.value&quot;/&gt;{{state.value}}
+    &lt;/div&gt;`,
+setup() {
+    const state = reactive({ value: '' })
+    return { state }
+}
+}
+Vue.createApp().mount(App, '#app')
+
+ setup实际上是一个组件的入口，它运行在组件被实例化时候，props 属性被定义之后，实际上等价于 2 版本的beforeCreate 和 Created 这两个生命周期。
+
+ setup接受两个参数，第一个参数是props， 另一个参数是context，所以大家在使用2.0时习惯的在this下获取属性的方式 ，在 vue3.0 中，变成了：
+ setup(props, ctx) {
+    console.log(props, ctx)
+}
+
+- 传值
+let Child = {
+    template: `&lt;div&gt;{{title}}&lt;/div&gt;`,
+    setup(props, context) {
+        console.log(props)
+    }
+}
+let App = {
+    template: `
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;Child title=&quot;test props&quot;/&gt;
+        &lt;/div&gt;`,
+    components: { Child }
+}
+Vue.createApp().mount(App, '#app')
+
+
+</code></pre></div></li> <li>reactive<br>
+在Vue3中，我们可以把数据经过 reactive 加工变成响应式的对象，用于模版的渲染数据， 当然Vue的向下兼容 还是允许我们使用data的方式实现<div class="language- extra-class"><pre class="language-text"><code>const { reactive, toRefs } = Vue
+let App = {
+template: `
+    &lt;div class=&quot;container&quot;&gt;
+        count: {{count}}
+        &lt;button @click=&quot;handlerCountAdd&quot;&gt; Click ++ &lt;/button&gt;
+    &lt;/div&gt;`,
+    setup() {
+        const state = reactive({ count: 0 })
+        const handlerCountAdd = () =&gt; {
+            state.count++
+        }
+        return { ...toRefs(state), handlerCountAdd }
+    }
+}
+Vue.createApp().mount(App, '#app')
+</code></pre></div></li> <li>toRefs</li></ul> <ol><li>先说下 ref ，vue3提供的ref让我们有机会创建单个的响应式的对象，在setup函数中return出去之后，在模板中可直接访问<div class="language- extra-class"><pre class="language-text"><code>const App = {
+template: `
+    &lt;div class=&quot;container&quot;&gt;
+        {{value}}     
+    &lt;/div&gt;`,
+setup() {
+    const value = ref(1)
+    return { value }
+}
+}
+Vue.createApp().mount(App, '#app')
+</code></pre></div></li> <li>那上文提到的 reactive创建的响应式对象 在模板中访问的话，则需要state.xxx。，vue3提供的toRefs正是为我们解决这个问题的，toRefs把一组的响应式对象拆成单个的响应式对象，就能够在模板中直接访问了。<div class="language- extra-class"><pre class="language-text"><code>const App = {
+template: `
+    &lt;div class=&quot;container&quot;&gt;
+        {{value}}
+        // {{state.value}} 不使用toRefs
+    &lt;/div&gt;`,
+setup() {
+    const state = reactive({ value: 'reactive' })
+    return toRefs(state)
+}
+}
+Vue.createApp().mount(App, '#app')
+</code></pre></div></li></ol> <ul><li>computed 计算属性</li></ul> <div class="language- extra-class"><pre class="language-text"><code>反转字符串 demo
+let App = {
+  template: `
+    &lt;div class=&quot;container&quot;&gt;
+        value: &lt;input v-model=&quot;value&quot;/&gt;
+        &lt;br/&gt;
+        rvalue: {{rvalue}}
+    &lt;/div&gt;`,
+  setup() {
+    const state = reactive({
+      value: '',
+      rvalue: computed(() =&gt;
+        state.value
+          .split('')
+          .reverse()
+          .join('')
+      )
+    })
+    return toRefs(state)
+  }
+}
+Vue.createApp().mount(App, '#app')
+
+</code></pre></div><ul><li>数据响应式 effect和watch
+effect和watch都可以监听到咱们数据的变化<br>
+effect 在响应式数据变化的时候就会执行，执行次数根据响应式数据的个数来决定<br>
+watch则点击一次 ，只会触发执行一次</li></ul> <div class="language- extra-class"><pre class="language-text"><code>let App = {
+  template: `
+    &lt;div class=&quot;container&quot;&gt;
+        &lt;button @click=&quot;handlerCountAdd&quot;&gt; Click ++ &lt;/button&gt;
+    &lt;/div&gt;`,
+  setup() {
+    const state = reactive({ count: 0, value: 1 })
+    const r = ref(1)
+    const s = ref(1)
+    const t = ref(1)
+    const handlerCountAdd = () =&gt; {
+      r.value *= 1
+      s.value *= 2
+      t.value *= 3
+    }
+    watch([r, s, t], val =&gt; {
+      console.log('watch', val)
+    })
+    //effect(() =&gt; {
+    //  console.log('effect', [r.value, s.value, t.value])
+    //})
+    return { handlerCountAdd }
+  }
+}
+Vue.createApp().mount(App, '#app')
+
+</code></pre></div><h2 id="_5-vue中的ref-refs"><a href="#_5-vue中的ref-refs" class="header-anchor">#</a> 5. Vue中的ref $refs</h2> <ol><li><p>ref 被用来给元素或者子组件注册引用信息。引用信息将会注册在父组件的$refs上对象上。<br>
+普通的DOM元素上，那就指向DOM元素。子组件上，指向组件实例。</p></li> <li><p>$refs 一个对象，持有已注册过ref的所有子组件。</p></li></ol> <h2 id="_6-vue异步dom更新（含ref）"><a href="#_6-vue异步dom更新（含ref）" class="header-anchor">#</a> 6. Vue异步DOM更新（含ref）</h2> <div class="language- extra-class"><pre class="language-text"><code>(ref $refs示例)
+&lt;template&gt;
+  &lt;div id=&quot;app&quot;&gt;
+    &lt;ul ref=&quot;ul&quot;&gt;
+      &lt;li v-for=&quot;(item, index) in arr&quot; :key=&quot;index&quot;&gt;{{item}}&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;button @click=&quot;add&quot;&gt;add&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+export default {
+  data() {
+    return {
+      arr: [1, 2, 3, 4],
+    };
+  },
+  methods: {
+    add() {
+      this.arr.push(Math.random());
+      this.arr.push(Math.random());
+      this.arr.push(Math.random());
+      console.log(this.arr);
+      console.log(this.$refs.ul.childNodes.length);
+    },
+  },
+};
+&lt;/script&gt;
+
+//  7 4
+//  10 7
+即使打印添加在后面，数据已经放进arr中，但是vue没有把新增的渲染进来，此时的DOM还是原来的li节点。
+同步渲染的那种效果。我们就是希望能够及时拿到先要的数据该怎么做呢（nextTick基本使用）
+</code></pre></div><h2 id="_7-nexttick基本使用（及时取到先要数据）"><a href="#_7-nexttick基本使用（及时取到先要数据）" class="header-anchor">#</a> 7. nextTick基本使用（及时取到先要数据）</h2> <ol><li>vue的全局还有实例中提供了nextTickAPI，用法：首先接受一个回调函数，即这个回调会在<strong>DOM更新后执行</strong></li></ol> <div class="language- extra-class"><pre class="language-text"><code>add() {
+      this.arr.push(Math.random());
+      this.arr.push(Math.random());
+      this.arr.push(Math.random());
+      console.log(this.arr);
+
+      this.$nextTick(() =&gt; {
+        console.log(this.$refs.ul.childNodes.length);
+      });
+
+    },
+// 7 7 
+// 10 10
+</code></pre></div><h2 id="_8-插槽"><a href="#_8-插槽" class="header-anchor">#</a> 8. 插槽</h2> <p>https://juejin.im/post/6864570298767769607#heading-10</p> <h2 id="_9-动态组件和异步组件"><a href="#_9-动态组件和异步组件" class="header-anchor">#</a> 9. 动态组件和异步组件</h2> <ol><li>component元素绑定一个is属性实现。</li></ol> <div class="language- extra-class"><pre class="language-text"><code>&lt;template&gt;
+  &lt;div id=&quot;app&quot;&gt;
+    &lt;ul @click=&quot;change&quot;&gt;
+      &lt;li&gt;test01&lt;/li&gt;
+      &lt;li&gt;test02&lt;/li&gt;
+      &lt;li&gt;test03&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;div class=&quot;zhan&quot;&gt;&lt;/div&gt;
+
+    &lt;component :is=&quot;componentId&quot;&gt;&lt;/component&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+&lt;script&gt;
+import Test01 from &quot;./components/test01&quot;;
+import Test02 from &quot;./components/test02&quot;;
+import Test03 from &quot;./components/test03&quot;;
+export default {
+  data() {
+    return {
+      componentId: &quot;Test01&quot;,
+    };
+  },
+  methods: {
+    change(e) {
+      this.componentId = e.target.innerText;
+    },
+  },
+  components: {
+    Test01,
+    Test02,
+    Test03,
+  },
+};
+&lt;/script&gt;
+</code></pre></div><ol start="2"><li>异步加载组件</li></ol> <div class="language- extra-class"><pre class="language-text"><code>  components: {
+    Test01:()=&gt;import('./components/test01'),//返回的是promise
+    Test02:()=&gt;import('./components/test02'),
+    Test03:()=&gt;import('./components/test03'),
+  },
+</code></pre></div><h2 id="_10-keep-alive是vue一个内置组件（主要就是要实现组件缓存）"><a href="#_10-keep-alive是vue一个内置组件（主要就是要实现组件缓存）" class="header-anchor">#</a> 10.keep-alive是vue一个内置组件（主要就是要实现组件缓存）</h2> <ol><li>keep-alive缓存，用<code>&lt;keep-alive&gt;</code>标签将动态目标包裹。</li></ol> <div class="language- extra-class"><pre class="language-text"><code> &lt;keep-alive&gt;
+      &lt;component :is=&quot;componentId&quot;&gt;&lt;/component&gt;
+    &lt;/keep-alive&gt;
+</code></pre></div><ol start="2"><li>有三个属性</li></ol> <ul><li>include 字符串或者正则表达式。只有名称匹配的组件<strong>会被缓存。</strong></li> <li>exclude 字符串或者正则表达式。名称匹配的组件<strong>不会被缓存。</strong></li> <li>max 数字。最多可以缓存多少组件实例。</li></ul> <div class="language- extra-class"><pre class="language-text"><code>&lt;!-- 逗号分隔字符串 --&gt;
+&lt;keep-alive include=&quot;a,b&quot;&gt;
+  &lt;component :is=&quot;view&quot;&gt;&lt;/component&gt;
+&lt;/keep-alive&gt;
+
+&lt;!-- 正则表达式 (使用 `v-bind`) --&gt;
+&lt;keep-alive :include=&quot;/a|b/&quot;&gt;
+  &lt;component :is=&quot;view&quot;&gt;&lt;/component&gt;
+&lt;/keep-alive&gt;
+
+&lt;!-- 数组 (使用 `v-bind`) --&gt;
+&lt;keep-alive :include=&quot;['a', 'b']&quot;&gt;
+  &lt;component :is=&quot;view&quot;&gt;&lt;/component&gt;
+&lt;/keep-alive&gt;
+匹配首先检查组件自身的 name 选项，如果 name 选项不可用，则匹配它的局部注册名称 (父组件 components 选项的键值)。匿名组件不能被匹配。
+</code></pre></div><ol start="3"><li></li></ol> <div class="language- extra-class"><pre class="language-text"><code>我们最终的目的就是储存组件，那么我们就要考虑使用什么数据结构保存、在什么时候创建这个创建结构、传过来的三个属性值变化了我们在哪个钩子里做处理、keep-alive组件销毁之后，所有存储的组件也要进行销毁
+  1. create钩子创建储存数据结构。  
+  2. mounted钩子执行完就完成挂载，钩子在额更新钩子后面，再次触发，可以拿到新传过来的三个属性的值。
+  3. mounted () {
+      this.$watch('include', val =&gt; {
+          pruneCache(this, name =&gt; matches(val, name))
+      })
+      this.$watch('exclude', val =&gt; {
+          pruneCache(this, name =&gt; !matches(val, name))
+      })
+  }
+  pruneCache这个函数，就是把以储存的组件，根据include或exclude的最新变化进行判断是否还需要储存，不需要剔除缓存对象中
+  4. destory 把缓存中所有组件都销毁。
+</code></pre></div><h2 id="_11-混入"><a href="#_11-混入" class="header-anchor">#</a> 11. 混入</h2> <ol><li>混入提供了一种非常灵活的方式，来分发vue组件中可复用功能。一个混入的对象可以包含任意组件的对象。</li></ol> <div class="language- extra-class"><pre class="language-text"><code>&lt;template&gt;
+  &lt;div&gt;test01&lt;/div&gt;
+&lt;/template&gt;
+&lt;script&gt;
+const mixin = {
+  created() {
+    console.log('混进来的')
+  },
+};
+export default {
+  mixins: [mixin],
+ 
+  created() {
+    console.log('组件上的')
+  },
+};
+&lt;/script&gt;
+
+</code></pre></div><h2 id="_12-onref-子组件向父组件传递数据"><a href="#_12-onref-子组件向父组件传递数据" class="header-anchor">#</a> 12. onRef 子组件向父组件传递数据</h2> <p><code>https://www.jianshu.com/p/c3e31d62bf76</code></p> <ol><li>父组件：</li></ol> <div class="language- extra-class"><pre class="language-text"><code>&lt;InsureCustomerInfo
+    dataSource={info}
+    onRemoveData={this.onRemoveDat
+    flag={flag}
+    onRef={(ref) =&gt; { this.cus = ref }} // 获取整个Child元素
+/&gt;
+
+
+ handleCancelEdit = () =&gt; {
+        const cus = this.cus;
+        const fam = this.fam;
+        const con = this.con;
+        const cusForm = cus.props.form;
+        const famForm = fam.props.form;
+        const conForm = con.props.form;
+        cusForm.resetFields();
+        famForm.resetFields();
+        conForm.resetFields();
+        this.setState({
+            flag: true
+        });
+    }
+</code></pre></div><ol start="2"><li>子组件</li></ol> <div class="language- extra-class"><pre class="language-text"><code>    componentDidMount() {
+        const { onRef } = this.props;
+        onRef &amp;&amp; onRef(this);
+    }
+</code></pre></div><h2 id="_13-vue组件之间的数据传递"><a href="#_13-vue组件之间的数据传递" class="header-anchor">#</a> 13. Vue组件之间的数据传递</h2> <ol><li>若子组件给父组件传值，可使用 $emit 方法</li> <li>祖孙组件之间可以使用 provide 和 inject 方式跨层级传值，允许一个祖先组件向其所有子孙后代。</li> <li>若子组件使用 $emit('say') 派发事件，父组件可使用 @say 监听</li> <li>若父组件给子组件传值，子组件可通过 props 接受数据</li></ol> <h2 id="_14-props校验"><a href="#_14-props校验" class="header-anchor">#</a> 14. Props校验</h2> <ol><li>js为弱类语言，可使用type为Props进行<strong>类型</strong>或者<strong>默认值</strong>的指定。</li> <li>设置：type 可设置为 <code>String Number Boolean Array Object Date Function Symbol</code></li> <li>设置为自定义函数</li> <li>设置为自定义的构造函数</li></ol> <h2 id="_15-key值的使用"><a href="#_15-key值的使用" class="header-anchor">#</a> 15. key值的使用</h2> <ol><li>v-for，如果不使用key，value会默认使用一种&quot;就地复用&quot;的策略进行更新。在一些情况下会导致渲染的不正确。</li> <li>v-router，会遇到 /path/:id，这样只改变id号的场景，但是渲染的是不同的组件。<strong>由于router-view是复用的，单纯的改变id号是不会刷新router-view</strong>。</li></ol> <div class="language- extra-class"><pre class="language-text"><code>解决方法
+为每个router-view添加不同的key，让vue每次切换路由的参数的时候，认为是不同的组件从而得到更新
+
+&lt;router-view :key = 'key'&gt;&lt;/router-view&gt;
+
+实际上对所有的DOM，Vue都可能会采取复用策略，遇到渲染顺序不准确的，可以向key方向考虑。
+</code></pre></div><h2 id="_16-hookevent的使用"><a href="#_16-hookevent的使用" class="header-anchor">#</a> 16. hookEvent的使用</h2> <p><code>https://juejin.im/post/6872128694639394830#heading-7</code></p> <ol><li>hookEvent模板式的注入声明周期函数钩子。</li></ol> <div class="language- extra-class"><pre class="language-text"><code>加载list需要很长时间，中间加载loading
+&lt;List @hook:updated= 'handleTableUpdated'&gt;&lt;/List&gt;
+</code></pre></div><ol start="2"><li>组件销毁的新方式</li></ol> <div class="language- extra-class"><pre class="language-text"><code>旧
+mounted(){
+  this.thirdPartyPlugin = thirdPartyPlugin()
+},
+
+beforeDestroy(){
+  this.thirdPartyPlugin.destroy()
+}
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>新
+mounted(){
+  const this.thirdPartyPlugin = thirdPartyPlugin()
+  this.$on('hook:beforeDestory', () =&gt; {
+    this.thirdPartyPlugin.destory();
+  })
+}
+
+</code></pre></div><h2 id="_18-v-loader中的scoped"><a href="#_18-v-loader中的scoped" class="header-anchor">#</a> 18. v-loader中的scoped</h2> <ol><li>当<code>&lt;style&gt;</code>标签有scoped时.css只作用于当前元素，通过使用PostCss转换。会添加专属的[data-v-f3f3eg9]</li></ol> <div class="language- extra-class"><pre class="language-text"><code>&lt;style scoped&gt;
+.example{           // .example[data-v-f3f3eg9]{
+  coloe: red;
+}
+&lt;/style&gt;
+
+&lt;template&gt;
+  &lt;div calss = &quot;example&quot;&gt; hi &lt;/div&gt;             //&lt;div calss = &quot;example&quot;  data-v-f3f3eg9&gt; hi &lt;/div&gt;     
+&lt;/template&gt;
+</code></pre></div><h2 id="_19-动态指令参数"><a href="#_19-动态指令参数" class="header-anchor">#</a> 19. 动态指令参数</h2> <div class="language- extra-class"><pre class="language-text"><code>&lt;template&gt;
+  &lt;button @[someEvent] = 'handSomeEvent()'&gt;&lt;/button&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+  data(){
+    return{
+      someEvent:someCondition ? &quot;Click&quot; : &quot;dblclick&quot;
+    }
+  },
+  methods:{
+    handSomeEvent(){
+
+    }
+  }
+&lt;/script&gt;
+
+</code></pre></div><h2 id="_20-watch-immediate"><a href="#_20-watch-immediate" class="header-anchor">#</a> 20. watch immediate</h2> <ol><li>组件中watch一个值，进行一些页面初始化或者更新操作，如this.getDetails()</li></ol> <div class="language- extra-class"><pre class="language-text"><code>watch(){
+  id:{
+    handler(newVuale){
+      this.getDetail(newValue)
+    }
+  }
+}
+watch 在最初绑定的时候是不会执行的，要等到id改变时才执行监听，这可能会导致第一次渲染出错。
+
+
+想watch中声明了id后立即执行handler方法，可以加上immediate：true
+watch(){
+  id:{
+    handler(newValue){
+      this.getDetail(newValue)
+    }
+  },
+  // watch中声明了id后，立即执行handler方法。
+  immediate:true
+}
+</code></pre></div><h2 id="_21-v-cloak解决页面闪烁问题"><a href="#_21-v-cloak解决页面闪烁问题" class="header-anchor">#</a> 21. v-cloak解决页面闪烁问题</h2> <ol><li>页面数据模板中的数据都是异步获取的，在网络不好的情况下，会出现闪烁的效果。影像用户体验。</li> <li>v-cloak保持在元素上直到关联实例结束编译。利用特性，结合css规则<code>[v-cloak]{dispaly: none}</code>，一起使用就可以隐藏掉未编译好的Mustache标签，直到实例完毕。</li></ol> <div class="language- extra-class"><pre class="language-text"><code>// template中
+&lt;div class=&quot;#app&quot;&gt;
+  &lt;p&gt;{{value.name}}&lt;/p&gt;
+&lt;/div&gt;
+
+// css中
+[v-cloak]{
+  display: none
+}
+</code></pre></div><blockquote><p>需要注意，虽然解决了闪烁的问题，但这段时间内如果什么都不处理的话，会直接白屏，这并不是我们想要的效果，我们应该加一个 loading 或者骨架屏的效果，提升用户体验。</p></blockquote> <h2 id="_22-v-once-v-pre"><a href="#_22-v-once-v-pre" class="header-anchor">#</a> 22. v-once v-pre</h2> <ol><li>v-once 渲染元素或者组件一次。重新渲染的话，元素/组件及其所有子节点会被视为<strong>静态内容</strong>跳过。</li> <li>v-pre  决定要不要跳过这个元素和子元素的编译。</li></ol> <h2 id="_23-表单输入控制"><a href="#_23-表单输入控制" class="header-anchor">#</a> 23. 表单输入控制</h2> <ol><li>表单修饰符</li></ol> <div class="language- extra-class"><pre class="language-text"><code>.number 自动将用户输入转化为数值类型
+&lt;input v-model.number = &quot;age&quot;  type = &quot;number&quot; /&gt;
+
+.trim 自动过滤用户输入的首尾空白字符
+&lt;input v-model.trim = &quot;msg&quot;/&gt;
+</code></pre></div><ol start="2"><li>change事件</li></ol> <div class="language- extra-class"><pre class="language-text"><code>&lt;imput v-model=&quot;value2&quot; type=&quot;text&quot; @change=&quot;inputChange(value2)&quot; /&gt;
+
+metho: {
+  inputChange(val){
+    if(!val) return ''
+    val = val.toString()
+    this.value2 = val.charAt(0).toUpperCase()+val.slice(1)
+  }
+}
+</code></pre></div><ol start="3"><li>filter过滤器</li></ol> <div class="language- extra-class"><pre class="language-text"><code>&lt;input v-model=&quot;value1&quot; type=&quot;text&quot; /&gt;
+
+vue.filter('capitalize', function(value){
+  if(!value) return ''
+  value = value.toString()
+  return value.charAt(0).toUpperCase() + value.slice(1)
+})
+
+watch: {
+  value1(val){
+    this.value1 = this.$option.filters.capitalize(val)
+  }
+}
+</code></pre></div><ol start="4"><li>自定义指令
+声明一个全局指令</li></ol> <div class="language- extra-class"><pre class="language-text"><code>
+</code></pre></div><h2 id="_24-事件：特殊变量-event"><a href="#_24-事件：特殊变量-event" class="header-anchor">#</a> 24. 事件：特殊变量$event</h2> <ol><li>原生事件：绑定事件后，传入除了原生对象之外的参数。监听原生DOM事件，方法以原生事件对象为唯一参数（默认值）。想在内联处理器中访问原始的dom事件（同时想传其他参数），可以使用$event传入。
+<code>https://juejin.im/post/6872128694639394830#heading-17</code></li></ol> <div class="language- extra-class"><pre class="language-text"><code>&lt;input v-model = &quot;value1&quot; @change = &quot;inputChange('hellow', $event)&quot; /&gt;
+
+methods: {
+  inputChange(msg, e){
+    console.log(msg, e)
+  }
+}
+</code></pre></div><ol start="2"><li>自定义事件：$event是从子组件中捕获的值。监听el-input的传递过来值的同时，传递其他的参数。</li></ol> <div class="language- extra-class"><pre class="language-text"><code>&lt;el-input
+  v-model = &quot;value2&quot;
+  @change = &quot;change($event, 'hellow')&quot;
+  placeholder = &quot;Input sonething here&quot;
+/&gt;
+
+methods: {
+  change(e, val){
+    console.log(&quot;evevt is &quot; + e); // el-input 输入的值
+    console.log(val) // hellow
+  }
+}
+</code></pre></div><h2 id="_25-vue的双向绑定"><a href="#_25-vue的双向绑定" class="header-anchor">#</a> 25. vue的双向绑定</h2> <blockquote><p>https://segmentfault.com/a/1190000019722065  示例
+<img src="/Blog/assets/img/vue-Observer.b6ca3db2.png" alt="vue-Observer"></p></blockquote> <ul><li>利用 Object.defineProperty() 对数据进行劫持，设置一个监听器 Observer，用来监听数据对象的属性，如果属性上发生变化了，交由 Dep 通知订阅者 Watcher 去更新数据，最后指令解析器 Compile 解析对应的指令，进而会执行对应的更新函数，从而更新视图，实现了双向绑定。</li></ul> <div class="language- extra-class"><pre class="language-text"><code>Observer (数据劫持)
+Dep (发布订阅)
+Watcher (数据监听)
+Compile (模版编译)
+</code></pre></div><h2 id="_26-单元测试"><a href="#_26-单元测试" class="header-anchor">#</a> 26. 单元测试</h2> <p><code>https://www.jianshu.com/p/ba76cfcac72c</code></p> <h2 id="_27-vue实现组件递归（嵌套自身）"><a href="#_27-vue实现组件递归（嵌套自身）" class="header-anchor">#</a> 27. vue实现组件递归（嵌套自身）</h2> <p><code>https://blog.csdn.net/weixin_43245095/article/details/109504127</code></p> <div class="language- extra-class"><pre class="language-text"><code>// 递归组件 demo.vue   自己调用自己
+&lt;template&gt;
+  &lt;div&gt;
+    &lt;div v-for=&quot;(item, index) in treeData&quot; :key=&quot;index&quot;&gt;
+      &lt;p&gt;{{ item.title }}&lt;/p&gt;
+      &lt;div class=&quot;children&quot; v-if=&quot;item.children&quot;&gt;
+     &lt;!-- 嵌套自身 --&gt;
+        &lt;Demo :treeData=&quot;item.children&quot;&gt;&lt;/Demo&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+&lt;script&gt;
+export default {
+  name: &quot;Demo&quot;,
+  props: [&quot;treeData&quot;],
+  data() {
+    return {};
+  },
+  created() {},
+};
+&lt;/script&gt;
+&lt;style  scoped&gt;
+.children {
+  padding-left: 10px;
+}
+&lt;/style&gt;
+
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>父组件调用demo.vue
+&lt;demo :treeData=&quot;treeData&quot; &gt;&lt;/demo&gt;
+//   模拟递归
+      treeData: [
+        {
+          title: &quot;递归层1&quot;,
+          children: [
+            {
+              title: &quot;递归层1-1&quot;,
+              children: [
+                {
+                  title: &quot;递归层1-1-1&quot;,
+                },
+                {
+                  title: &quot;递归层1-2-1&quot;,
+                  children: [
+                    {
+                      title: &quot;递归层1-2-1-1&quot;,
+                    },
+                    {
+                      title: &quot;递归层1-2-1-2&quot;,
+                    },
+                  ],
+                },
+              ],
+            },
+            {
+              title: &quot;递归层1-2&quot;,
+            },
+          ],
+        },
+      ],
+
+
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/Blog/Difficulties/" class="prev router-link-active">
+        JS注意点-难点
+      </a></span> <span class="next"><a href="/Blog/Difficulties/React.html">
+        React注意点-难点
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/Blog/assets/js/app.9c47bd80.js" defer></script><script src="/Blog/assets/js/2.b786c2ed.js" defer></script><script src="/Blog/assets/js/14.1badd55b.js" defer></script>
+  </body>
+</html>

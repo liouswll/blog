@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>正则（内置对象） | lious</title>
+    <meta name="generator" content="VuePress 1.5.1">
+    
+    <meta name="description" content="前端开发空间站">
+    <link rel="preload" href="/Blog/assets/css/0.styles.16d8b4f8.css" as="style"><link rel="preload" href="/Blog/assets/js/app.9c47bd80.js" as="script"><link rel="preload" href="/Blog/assets/js/2.b786c2ed.js" as="script"><link rel="preload" href="/Blog/assets/js/29.08475c58.js" as="script"><link rel="prefetch" href="/Blog/assets/js/10.2ae6b466.js"><link rel="prefetch" href="/Blog/assets/js/11.533bbb72.js"><link rel="prefetch" href="/Blog/assets/js/12.8e74b9fc.js"><link rel="prefetch" href="/Blog/assets/js/13.2be3647b.js"><link rel="prefetch" href="/Blog/assets/js/14.1badd55b.js"><link rel="prefetch" href="/Blog/assets/js/15.f7f64fd6.js"><link rel="prefetch" href="/Blog/assets/js/16.72a686a6.js"><link rel="prefetch" href="/Blog/assets/js/17.db6d94f8.js"><link rel="prefetch" href="/Blog/assets/js/18.bc0ab2ef.js"><link rel="prefetch" href="/Blog/assets/js/19.e02c1cba.js"><link rel="prefetch" href="/Blog/assets/js/20.d91c50f5.js"><link rel="prefetch" href="/Blog/assets/js/21.22b161ae.js"><link rel="prefetch" href="/Blog/assets/js/22.bc2dea31.js"><link rel="prefetch" href="/Blog/assets/js/23.8e66fc0e.js"><link rel="prefetch" href="/Blog/assets/js/24.bcb02ed7.js"><link rel="prefetch" href="/Blog/assets/js/25.086b542b.js"><link rel="prefetch" href="/Blog/assets/js/26.b4fa9650.js"><link rel="prefetch" href="/Blog/assets/js/27.56fc3609.js"><link rel="prefetch" href="/Blog/assets/js/28.482e48d5.js"><link rel="prefetch" href="/Blog/assets/js/3.686b262b.js"><link rel="prefetch" href="/Blog/assets/js/30.ba2aca8b.js"><link rel="prefetch" href="/Blog/assets/js/31.5d7b81c9.js"><link rel="prefetch" href="/Blog/assets/js/32.72d44b49.js"><link rel="prefetch" href="/Blog/assets/js/33.25e091aa.js"><link rel="prefetch" href="/Blog/assets/js/34.0b495ba3.js"><link rel="prefetch" href="/Blog/assets/js/35.0c41c066.js"><link rel="prefetch" href="/Blog/assets/js/36.5cb79c2b.js"><link rel="prefetch" href="/Blog/assets/js/37.ad8db7c0.js"><link rel="prefetch" href="/Blog/assets/js/38.1f99eb01.js"><link rel="prefetch" href="/Blog/assets/js/39.b05cd399.js"><link rel="prefetch" href="/Blog/assets/js/4.94ea306f.js"><link rel="prefetch" href="/Blog/assets/js/40.ec81b87a.js"><link rel="prefetch" href="/Blog/assets/js/41.6f245bcc.js"><link rel="prefetch" href="/Blog/assets/js/42.2a727e6b.js"><link rel="prefetch" href="/Blog/assets/js/43.2e2eee59.js"><link rel="prefetch" href="/Blog/assets/js/44.36c49c87.js"><link rel="prefetch" href="/Blog/assets/js/45.cb2389f6.js"><link rel="prefetch" href="/Blog/assets/js/46.6f746980.js"><link rel="prefetch" href="/Blog/assets/js/47.7987c6b9.js"><link rel="prefetch" href="/Blog/assets/js/48.15d01434.js"><link rel="prefetch" href="/Blog/assets/js/49.728714a6.js"><link rel="prefetch" href="/Blog/assets/js/5.c5721a11.js"><link rel="prefetch" href="/Blog/assets/js/6.99fdf330.js"><link rel="prefetch" href="/Blog/assets/js/7.f8ea1854.js"><link rel="prefetch" href="/Blog/assets/js/8.f72b32ca.js"><link rel="prefetch" href="/Blog/assets/js/9.9a3b5fa5.js">
+    <link rel="stylesheet" href="/Blog/assets/css/0.styles.16d8b4f8.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/Blog/" class="home-link router-link-active"><!----> <span class="site-name">lious</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/Blog/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><a href="/Blog/JavaScript/" class="nav-link router-link-active">
+  JavaScript
+</a></div><div class="nav-item"><a href="/Blog/es6/" class="nav-link">
+  ES6
+</a></div><div class="nav-item"><a href="/Blog/Vue/" class="nav-link">
+  Vue
+</a></div><div class="nav-item"><a href="/Blog/React/" class="nav-link">
+  React
+</a></div><div class="nav-item"><a href="/Blog/Webpack/" class="nav-link">
+  Webpack
+</a></div><div class="nav-item"><a href="/Blog/git/" class="nav-link">
+  Git
+</a></div><div class="nav-item"><a href="/Blog/Websocket/" class="nav-link">
+  Websocket
+</a></div><div class="nav-item"><a href="/Blog/Http/" class="nav-link">
+  HTTP
+</a></div><div class="nav-item"><a href="/Blog/Difficulties/" class="nav-link">
+  前端难点集中
+</a></div><div class="nav-item"><a href="/Blog/Algorithm/" class="nav-link">
+  前端算法
+</a></div><div class="nav-item"><a href="/Blog/Node/" class="nav-link">
+  Node
+</a></div><div class="nav-item"><a href="/Blog/Plan/" class="nav-link">
+  PLAN
+</a></div><div class="nav-item"><a href="/Blog/Type-Script/" class="nav-link">
+  Type-Script
+</a></div><div class="nav-item"><a href="/Blog/Gu/" class="nav-link">
+  GU
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/Blog/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><a href="/Blog/JavaScript/" class="nav-link router-link-active">
+  JavaScript
+</a></div><div class="nav-item"><a href="/Blog/es6/" class="nav-link">
+  ES6
+</a></div><div class="nav-item"><a href="/Blog/Vue/" class="nav-link">
+  Vue
+</a></div><div class="nav-item"><a href="/Blog/React/" class="nav-link">
+  React
+</a></div><div class="nav-item"><a href="/Blog/Webpack/" class="nav-link">
+  Webpack
+</a></div><div class="nav-item"><a href="/Blog/git/" class="nav-link">
+  Git
+</a></div><div class="nav-item"><a href="/Blog/Websocket/" class="nav-link">
+  Websocket
+</a></div><div class="nav-item"><a href="/Blog/Http/" class="nav-link">
+  HTTP
+</a></div><div class="nav-item"><a href="/Blog/Difficulties/" class="nav-link">
+  前端难点集中
+</a></div><div class="nav-item"><a href="/Blog/Algorithm/" class="nav-link">
+  前端算法
+</a></div><div class="nav-item"><a href="/Blog/Node/" class="nav-link">
+  Node
+</a></div><div class="nav-item"><a href="/Blog/Plan/" class="nav-link">
+  PLAN
+</a></div><div class="nav-item"><a href="/Blog/Type-Script/" class="nav-link">
+  Type-Script
+</a></div><div class="nav-item"><a href="/Blog/Gu/" class="nav-link">
+  GU
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/Blog/JavaScript/" aria-current="page" class="sidebar-link">JavaScript</a></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>基本知识</span> <span class="arrow right"></span></p> <!----></section></li><li><a href="/Blog/JavaScript/function.html" class="sidebar-link">函数</a></li><li><a href="/Blog/JavaScript/form.html" class="sidebar-link">表单</a></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>对象</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>面向对象</span> <span class="arrow right"></span></p> <!----></section></li><li><a href="/Blog/JavaScript/DOM.html" class="sidebar-link">DOM</a></li><li><a href="/Blog/JavaScript/BOM.html" class="sidebar-link">BOM</a></li><li><a href="/Blog/JavaScript/Reg.html" aria-current="page" class="active sidebar-link">Reg</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/Blog/JavaScript/Reg.html#正则（内置对象）" class="sidebar-link">正则（内置对象）</a></li><li class="sidebar-sub-header"><a href="/Blog/JavaScript/Reg.html#正则对象的方法-exec-test-tostring" class="sidebar-link">正则对象的方法(exec,test,toString)</a></li><li class="sidebar-sub-header"><a href="/Blog/JavaScript/Reg.html#支持正则表达式的-string-对象的方法-match-replace-search-split" class="sidebar-link">支持正则表达式的 String 对象的方法(match,replace,search,split)</a></li></ul></li><li><a href="/Blog/JavaScript/JSDesignMode.html" class="sidebar-link">JS设计模式</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="正则（内置对象）"><a href="#正则（内置对象）" class="header-anchor">#</a> 正则（内置对象）</h2> <p><code>https://www.runoob.com/jsref/jsref-obj-regexp.html</code></p> <ol><li>正则表达式：用于对<strong>字符串模式匹配和检索替换</strong>，对字符串执行模式匹配强大的工具。</li> <li>语法：</li></ol> <div class="language- extra-class"><pre class="language-text"><code>var patt = new RegExp(pattern, modifiers)
+或者
+var patt = /pattern/modifiers
+</code></pre></div><p><strong>pattern(模式)：描述表达式的模式。</strong><br> <strong>modifiers(修饰符)：用于指定全局匹配，区分大小写的匹配和多行匹配。</strong></p> <blockquote><p>当使用构造函数创造正则对象时，需要常规的字符转义规则（在前面加反斜杠 \）。比如，以下是等价的：<br>
+var re = new RegExp(&quot;\w+&quot;);<br>
+var re = /\w+/;</p></blockquote> <blockquote><p>\w 匹配字母、数字、下划线的字符。<br> <em>表示任意多个多个字符<br>
+\w</em>表示任意多个\w</p></blockquote> <ol start="3"><li>修饰符：</li></ol> <table><thead><tr><th>序号</th> <th>修饰符</th> <th>描述</th></tr></thead> <tbody><tr><td>1</td> <td>i</td> <td>执行对大小写不敏感的匹配。</td></tr> <tr><td>2</td> <td>g</td> <td>执行全局匹配（查找所有匹配而非在找到第一个匹配后停止）。</td></tr> <tr><td>3</td> <td>m</td> <td>执行多行匹配。</td></tr></tbody></table> <ol start="4"><li>方括号：查找某个范围的内的字符。</li></ol> <div class="language- extra-class"><pre class="language-text"><code>表达式	描述
+[abc]	查找方括号之间的任何字符。
+[^abc]	查找任何不在方括号之间的字符。
+[0-9]	查找任何从 0 至 9 的数字。
+[a-z]	查找任何从小写 a 到小写 z 的字符。
+[A-Z]	查找任何从大写 A 到大写 Z 的字符。
+[A-z]	查找任何从大写 A 到小写 z 的字符。
+[adgk]	查找给定集合内的任何字符。
+[^adgk]	查找给定集合外的任何字符。
+(red|blue|green)	查找任何指定的选项。
+</code></pre></div><ol start="5"><li>元字符：拥有特殊含义的字符。</li></ol> <h2 id="正则对象的方法-exec-test-tostring"><a href="#正则对象的方法-exec-test-tostring" class="header-anchor">#</a> 正则对象的方法(exec,test,toString)</h2> <ol><li></li></ol> <table><thead><tr><th>方法</th> <th>描述</th> <th>返回值</th> <th>语法</th></tr></thead> <tbody><tr><td>exec</td> <td>检索字符串中的正则表达式的匹配</td> <td>字符串中有匹配的返回改匹配值，否则返回null</td> <td>RegExpObject.exec(string)</td></tr></tbody></table> <p>示例:</p> <div class="language- extra-class"><pre class="language-text"><code>var str=&quot;Hello world!&quot;;
+//查找&quot;Hello&quot;
+var patt=/Hello/g;
+var result=patt.exec(str);
+document.write(&quot;返回值: &quot; +  result); 
+
+返回值: Hello
+__________________________________________
+//查找 &quot;RUNOOB&quot;
+patt=/RUNOOB/g;
+result=patt.exec(str);
+document.write(&quot;&lt;br&gt;返回值: &quot; +  result);
+
+返回值: null
+</code></pre></div><ol start="2"><li></li></ol> <table><thead><tr><th>方法</th> <th>描述</th> <th>返回值</th> <th>语法</th></tr></thead> <tbody><tr><td>test</td> <td>用于检测一个字符串是否匹配某个模式</td> <td>如果字符串中有匹配的值返回 true ，否则返回 false。</td> <td>RegExpObject.test(string)</td></tr></tbody></table> <p>示例</p> <div class="language- extra-class"><pre class="language-text"><code>var str=&quot;Hello world!&quot;;
+//查找&quot;Hello&quot;
+var patt=/Hello/g;
+var result=patt.test(str);
+document.write(&quot;返回值: &quot; +  result);  // 返回值: true
+
+//查找 &quot;Runoob&quot;
+patt=/Runoob/g;
+result=patt.test(str);
+document.write(&quot;&lt;br&gt;返回值: &quot; +  result); // 返回值: false
+</code></pre></div><ol start="3"><li></li></ol> <table><thead><tr><th>方法</th> <th>描述</th> <th>返回值</th> <th>语法</th></tr></thead> <tbody><tr><td>toString()</td> <td></td> <td>返回正则表达式的字符串值。</td> <td>RegExpObject.toString()</td></tr></tbody></table> <p>示例</p> <div class="language- extra-class"><pre class="language-text"><code>var patt = new RegExp(&quot;RUNOOB&quot;, &quot;g&quot;);
+var res = patt.toString(); //  /RUNOOB/g
+</code></pre></div><h2 id="支持正则表达式的-string-对象的方法-match-replace-search-split"><a href="#支持正则表达式的-string-对象的方法-match-replace-search-split" class="header-anchor">#</a> 支持正则表达式的 String 对象的方法(match,replace,search,split)</h2> <ol><li></li></ol> <table><thead><tr><th>方法</th> <th>描述</th> <th>返回值</th> <th>语法</th></tr></thead> <tbody><tr><td>match()</td> <td>可在字符串内检索指定的值，或找到一个或多个正则表达式的匹配。</td> <td>存放匹配结果的数组。该数组的内容依赖于 regexp 是否具有全局标志 g。 如果没找到匹配结果返回 null 。</td> <td>string.match(regexp)</td></tr></tbody></table> <p>示例：</p> <div class="language- extra-class"><pre class="language-text"><code>全局查找字符串 &quot;ain&quot;，且不区分大小写:
+var str = &quot;The rain in SPAIN stays mainly in the plain&quot;; 
+var n=str.match(/ain/gi);   // ain,AIN,ain,ain
+
+判断是否微信浏览器:
+function is_weixn(){  
+    var ua = navigator.userAgent.toLowerCase();  
+    if(ua.match(/MicroMessenger/i)==&quot;micromessenger&quot;) {  
+        return true;  
+    } else {  
+        return false;  
+    }  
+}
+</code></pre></div><ol start="2"><li></li></ol> <table><thead><tr><th>方法</th> <th>描述</th> <th>返回值</th> <th>语法</th></tr></thead> <tbody><tr><td>replace()</td> <td>在字符串中用一些字符替换另一些字符，或替换一个与正则表达式匹配的子串</td> <td>一个新的字符串，是用 replacement 替换了 regexp 的第一次匹配或所有匹配之后得到的。</td> <td>string.replace(searchvalue,newvalue)</td></tr></tbody></table> <p>示例：</p> <div class="language- extra-class"><pre class="language-text"><code>全局替换：
+var str=&quot;Mr Blue has a blue house and a blue car&quot;;
+var n=str.replace(/blue/g,&quot;red&quot;);   // Mr Blue has a red house and a red car
+
+// 忽略大小写
+var str=&quot;Mr Blue has a blue house and a blue car&quot;;
+var n=str.replace(/blue/gi, &quot;red&quot;);  // Mr red has a red house and a red car
+
+
+String.prototype.replaceAll = function(search, replacement) {
+    var target = this;
+    return target.replace(new RegExp(search, 'g'), replacement);
+};
+function myFunction() {
+	var str=document.getElementById(&quot;demo&quot;).innerHTML;
+	var n=str.replaceAll(&quot;Microsoft&quot;,&quot;Runoob&quot;);
+	document.getElementById(&quot;demo&quot;).innerHTML=n;
+}
+Visit Microsoft!Visit Microsoft!Visit Microsoft!  
+Visit Runoob!Visit Runoob!Visit Runoob!
+</code></pre></div><ol start="3"><li></li></ol> <table><thead><tr><th>方法</th> <th>描述</th> <th>返回值</th> <th>语法</th></tr></thead> <tbody><tr><td>search()</td> <td>检索字符串中指定的子字符串，或检索与正则表达式相匹配的子字符串</td> <td>与指定查找的字符串或者正则表达式相匹配的 String 对象起始位置。</td> <td>string.search(searchvalue)</td></tr></tbody></table> <p>示例：</p> <div class="language- extra-class"><pre class="language-text"><code>执行一次忽略大小写的检索:
+var str=&quot;Mr. Blue has a blue house&quot;;
+document.write(str.search(/blue/i)); //4
+
+执行一次对大小写敏感的查找:
+var str=&quot;Mr. Blue has a blue house&quot;;
+document.write(str.search(&quot;blue&quot;));  // 15
+</code></pre></div><ol start="4"><li></li></ol> <table><thead><tr><th>方法</th> <th>描述</th> <th>返回值</th> <th>语法</th></tr></thead> <tbody><tr><td>split()</td> <td>把一个字符串分割成字符串数组。split() 方法不改变原始字符串。</td> <td>与指定查找的字符串或者正则表达式相匹配的 String 对象起始位置。</td> <td>string.split(separator,limit可选。该参数可指定返回的数组的最大长度。)</td></tr></tbody></table> <p>示例：</p> <div class="language- extra-class"><pre class="language-text"><code>省略分割参数：
+var str=&quot;How are you doing today?&quot;;
+var n=str.split();
+n 输出数组值得结果:
+How are you doing today?
+
+分割每个字符，包括空格:
+var str=&quot;How are you doing today?&quot;;
+var n=str.split(&quot;&quot;);
+n 输出数组值得结果:
+H,o,w, ,a,r,e, ,y,o,u, ,d,o,i,n,g, ,t,o,d,a,y,?
+
+使用 limit 参数:
+var str=&quot;How are you doing today?&quot;;
+var n=str.split(&quot; &quot;,3);
+n 将输出3个数组的值:
+How,are,you
+
+使用一个字符作为分隔符:
+var str=&quot;How are you doing today?&quot;;
+var n=str.split(&quot;o&quot;);
+n 输出数组值得结果:
+H,w are y,u d,ing t,day?
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/Blog/JavaScript/BOM.html" class="prev">
+        BOM
+      </a></span> <span class="next"><a href="/Blog/JavaScript/JSDesignMode.html">
+        JS设计模式
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/Blog/assets/js/app.9c47bd80.js" defer></script><script src="/Blog/assets/js/2.b786c2ed.js" defer></script><script src="/Blog/assets/js/29.08475c58.js" defer></script>
+  </body>
+</html>

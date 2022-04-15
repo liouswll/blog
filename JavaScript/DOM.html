@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>DOM中的Event事件 | lious</title>
+    <meta name="generator" content="VuePress 1.5.1">
+    
+    <meta name="description" content="前端开发空间站">
+    <link rel="preload" href="/Blog/assets/css/0.styles.16d8b4f8.css" as="style"><link rel="preload" href="/Blog/assets/js/app.9c47bd80.js" as="script"><link rel="preload" href="/Blog/assets/js/2.b786c2ed.js" as="script"><link rel="preload" href="/Blog/assets/js/27.56fc3609.js" as="script"><link rel="prefetch" href="/Blog/assets/js/10.2ae6b466.js"><link rel="prefetch" href="/Blog/assets/js/11.533bbb72.js"><link rel="prefetch" href="/Blog/assets/js/12.8e74b9fc.js"><link rel="prefetch" href="/Blog/assets/js/13.2be3647b.js"><link rel="prefetch" href="/Blog/assets/js/14.1badd55b.js"><link rel="prefetch" href="/Blog/assets/js/15.f7f64fd6.js"><link rel="prefetch" href="/Blog/assets/js/16.72a686a6.js"><link rel="prefetch" href="/Blog/assets/js/17.db6d94f8.js"><link rel="prefetch" href="/Blog/assets/js/18.bc0ab2ef.js"><link rel="prefetch" href="/Blog/assets/js/19.e02c1cba.js"><link rel="prefetch" href="/Blog/assets/js/20.d91c50f5.js"><link rel="prefetch" href="/Blog/assets/js/21.22b161ae.js"><link rel="prefetch" href="/Blog/assets/js/22.bc2dea31.js"><link rel="prefetch" href="/Blog/assets/js/23.8e66fc0e.js"><link rel="prefetch" href="/Blog/assets/js/24.bcb02ed7.js"><link rel="prefetch" href="/Blog/assets/js/25.086b542b.js"><link rel="prefetch" href="/Blog/assets/js/26.b4fa9650.js"><link rel="prefetch" href="/Blog/assets/js/28.482e48d5.js"><link rel="prefetch" href="/Blog/assets/js/29.08475c58.js"><link rel="prefetch" href="/Blog/assets/js/3.686b262b.js"><link rel="prefetch" href="/Blog/assets/js/30.ba2aca8b.js"><link rel="prefetch" href="/Blog/assets/js/31.5d7b81c9.js"><link rel="prefetch" href="/Blog/assets/js/32.72d44b49.js"><link rel="prefetch" href="/Blog/assets/js/33.25e091aa.js"><link rel="prefetch" href="/Blog/assets/js/34.0b495ba3.js"><link rel="prefetch" href="/Blog/assets/js/35.0c41c066.js"><link rel="prefetch" href="/Blog/assets/js/36.5cb79c2b.js"><link rel="prefetch" href="/Blog/assets/js/37.ad8db7c0.js"><link rel="prefetch" href="/Blog/assets/js/38.1f99eb01.js"><link rel="prefetch" href="/Blog/assets/js/39.b05cd399.js"><link rel="prefetch" href="/Blog/assets/js/4.94ea306f.js"><link rel="prefetch" href="/Blog/assets/js/40.ec81b87a.js"><link rel="prefetch" href="/Blog/assets/js/41.6f245bcc.js"><link rel="prefetch" href="/Blog/assets/js/42.2a727e6b.js"><link rel="prefetch" href="/Blog/assets/js/43.2e2eee59.js"><link rel="prefetch" href="/Blog/assets/js/44.36c49c87.js"><link rel="prefetch" href="/Blog/assets/js/45.cb2389f6.js"><link rel="prefetch" href="/Blog/assets/js/46.6f746980.js"><link rel="prefetch" href="/Blog/assets/js/47.7987c6b9.js"><link rel="prefetch" href="/Blog/assets/js/48.15d01434.js"><link rel="prefetch" href="/Blog/assets/js/49.728714a6.js"><link rel="prefetch" href="/Blog/assets/js/5.c5721a11.js"><link rel="prefetch" href="/Blog/assets/js/6.99fdf330.js"><link rel="prefetch" href="/Blog/assets/js/7.f8ea1854.js"><link rel="prefetch" href="/Blog/assets/js/8.f72b32ca.js"><link rel="prefetch" href="/Blog/assets/js/9.9a3b5fa5.js">
+    <link rel="stylesheet" href="/Blog/assets/css/0.styles.16d8b4f8.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/Blog/" class="home-link router-link-active"><!----> <span class="site-name">lious</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/Blog/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><a href="/Blog/JavaScript/" class="nav-link router-link-active">
+  JavaScript
+</a></div><div class="nav-item"><a href="/Blog/es6/" class="nav-link">
+  ES6
+</a></div><div class="nav-item"><a href="/Blog/Vue/" class="nav-link">
+  Vue
+</a></div><div class="nav-item"><a href="/Blog/React/" class="nav-link">
+  React
+</a></div><div class="nav-item"><a href="/Blog/Webpack/" class="nav-link">
+  Webpack
+</a></div><div class="nav-item"><a href="/Blog/git/" class="nav-link">
+  Git
+</a></div><div class="nav-item"><a href="/Blog/Websocket/" class="nav-link">
+  Websocket
+</a></div><div class="nav-item"><a href="/Blog/Http/" class="nav-link">
+  HTTP
+</a></div><div class="nav-item"><a href="/Blog/Difficulties/" class="nav-link">
+  前端难点集中
+</a></div><div class="nav-item"><a href="/Blog/Algorithm/" class="nav-link">
+  前端算法
+</a></div><div class="nav-item"><a href="/Blog/Node/" class="nav-link">
+  Node
+</a></div><div class="nav-item"><a href="/Blog/Plan/" class="nav-link">
+  PLAN
+</a></div><div class="nav-item"><a href="/Blog/Type-Script/" class="nav-link">
+  Type-Script
+</a></div><div class="nav-item"><a href="/Blog/Gu/" class="nav-link">
+  GU
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/Blog/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><a href="/Blog/JavaScript/" class="nav-link router-link-active">
+  JavaScript
+</a></div><div class="nav-item"><a href="/Blog/es6/" class="nav-link">
+  ES6
+</a></div><div class="nav-item"><a href="/Blog/Vue/" class="nav-link">
+  Vue
+</a></div><div class="nav-item"><a href="/Blog/React/" class="nav-link">
+  React
+</a></div><div class="nav-item"><a href="/Blog/Webpack/" class="nav-link">
+  Webpack
+</a></div><div class="nav-item"><a href="/Blog/git/" class="nav-link">
+  Git
+</a></div><div class="nav-item"><a href="/Blog/Websocket/" class="nav-link">
+  Websocket
+</a></div><div class="nav-item"><a href="/Blog/Http/" class="nav-link">
+  HTTP
+</a></div><div class="nav-item"><a href="/Blog/Difficulties/" class="nav-link">
+  前端难点集中
+</a></div><div class="nav-item"><a href="/Blog/Algorithm/" class="nav-link">
+  前端算法
+</a></div><div class="nav-item"><a href="/Blog/Node/" class="nav-link">
+  Node
+</a></div><div class="nav-item"><a href="/Blog/Plan/" class="nav-link">
+  PLAN
+</a></div><div class="nav-item"><a href="/Blog/Type-Script/" class="nav-link">
+  Type-Script
+</a></div><div class="nav-item"><a href="/Blog/Gu/" class="nav-link">
+  GU
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/Blog/JavaScript/" aria-current="page" class="sidebar-link">JavaScript</a></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>基本知识</span> <span class="arrow right"></span></p> <!----></section></li><li><a href="/Blog/JavaScript/function.html" class="sidebar-link">函数</a></li><li><a href="/Blog/JavaScript/form.html" class="sidebar-link">表单</a></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>对象</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>面向对象</span> <span class="arrow right"></span></p> <!----></section></li><li><a href="/Blog/JavaScript/DOM.html" aria-current="page" class="active sidebar-link">DOM</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/Blog/JavaScript/DOM.html#dom中的event事件" class="sidebar-link">DOM中的Event事件</a></li><li class="sidebar-sub-header"><a href="/Blog/JavaScript/DOM.html#dom中document对象" class="sidebar-link">DOM中Document对象</a></li><li class="sidebar-sub-header"><a href="/Blog/JavaScript/DOM.html#dom中element对象" class="sidebar-link">DOM中Element对象</a></li><li class="sidebar-sub-header"><a href="/Blog/JavaScript/DOM.html#dom中attribute-对象" class="sidebar-link">DOM中Attribute 对象</a></li><li class="sidebar-sub-header"><a href="/Blog/JavaScript/DOM.html#dom-操作" class="sidebar-link">DOM-操作</a></li></ul></li><li><a href="/Blog/JavaScript/BOM.html" class="sidebar-link">BOM</a></li><li><a href="/Blog/JavaScript/Reg.html" class="sidebar-link">Reg</a></li><li><a href="/Blog/JavaScript/JSDesignMode.html" class="sidebar-link">JS设计模式</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="dom中的event事件"><a href="#dom中的event事件" class="header-anchor">#</a> DOM中的Event事件</h2> <h4 id="事件"><a href="#事件" class="header-anchor">#</a> 事件</h4> <ul><li>onblur		元素失去焦点。</li> <li>onchange	域的内容被改变。</li> <li>onclick		当用户点击某个对象时调用的事件句柄。</li> <li>ondblclick	当用户双击某个对象时调用的事件句柄。</li> <li>onfocus	元素获得焦点。</li> <li>onkeydown	某个键盘按键被按下。</li> <li>onkeypress	某个键盘按键被按下并松开。</li> <li>onkeyup	某个键盘按键被松开。</li> <li>onload		一张页面或一幅图像完成加载。</li> <li>onmousedown	鼠标按钮被按下。</li> <li>onmousemove	鼠标被移动。</li> <li>onmouseout	鼠标从某元素移开。</li> <li>onmouseover	鼠标移到某元素之上。</li> <li>onmouseup	鼠标按键被松开。</li> <li>onselect	文本被选中。</li> <li>onsubmit	确认按钮被点击。</li> <li>onunload	用户退出页面。</li></ul> <h4 id="鼠标键盘属性"><a href="#鼠标键盘属性" class="header-anchor">#</a> 鼠标键盘属性</h4> <ul><li>button		返回当事件被触发时，哪个鼠标按钮被点击。</li> <li>clientX		返回当事件被触发时，鼠标指针的水平坐标。</li> <li>clientY		返回当事件被触发时，鼠标指针的垂直坐标。</li> <li>screenX	    返回当某个事件被触发时，鼠标指针的水平坐标。</li> <li>screenY	    返回当某个事件被触发时，鼠标指针的垂直坐标。</li></ul> <h4 id="ie属性"><a href="#ie属性" class="header-anchor">#</a> IE属性</h4> <ul><li>cancelBubble	如果事件句柄想阻止事件传播到包容对象，必须把该属性设为 true。</li> <li>offsetX,offsetY	发生事件的地点在事件源元素的坐标系统中的 x 坐标和 y 坐标。</li></ul> <h4 id="标准event属性"><a href="#标准event属性" class="header-anchor">#</a> 标准Event属性</h4> <ul><li>bubbles	返回布尔值，指示事件是否是冒泡事件类型。</li> <li>cancelable	返回布尔值，指示事件是否可拥可取消的默认动作。</li> <li>currentTarget	返回其事件监听器触发该事件的元素。</li> <li>eventPhase	返回事件传播的当前阶段。</li> <li>target		返回触发此事件的元素（事件的目标节点）。</li> <li>timeStamp	返回事件生成的日期和时间。</li> <li>type		返回当前 Event 对象表示的事件的名称。</li></ul> <h4 id="标准event方法"><a href="#标准event方法" class="header-anchor">#</a> 标准Event方法</h4> <ul><li>initEvent()		初始化新创建的 Event 对象的属性。</li> <li>preventDefault()	通知浏览器不要执行与事件关联的默认动作。</li> <li>stopPropagation()	不再派发事件。</li></ul> <h2 id="dom中document对象"><a href="#dom中document对象" class="header-anchor">#</a> DOM中Document对象</h2> <h4 id="对象属性"><a href="#对象属性" class="header-anchor">#</a> 对象属性</h4> <ul><li>cookie		设置或返回与当前文档有关的所有 cookie。</li> <li>lastModified	返回文档被最后修改的日期和时间。</li> <li>referrer		返回载入当前文档的文档的 URL。</li> <li>URL		返回当前文档的 URL。</li></ul> <h4 id="对象方法"><a href="#对象方法" class="header-anchor">#</a> 对象方法</h4> <ul><li>getElementById()		返回对拥有指定 id 的第一个对象的引用。</li> <li>getElementsByName()		返回带有指定名称的对象集合。【数组】</li> <li>getElementsByTagName()	返回带有指定标签名的对象集合。【数组】</li></ul> <h2 id="dom中element对象"><a href="#dom中element对象" class="header-anchor">#</a> DOM中Element对象</h2> <div class="language- extra-class"><pre class="language-text"><code>element.appendChild()	向元素添加新的子节点，作为最后一个子节点。  
+element.attributes	返回元素属性的 NamedNodeMap。  
+element.childNodes	返回元素子节点的 NodeList。  
+element.className	设置或返回元素的 class 属性。  
+element.firstChild	返回元素的首个子节点。  
+element.getAttribute()	返回元素节点的指定属性值。  
+element.getAttributeNode()	返回指定的属性节点。  
+element.getElementsByTagName()	返回拥有指定标签名的所有子元素的集合。  
+element.hasAttribute()	如果元素拥有指定属性，则返回true，否则返回 false。  
+element.hasAttributes()	如果元素拥有属性，则返回 true，否则返回 false。  
+element.hasChildNodes()	如果元素拥有子节点，则返回 true，否则 false。  
+element.insertBefore()	在指定的已有的子节点之前插入新节点。  
+element.lastChild	返回元素的最后一个子元素。  
+element.parentNode	返回元素的父节点。  
+element.previousSibling	返回位于相同节点树层级的前一个元素。  
+element.removeAttribute()	从元素中移除指定属性。  
+element.removeAttributeNode()	移除指定的属性节点，并返回被移除的节点。  
+element.removeChild()	从元素中移除子节点。  
+element.replaceChild()	替换元素中的子节点。  
+element.setAttribute()	把指定属性设置或更改为指定值。  
+element.setAttributeNode()	设置或更改指定属性节点。  
+element.tabIndex	设置或返回元素的 tab 键控制次序。  
+element.tagName	返回元素的标签名。  
+element.textContent	设置或返回节点及其后代的文本内容。  
+element.title	设置或返回元素的 title 属性。  
+</code></pre></div><h2 id="dom中attribute-对象"><a href="#dom中attribute-对象" class="header-anchor">#</a> DOM中Attribute 对象</h2> <h2 id="dom-操作"><a href="#dom-操作" class="header-anchor">#</a> DOM-操作</h2> <h4 id="_1-window和document"><a href="#_1-window和document" class="header-anchor">#</a> 1. window和document</h4> <ul><li><p>window： 所有的浏览器都支持window对象，它支持浏览器窗口。所有的js全局对象，函数以及变量都能自动成为window对象的成员。全局变量是window对象的属性，全局函数是window对象的方法。</p></li> <li><p>document：document也是window对象的属性之一。document对象是documentHTML的一个实例，也是window对象的一个属性，因此可以将document对象作为一个全局对象来访问。</p></li></ul> <div class="language- extra-class"><pre class="language-text"><code>console.log(document);
+console.log(document.childNodes);
+console.log(document.head);
+console.log(document.body);
+document.title = &quot;测试&quot;;
+console.log(document.title);
+</code></pre></div><h4 id="_2-事件"><a href="#_2-事件" class="header-anchor">#</a> 2. 事件</h4> <p>定义：用户和浏览器之间的交互行为,	比如：点击按钮，鼠标进入/离开、双击...，我们可以在事件对应的属性中实现一些js代码，这样当事件被触发时，这些代码将会执行。</p> <div class="language- extra-class"><pre class="language-text"><code>比如: 按钮点击
+方式一 结构和行为耦合，不方便维护，不推荐使用	
+&lt;button id=&quot;btn&quot; onmousemove=&quot;alert('你干嘛摸我?');&quot;&gt;按钮1&lt;/button&gt;
+
+方式二  为按钮的对应事件绑定处理函数的形式来响应事件
+var btn = document.getElementById('btn');
+btn.onclick = function (ev) {
+    alert('你再点一下试试?');
+}
+</code></pre></div><h4 id="_3-文档加载过程"><a href="#_3-文档加载过程" class="header-anchor">#</a> 3. 文档加载过程</h4> <p>存在问题：浏览器在加载一个页面时，是按照自上向下的顺序加载的。读取到一行就运行一行, <strong>如果将script标签写到head内部</strong>，在代码执行时，页面还没有加载，页面中的DOM对象也没有加载。会导致在js中无法获取到页面中的DOM对象</p> <p>解决方法：</p> <ul><li>onload事件：onload事件会在整个页面加载完成之后才触发，为window绑定一个onload事件, 该事件对应的响应函数将会在页面加载完成之后执行，这样可以确保我们的代码执行时所有的DOM对象已经加载完毕了。</li> <li>把script标签放在body尾部。</li></ul> <h4 id="_4-获取dom对象"><a href="#_4-获取dom对象" class="header-anchor">#</a> 4. 获取DOM对象</h4> <div class="language- extra-class"><pre class="language-text"><code>var btn1 = document.getElementById(&quot;btn&quot;);
+var btn2 = document.getElementsByClassName(&quot;my-btn&quot;)[0];
+var btn3 = document.getElementsByTagName(&quot;button&quot;)[0];
+var btn4 = document.getElementsByName(&quot;btn&quot;)[0];
+var btn5 = document.querySelector(&quot;.my-btn&quot;);
+var btn6 = document.querySelectorAll(&quot;.my-btn&quot;)[0];
+</code></pre></div><h4 id="_5-节点之间关系"><a href="#_5-节点之间关系" class="header-anchor">#</a> 5. 节点之间关系</h4> <ul><li>parentNode：获取父节点</li></ul> <div class="language- extra-class"><pre class="language-text"><code>通过子盒子设置父盒子的背景色
+var btn = document.getElementsByClassName(&quot;btn&quot;)[0];
+btn.onclick = function () {
+    var span = document.getElementById(&quot;span&quot;);
+    var box = span.parentNode;
+    box.style.backgroundColor = &quot;red&quot;;
+};
+</code></pre></div><ul><li>previousElementSibling || previousSibling ：上一个兄弟节点</li></ul> <div class="language- extra-class"><pre class="language-text"><code> var previous = span.previousElementSibling || span.previousSibling;
+</code></pre></div><ul><li>nextElementSibling || nextSibling ：下一个兄弟节点</li></ul> <div class="language- extra-class"><pre class="language-text"><code> var next = span.nextElementSibling || span.nextSibling;
+</code></pre></div><ul><li>firstChild || firstElementChild ：获取标签中第一个子节点</li></ul> <div class="language- extra-class"><pre class="language-text"><code>box.firstElementChild || box.firstChild
+</code></pre></div><h4 id="_6-节点操作"><a href="#_6-节点操作" class="header-anchor">#</a> 6. 节点操作</h4> <ul><li>CRUD(增删改查)</li></ul> <div class="language- extra-class"><pre class="language-text"><code>创建节点
+	document.createElement(&quot;img&quot;);
+    box.appendChild(img);
+	box.insertBefore(img, btn);
+删除节点
+	var btn = document.getElementById(&quot;btn&quot;);
+    word.parentNode.removeChild(word); // 自杀
+    // btn.remove();
+克隆节点
+	新节点=要复制的节点.cloneNode(参数) ; 
+	var box = document.getElementsByClassName(&quot;box&quot;)[0];
+    var newTag = box.cloneNode(true);
+    // console.log(newTag);
+    document.body.appendChild(newTag);
+</code></pre></div><ul><li>节点属性（节点.属性）</li></ul> <div class="language- extra-class"><pre class="language-text"><code>获取：getAttribute(名称)
+设置：setAttribute(名称, 值)
+删除：removeAttribute(名称)
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/Blog/JavaScript/orientedObjects/inheritance.html" class="prev">
+        继承
+      </a></span> <span class="next"><a href="/Blog/JavaScript/BOM.html">
+        BOM
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/Blog/assets/js/app.9c47bd80.js" defer></script><script src="/Blog/assets/js/2.b786c2ed.js" defer></script><script src="/Blog/assets/js/27.56fc3609.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>对象属性类型 | lious</title>
+    <meta name="generator" content="VuePress 1.5.1">
+    
+    <meta name="description" content="前端开发空间站">
+    <link rel="preload" href="/Blog/assets/css/0.styles.16d8b4f8.css" as="style"><link rel="preload" href="/Blog/assets/js/app.9c47bd80.js" as="script"><link rel="preload" href="/Blog/assets/js/2.b786c2ed.js" as="script"><link rel="preload" href="/Blog/assets/js/36.5cb79c2b.js" as="script"><link rel="prefetch" href="/Blog/assets/js/10.2ae6b466.js"><link rel="prefetch" href="/Blog/assets/js/11.533bbb72.js"><link rel="prefetch" href="/Blog/assets/js/12.8e74b9fc.js"><link rel="prefetch" href="/Blog/assets/js/13.2be3647b.js"><link rel="prefetch" href="/Blog/assets/js/14.1badd55b.js"><link rel="prefetch" href="/Blog/assets/js/15.f7f64fd6.js"><link rel="prefetch" href="/Blog/assets/js/16.72a686a6.js"><link rel="prefetch" href="/Blog/assets/js/17.db6d94f8.js"><link rel="prefetch" href="/Blog/assets/js/18.bc0ab2ef.js"><link rel="prefetch" href="/Blog/assets/js/19.e02c1cba.js"><link rel="prefetch" href="/Blog/assets/js/20.d91c50f5.js"><link rel="prefetch" href="/Blog/assets/js/21.22b161ae.js"><link rel="prefetch" href="/Blog/assets/js/22.bc2dea31.js"><link rel="prefetch" href="/Blog/assets/js/23.8e66fc0e.js"><link rel="prefetch" href="/Blog/assets/js/24.bcb02ed7.js"><link rel="prefetch" href="/Blog/assets/js/25.086b542b.js"><link rel="prefetch" href="/Blog/assets/js/26.b4fa9650.js"><link rel="prefetch" href="/Blog/assets/js/27.56fc3609.js"><link rel="prefetch" href="/Blog/assets/js/28.482e48d5.js"><link rel="prefetch" href="/Blog/assets/js/29.08475c58.js"><link rel="prefetch" href="/Blog/assets/js/3.686b262b.js"><link rel="prefetch" href="/Blog/assets/js/30.ba2aca8b.js"><link rel="prefetch" href="/Blog/assets/js/31.5d7b81c9.js"><link rel="prefetch" href="/Blog/assets/js/32.72d44b49.js"><link rel="prefetch" href="/Blog/assets/js/33.25e091aa.js"><link rel="prefetch" href="/Blog/assets/js/34.0b495ba3.js"><link rel="prefetch" href="/Blog/assets/js/35.0c41c066.js"><link rel="prefetch" href="/Blog/assets/js/37.ad8db7c0.js"><link rel="prefetch" href="/Blog/assets/js/38.1f99eb01.js"><link rel="prefetch" href="/Blog/assets/js/39.b05cd399.js"><link rel="prefetch" href="/Blog/assets/js/4.94ea306f.js"><link rel="prefetch" href="/Blog/assets/js/40.ec81b87a.js"><link rel="prefetch" href="/Blog/assets/js/41.6f245bcc.js"><link rel="prefetch" href="/Blog/assets/js/42.2a727e6b.js"><link rel="prefetch" href="/Blog/assets/js/43.2e2eee59.js"><link rel="prefetch" href="/Blog/assets/js/44.36c49c87.js"><link rel="prefetch" href="/Blog/assets/js/45.cb2389f6.js"><link rel="prefetch" href="/Blog/assets/js/46.6f746980.js"><link rel="prefetch" href="/Blog/assets/js/47.7987c6b9.js"><link rel="prefetch" href="/Blog/assets/js/48.15d01434.js"><link rel="prefetch" href="/Blog/assets/js/49.728714a6.js"><link rel="prefetch" href="/Blog/assets/js/5.c5721a11.js"><link rel="prefetch" href="/Blog/assets/js/6.99fdf330.js"><link rel="prefetch" href="/Blog/assets/js/7.f8ea1854.js"><link rel="prefetch" href="/Blog/assets/js/8.f72b32ca.js"><link rel="prefetch" href="/Blog/assets/js/9.9a3b5fa5.js">
+    <link rel="stylesheet" href="/Blog/assets/css/0.styles.16d8b4f8.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/Blog/" class="home-link router-link-active"><!----> <span class="site-name">lious</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/Blog/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><a href="/Blog/JavaScript/" class="nav-link router-link-active">
+  JavaScript
+</a></div><div class="nav-item"><a href="/Blog/es6/" class="nav-link">
+  ES6
+</a></div><div class="nav-item"><a href="/Blog/Vue/" class="nav-link">
+  Vue
+</a></div><div class="nav-item"><a href="/Blog/React/" class="nav-link">
+  React
+</a></div><div class="nav-item"><a href="/Blog/Webpack/" class="nav-link">
+  Webpack
+</a></div><div class="nav-item"><a href="/Blog/git/" class="nav-link">
+  Git
+</a></div><div class="nav-item"><a href="/Blog/Websocket/" class="nav-link">
+  Websocket
+</a></div><div class="nav-item"><a href="/Blog/Http/" class="nav-link">
+  HTTP
+</a></div><div class="nav-item"><a href="/Blog/Difficulties/" class="nav-link">
+  前端难点集中
+</a></div><div class="nav-item"><a href="/Blog/Algorithm/" class="nav-link">
+  前端算法
+</a></div><div class="nav-item"><a href="/Blog/Node/" class="nav-link">
+  Node
+</a></div><div class="nav-item"><a href="/Blog/Plan/" class="nav-link">
+  PLAN
+</a></div><div class="nav-item"><a href="/Blog/Type-Script/" class="nav-link">
+  Type-Script
+</a></div><div class="nav-item"><a href="/Blog/Gu/" class="nav-link">
+  GU
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/Blog/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><a href="/Blog/JavaScript/" class="nav-link router-link-active">
+  JavaScript
+</a></div><div class="nav-item"><a href="/Blog/es6/" class="nav-link">
+  ES6
+</a></div><div class="nav-item"><a href="/Blog/Vue/" class="nav-link">
+  Vue
+</a></div><div class="nav-item"><a href="/Blog/React/" class="nav-link">
+  React
+</a></div><div class="nav-item"><a href="/Blog/Webpack/" class="nav-link">
+  Webpack
+</a></div><div class="nav-item"><a href="/Blog/git/" class="nav-link">
+  Git
+</a></div><div class="nav-item"><a href="/Blog/Websocket/" class="nav-link">
+  Websocket
+</a></div><div class="nav-item"><a href="/Blog/Http/" class="nav-link">
+  HTTP
+</a></div><div class="nav-item"><a href="/Blog/Difficulties/" class="nav-link">
+  前端难点集中
+</a></div><div class="nav-item"><a href="/Blog/Algorithm/" class="nav-link">
+  前端算法
+</a></div><div class="nav-item"><a href="/Blog/Node/" class="nav-link">
+  Node
+</a></div><div class="nav-item"><a href="/Blog/Plan/" class="nav-link">
+  PLAN
+</a></div><div class="nav-item"><a href="/Blog/Type-Script/" class="nav-link">
+  Type-Script
+</a></div><div class="nav-item"><a href="/Blog/Gu/" class="nav-link">
+  GU
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/Blog/JavaScript/" aria-current="page" class="sidebar-link">JavaScript</a></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>基本知识</span> <span class="arrow right"></span></p> <!----></section></li><li><a href="/Blog/JavaScript/function.html" class="sidebar-link">函数</a></li><li><a href="/Blog/JavaScript/form.html" class="sidebar-link">表单</a></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>对象</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/Blog/JavaScript/object/objects.html" aria-current="page" class="active sidebar-link">对象</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/Blog/JavaScript/object/objects.html#对象属性类型" class="sidebar-link">对象属性类型</a></li><li class="sidebar-sub-header"><a href="/Blog/JavaScript/object/objects.html#基本要求" class="sidebar-link">基本要求</a></li><li class="sidebar-sub-header"><a href="/Blog/JavaScript/object/objects.html#面向对象和基于对象" class="sidebar-link">面向对象和基于对象</a></li><li class="sidebar-sub-header"><a href="/Blog/JavaScript/object/objects.html#辨别js中的对象" class="sidebar-link">辨别JS中的对象</a></li><li class="sidebar-sub-header"><a href="/Blog/JavaScript/object/objects.html#使用对象" class="sidebar-link">使用对象</a></li><li class="sidebar-sub-header"><a href="/Blog/JavaScript/object/objects.html#js中对象的分类" class="sidebar-link">JS中对象的分类</a></li><li class="sidebar-sub-header"><a href="/Blog/JavaScript/object/objects.html#如何创建对象" class="sidebar-link">如何创建对象</a></li><li class="sidebar-sub-header"><a href="/Blog/JavaScript/object/objects.html#属性名和属性值" class="sidebar-link">属性名和属性值</a></li><li class="sidebar-sub-header"><a href="/Blog/JavaScript/object/objects.html#基本类型和引用类型在堆栈中的表示" class="sidebar-link">基本类型和引用类型在堆栈中的表示</a></li><li class="sidebar-sub-header"><a href="/Blog/JavaScript/object/objects.html#对象字面量" class="sidebar-link">对象字面量</a></li></ul></li><li><a href="/Blog/JavaScript/object/dataType.html" class="sidebar-link">数据类型和内存分析</a></li><li><a href="/Blog/JavaScript/object/builtInObjects.html" class="sidebar-link">内置对象</a></li><li><a href="/Blog/JavaScript/object/globalObjects.html" class="sidebar-link">全局对象</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>面向对象</span> <span class="arrow right"></span></p> <!----></section></li><li><a href="/Blog/JavaScript/DOM.html" class="sidebar-link">DOM</a></li><li><a href="/Blog/JavaScript/BOM.html" class="sidebar-link">BOM</a></li><li><a href="/Blog/JavaScript/Reg.html" class="sidebar-link">Reg</a></li><li><a href="/Blog/JavaScript/JSDesignMode.html" class="sidebar-link">JS设计模式</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="对象属性类型"><a href="#对象属性类型" class="header-anchor">#</a> 对象属性类型</h2> <h4 id="数据类型"><a href="#数据类型" class="header-anchor">#</a> 数据类型</h4> <ul><li>Configurable：表示能否通过delete删除属性从而重新定义，<strong>能否修改属性特性</strong>。默认为true</li> <li>Enumerable：表示是否能够通过for-in循环返回属性。默认为true。</li> <li>Writeable：表示能否修改属性的值。默认为true。</li> <li>Value：属性的数据值，读取时从这取。写入时，把新值保存到这个位置。默认为undefined</li></ul> <div class="language- extra-class"><pre class="language-text"><code>使用Object.defineProperty()方法修改，接受三个参数。
+Object.defineProperty(属性所在的对象, 属性的名字, 一个描述符对象)
+
+var person ={}
+Object.defineProperty(person, &quot;name&quot;, {
+	writeable: false,
+	value: 'zx'
+})
+console.log(person.name) // zx
+person.name = &quot;cy&quot;
+console.log(person.name) // zx
+
+writeable设置为false,修改值，非严格模式下赋值操作会被忽略。严格模式下报错。
+configurable设置为不可更改后,调用delete非严格模式下什么模式也不会发生。严格模式下报错。一旦设置为不可修改属性特性，就不能变回可配置。此时再修改writeable之外的特性，都会导致报错。
+</code></pre></div><h4 id="访问器属性"><a href="#访问器属性" class="header-anchor">#</a> 访问器属性</h4> <ul><li>Configurable：表示能否通过delete删除属性从而重新定义，能否修改器特性。默认为true</li> <li>Enumerable：表示是否能够通过for-in循环返回属性。默认为true。</li> <li>Get：读取数值时调用的函数，默认undefined</li> <li>Set：写入属性时调用的函数，默认undefined</li></ul> <div class="language- extra-class"><pre class="language-text"><code>var book = {
+	_year: 2004,
+	edition: 1
+};
+Object.defineProperty(book, &quot;year&quot;, {
+	get: function(){
+		return this._year
+	},
+	set: function(newValue){
+		if(newValue &gt; 2004){
+			this._year = newValue;
+			this.edition += newValue - 2004	
+		}
+	}
+})
+book.year = 2005;
+console.log(book.edition) // 2	
+</code></pre></div><h4 id="定义多个属性"><a href="#定义多个属性" class="header-anchor">#</a> 定义多个属性</h4> <ul><li>Object.defineProperties() 可以定义多个属性，接受两个对象参数第一个<strong>对象是要添加或者修改的其属性的队象</strong>，第二个<strong>对象的属性与第一个对象中要添加或者修改的属性一一对应</strong></li></ul> <div class="language- extra-class"><pre class="language-text"><code>var book ={}
+Objet.defineProperties(book, {
+	_year: {
+		value: 2004
+	},
+	edition: {
+		value: 1
+	}
+	year: {
+		get: function(){
+			return this._year
+		},
+		set: fubction(){
+			if(newValue&gt;2004){
+				this._year = newValue;
+				this.edition += newValue-2004
+			}
+		}
+	}
+})
+</code></pre></div><h4 id="读取属性的特性"><a href="#读取属性的特性" class="header-anchor">#</a> 读取属性的特性</h4> <ul><li>Object.getOwnPropertyDescriptor() 可以取得给给定属性的描述符。接受两个参数<strong>属性所在的对象，读取描述符的属性名称</strong>分别是数据属性和访问器属性</li></ul> <div class="language- extra-class"><pre class="language-text"><code>var book ={}
+Objet.defineProperties(book, {
+	_year: {
+		value: 2004
+	},
+	edition: {
+		value: 1
+	}
+	year: {
+		get: function(){
+			return this._year
+		},
+		set: fubction(){
+			if(newValue&gt;2004){
+				this._year = newValue;
+				this.edition += newValue-2004
+			}
+		}
+	}
+})
+
+// 数据属性
+var descriptor = Objet.defineProperties(book, _year);
+alert(descriptor.value) //2014
+alert(descriptor.configgurale) // false
+alert(type descriptor.get) // underfined
+
+// 访问器属性
+var descriptor = Objet.defineProperties(book, year);
+alert(descriptor.value) //undefined
+alert(descriptor.configgurale) // false
+alert(type descriptor.get) // function
+</code></pre></div><h2 id="基本要求"><a href="#基本要求" class="header-anchor">#</a> 基本要求</h2> <ul><li>定义一个构造函数，创建自定义对象。</li></ul> <h2 id="面向对象和基于对象"><a href="#面向对象和基于对象" class="header-anchor">#</a> 面向对象和基于对象</h2> <ul><li>面向对象：可以创建自定义的类型、很好的支持继承和多态。面向对象的语言c++/java/c#...</li></ul> <blockquote><p>特征：封装、继承、多态<br>
+万物皆对象：世间的一切事物都可以用对象来描述</p></blockquote> <ul><li>基于对象：无法创建自定义的类型、不能很好的支持继承和多态。</li></ul> <blockquote><p>基于对象的语言,  比如:JavaScript</p></blockquote> <h2 id="辨别js中的对象"><a href="#辨别js中的对象" class="header-anchor">#</a> 辨别JS中的对象</h2> <ul><li>除了5种基本的数据类型，其它的全都是对象。Object就是一个对象</li></ul> <h2 id="使用对象"><a href="#使用对象" class="header-anchor">#</a> 使用对象</h2> <ul><li>对象属于一种复合的数据类型，在对象中可以保存多个不同数据类型的属性。</li></ul> <div class="language- extra-class"><pre class="language-text"><code>比如想要描述一个人? 如果使用基本数据类型的数据，我们所创建的变量都是独立，不能成为一个整体。
+var name = &quot;&quot;;
+var intro = &quot;&quot;;
+var age = 108;
+</code></pre></div><h2 id="js中对象的分类"><a href="#js中对象的分类" class="header-anchor">#</a> JS中对象的分类</h2> <h4 id="内建对象：由es标准中定义的对象，在任何的es的实现中都可以使用。"><a href="#内建对象：由es标准中定义的对象，在任何的es的实现中都可以使用。" class="header-anchor">#</a> 内建对象：由ES标准中定义的对象，在任何的ES的实现中都可以使用。</h4> <ul><li>比如：String Number Boolean Function Object Math ....</li></ul> <h4 id="宿主对象：由js的运行环境提供的对象，现在主要指由浏览器提供的对象"><a href="#宿主对象：由js的运行环境提供的对象，现在主要指由浏览器提供的对象" class="header-anchor">#</a> 宿主对象：由JS的运行环境提供的对象，现在主要指由浏览器提供的对象</h4> <ul><li>比如: BOM对象, DOM对象</li></ul> <h4 id="自定义对象"><a href="#自定义对象" class="header-anchor">#</a> 自定义对象</h4> <ul><li>比如: Person, Dog, ....</li></ul> <h2 id="如何创建对象"><a href="#如何创建对象" class="header-anchor">#</a> 如何创建对象</h2> <h4 id="构造函数"><a href="#构造函数" class="header-anchor">#</a> 构造函数</h4> <ul><li>构造函数是专门用来创建对象的函数。使用new关键字调用的函数，可以被称为构造函数(constructor)<br> <code>var obj = new Object();</code></li></ul> <h4 id="定义："><a href="#定义：" class="header-anchor">#</a> 定义：</h4> <ul><li>在对象中保存的值称为属性</li> <li>向对象添加属性: 对象.属性名 = 属性值;</li> <li>读取对象中的属性: 对象.属性名</li></ul> <blockquote><p>如果读取对象中没有的属性，不会报错而是会返回undefined</p></blockquote> <ul><li>修改对象的属性值: 对象.属性名 = 新值</li> <li>删除对象的属性: delete 对象.属性名</li></ul> <div class="language- extra-class"><pre class="language-text"><code>var obj = new Object();
+//向obj中添加一个name属性
+obj.name = &quot;谢霆锋&quot;;
+//向obj中添加一个gender属性
+obj.gender = &quot;男&quot;;
+//向obj中添加一个age属性
+obj.age = 38;
+</code></pre></div><h2 id="属性名和属性值"><a href="#属性名和属性值" class="header-anchor">#</a> 属性名和属性值</h2> <p><strong>如果要使用特殊的属性名，不能采用.的方式来操作, 需要使用另一种方式, 语法: 对象[&quot;属性名&quot;] = 属性值, 读取也要用该方式</strong></p> <div class="language- extra-class"><pre class="language-text"><code>obj[&quot;666&quot;] = 888;
+console.log(obj[&quot;666&quot;]);
+
+var str = '666';
+obj[str] = 888;
+console.log(obj[str]);
+</code></pre></div><ul><li>JS对象的属性值，可以是任意的数据类型, 也可以是一个对象</li></ul> <h4 id="in-运算符"><a href="#in-运算符" class="header-anchor">#</a> in 运算符</h4> <ul><li>通过该运算符可以检查一个对象中是否含有指定的属性, 如果有则返回true，没有则返回false</li></ul> <blockquote><p>&quot;属性名&quot; in 对象</p></blockquote> <h2 id="基本类型和引用类型在堆栈中的表示"><a href="#基本类型和引用类型在堆栈中的表示" class="header-anchor">#</a> 基本类型和引用类型在堆栈中的表示</h2> <h4 id="基本数据类型"><a href="#基本数据类型" class="header-anchor">#</a> 基本数据类型</h4> <ul><li>String Number Boolean Null Undefined</li></ul> <h4 id="引用数据类型"><a href="#引用数据类型" class="header-anchor">#</a> 引用数据类型</h4> <ul><li>Object</li></ul> <h4 id="区别"><a href="#区别" class="header-anchor">#</a> 区别</h4> <ul><li>JS中的变量都是保存到栈内存中的，基本数据类型的值直接在栈内存中存储，值与值之间是独立存在，修改一个变量不会影响其他的变量</li> <li>对象是保存到堆内存中的，每创建一个新的对象，就会在堆内存中开辟出一个新的空间，而变量保存的是对象的内存地址（对象的引用），如果两个变量保存的是同一个对象引用，当一个通过一个变量修改属性时，另一个也会受到影响</li></ul> <blockquote><p>比较两个基本数据类型的值时，就是比较值。<br>
+比较两个引用数据类型时，它是比较的对象的内存地址，如果两个对象是一摸一样的，但是地址不同，它也会返回false</p></blockquote> <h2 id="对象字面量"><a href="#对象字面量" class="header-anchor">#</a> 对象字面量</h2> <div class="language- extra-class"><pre class="language-text"><code>var 对象 = {属性名:属性值,属性名:属性值....};
+对象字面量的属性名可以加引号也可以不加，建议不加, 如果要使用一些特殊的名字，则必须加引号
+使用对象字面量，可以在创建对象时，直接指定对象中的属性
+属性名和属性值是一组一组的名值对结构，和值之间使用:连接，多个名值对之间使用,隔开
+var obj = {	
+	name:&quot;刘德华&quot;,
+	age:50,
+	gender:&quot;男&quot;,
+	friend:{name:&quot;洗头发&quot;}
+	};	
+console.log(obj.friend);
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/Blog/JavaScript/form.html" class="prev">
+        表单
+      </a></span> <span class="next"><a href="/Blog/JavaScript/object/dataType.html">
+        数据类型和内存分析
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/Blog/assets/js/app.9c47bd80.js" defer></script><script src="/Blog/assets/js/2.b786c2ed.js" defer></script><script src="/Blog/assets/js/36.5cb79c2b.js" defer></script>
+  </body>
+</html>
